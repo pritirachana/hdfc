@@ -1,0 +1,83 @@
+<style type="text/css">
+
+    area:hover {
+        cursor: pointer;
+    }
+    
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    #stageheight{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .stage-player {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        margin-left: 0vh;
+        top: 0;
+        background-color: transparent;
+    }
+    .stageheight iframe {
+        min-width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        max-width: 100%;
+    }
+    @media(max-width: 769px){
+        .stage-player{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0vh !important;
+        background-color: black;
+            margin-left: 0vh;
+    
+    }
+    iframe{
+        min-height: -webkit-fill-available !important;
+    }
+    
+    }
+    @media screen and (orientation:landscape) and (max-width: 840px) {
+        iframe{
+            min-width: 100%;
+            min-height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+        }
+            .stage-player{
+        position: absolute;
+        width: 100% !important;
+        height: 100vh;
+        top: 0vh !important;
+        background-color: black;
+        margin-left: 0vh;
+    
+    }
+    }
+    </style>
+        <div class="stageheight" id="stageheight" ng-if="concert_started == 1">
+            <div class="stage-player">
+                <iframe src="https://player.vimeo.com/video/472856265" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <!-- <iframe id="iframe" iframe-set-dimensions-onload scrolling="no" src="https://www.youtube.com/embed/nqE4TiDcAz4?controls=0&autoplay=1" autoplay frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <!-- <iframe src="https://vimeo.com/event/252078/embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+        </div>
+        <div>
+            <img class="rwdimgmap" src="images/KEYNOTE-STAGE.jpg" usemap="#powerpuffgirls" alt="" />
+            <!-- <map name="powerpuffgirls">
+                <area shape="poly" coords="5269,3731,7049,3719,7056,3898,5281,3904" ng-click="myTrigger('session')" title="Almond" alt="Almond" href="https://virtex.in/" target="blank" />
+            </map> -->
+           
+        </div>
+        
+        
+        

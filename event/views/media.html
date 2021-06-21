@@ -1,0 +1,476 @@
+<style>
+    .feedback{
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    a{
+        color: #132f42;
+    }
+    .table-media1{
+        overflow: hidden;
+        overflow-y: scroll;
+        height: 60vh !important;
+    }
+    .leader-name-txt{
+        text-align: left
+    }
+    .speaker-name{
+        text-align: left;
+    }
+    .speaker-heading{
+        color: white;
+    background-color: #132f42;
+    padding: 0.2vh 0.5vh;
+    font-size: 14px;
+    width: fit-content;
+    text-align: center;
+    border-radius: 4px;
+    }
+    #modalalertbody{
+        height: auto !important;
+    }
+    #modalcontentalert{
+    background-color: #132f42;
+}
+.day-info{
+    color: white;
+    font-weight: 500;
+    background-color:rgb(35 67 150);
+    padding: 1vh;
+    width: 49%;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+.day-info p{
+    font-size: 16px;
+}
+.day-main{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1.5vh;
+}
+#active-day{
+    background-color: #132f42;
+}
+    
+    </style>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <div class="container-fluid feedback">
+        <div class="header">
+            <img class="img-fluid" src="https://d3daqnblwo9fae.cloudfront.net/header-bg.jpg">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-10 col-lg-8">
+                <div class="day-main">
+                    <div ui-sref="media" class="day-info">
+                        <p>Day 1</p>
+                    </div>
+                    <div ui-sref="media2" class="day-info" id="active-day">
+                        <p>Day 2</p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 table-media1">
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th id="name-left">Name</th>
+                        <th id="th-small">View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                   Event Walkthrough Video
+                                </div>
+                            </div>
+                        </td>
+                        <!-- ng-click="myTrigger('video')" -->
+                        <td ng-click="myTrigger('video2')" style="cursor: pointer;">
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                   Our Planet: Our Business
+                                </div>
+                            </div>
+                        </td>
+                        <!-- ng-click="myTrigger('video')" -->
+                        <td ng-click="myTrigger('video')" style="cursor: pointer;">
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    The Impact of the Pandemic on the
+                                    Web Presence Industry - Focus on MSMEs
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Manish Dalal, SVP & General Manager,
+                                        Endurance International Group-APAC</p>
+                                </div>
+                            </div>
+                        </td>
+                        <!-- ng-click="myTrigger('video')" -->
+                        <td ng-click="myTrigger('video3')" style="cursor: pointer;">
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Fireside Chat with the co-founder of WordPress 
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Matt Mullenweg, Co-Founder, WordPress &
+                                        Founder and CEO, Automattic</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video4')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Session by Godaddy Registry
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>TBD</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video5')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Pandemic: Driving MSME Digital Transformation 
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Biswapriya Bhattacharjee, Executive VP,
+                                        Insights Division, Kantar South Asia</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video6')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Advance Level of Google Analytics
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Swapnil Rastogi, Strategic Partner Manager,
+                                        Google Marketing Platform</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video7')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Business Continuity for SMBs
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Taru Dahiya, Director, SMB-Asia Pacific,
+                                        Google Cloud</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video8')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Tools for the Modern Web Pro
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Simran Talreja, Product Lead,
+                                        Endurance International Group</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video9')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Innovation During the Pandemic – What the VC’s Think
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Mohit Bhatnaga, Managing Director, 
+                                        Sequoia Capital India LLP 
+                                        Shekhar Kirani, Partner- Accel</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video10')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Wow Your Customers & Win Them for Life With
+                                    Omnichannel Customer Engagement Strategies
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Arvind Sekar, Lead- Partner Sales
+                                        Engineer, Freshworks Inc.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video11')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Insights and Inspirations with Bhavin Turakhia
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Bhavin Turakhia, Founder & CEO of Flock;
+                                        Founder of Radix ; Co-founder & CEO, Zeta</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video12')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Increasing Profits & Value Added Services
+                                    Through SedoMLS Premium Domains
+                                </div>
+                                <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Brad Lemire, Vice President of
+                                        Business Development, Sedo</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video13')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="table-name" data-column="Name">
+                           
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    Our Planet Our Business
+                                </div>
+                                <!-- <div class="speaker-name">
+                                    <p class="speaker-heading">Speaker</p>
+                                    <p>Brad Lemire, Vice President of
+                                        Business Development, Sedo</p>
+                                </div> -->
+                            </div>
+                        </td>
+                        <td ng-click="myTrigger('video14')" style="cursor: pointer;">
+                            
+                            <i class="far fa-play-circle"></i>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+                </div>
+                </div>
+                <div class="footer">
+                    <img class="img-fluid" src="images/footer-bg.jpg">
+                </div>
+        </div>
+       
+    </div>
+
+    <div class="lightbox" ng-if="popupvideo" id="lightbox-1">
+        <div class="video-pop-box">
+        <iframe src="https://www.youtube.com/embed/JdWQJq2OkJs?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+    </div>
+    </div>
+   <div class="lightbox" ng-if="popupvideo2" id="lightbox-1">
+        <div class="video-pop-box">
+        <iframe src="https://virtualeventvideo.s3.ap-south-1.amazonaws.com/cloudbazaar/walkthrough+R2.mp4" autoplay="1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+    </div>
+    </div>
+     <div class="lightbox" ng-if="popupvideo3" id="lightbox-1">
+      <div class="video-pop-box">
+      <iframe src="https://player.vimeo.com/video/489866933?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+  </div>
+  </div>
+  <div class="lightbox" ng-if="popupvideo4" id="lightbox-1">
+    <div class="video-pop-box">
+    <iframe src="https://player.vimeo.com/video/489886668?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div>
+<div class="lightbox" ng-if="popupvideo5" id="lightbox-1">
+    <div class="video-pop-box">
+    <iframe src="https://player.vimeo.com/video/489855088?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div>
+<div class="lightbox" ng-if="popupvideo6" id="lightbox-1">
+  <div class="video-pop-box">
+  <iframe src="https://player.vimeo.com/video/489889202?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div>
+<div class="lightbox" ng-if="popupvideo7" id="lightbox-1">
+    <div class="video-pop-box">
+    <iframe src="https://player.vimeo.com/video/489855457?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div>
+<div class="lightbox" ng-if="popupvideo8" id="lightbox-1">
+    <div class="video-pop-box">
+    <iframe src="https://player.vimeo.com/video/489896698?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div>
+<div class="lightbox" ng-if="popupvideo9" id="lightbox-1">
+  <div class="video-pop-box">
+  <iframe src="https://player.vimeo.com/video/489855931?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div>
+<div class="lightbox" ng-if="popupvideo10" id="lightbox-1">
+    <div class="video-pop-box">
+    <iframe src="https://player.vimeo.com/video/489892632?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div>
+<div class="lightbox" ng-if="popupvideo11" id="lightbox-1">
+    <div class="video-pop-box">
+    <iframe src="https://player.vimeo.com/video/489856282?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div> 
+<div class="lightbox" ng-if="popupvideo12" id="lightbox-1">
+    <div class="video-pop-box">
+    <iframe src="https://player.vimeo.com/video/489891895?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div> 
+<div class="lightbox" ng-if="popupvideo13" id="lightbox-1">
+    <div class="video-pop-box">
+    <iframe src="https://player.vimeo.com/video/489866737?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div>
+<div class="lightbox" ng-if="popupvideo14" id="lightbox-1">
+    <div class="video-pop-box">
+    <iframe src="https://player.vimeo.com/video/489877712?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+</div>
+</div>
+
+
+<button type="button" class="btn btn-primary" >
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" id="modalcontentalert">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalalertbody">
+        <p style="color: white; font-size: 18px; font-weight: 500;">The recorded session will be available within 6 hours.</p> 
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,446 @@
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+area:hover {
+    cursor: pointer;
+    position: relative !important;
+}
+
+img[usemap] {
+    border: none;
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+    width: auto;
+}
+.lightbox__close {
+  color: #ffffff;
+    display: block;
+    font-weight: bold;
+    height: 4%;
+    line-height: 0;
+    text-align: center;
+    text-decoration: none;
+    width: 4%;
+    border-radius: 100%;
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); */
+    position: absolute;
+    top: 17%;
+    font-size: 30px;
+    background-color: none;
+    right: 1%;
+    cursor: pointer;
+}
+.containerr {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.lg-container {
+  max-width: 100%;
+  position: relative;
+  padding: 0;
+}
+
+.lg-image {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: scale-down;
+}
+.lg-hotspot {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+/* .lg-hotspot:hover .lg-hotspot__button, .lg-hotspot:active .lg-hotspot__button {
+  border-color: #ff774c;
+}
+.lg-hotspot:hover .lg-hotspot__button:after, .lg-hotspot:active .lg-hotspot__button:after {
+  background-color: #ff774c;
+}
+.lg-hotspot--selected {
+  z-index: 999;
+}
+.lg-hotspot--selected .lg-hotspot__label {
+  opacity: 1;
+} */
+.lg-hotspot__button {
+    border: 3px solid #fb7815;
+    -webkit-border-radius: 30px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    cursor: pointer;
+    opacity: 0.0
+}
+
+.lg-hotspot__text {
+    position: absolute;
+    width: 13vw;
+    -webkit-animation: beat 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    color:#fff;
+    font-size:20px;
+    cursor: pointer;
+}
+
+.lg-hotspot__button:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  content: "";
+  display: block;
+  height: 16.8px;
+  width: 16.8px;
+  border-radius: 100%;
+  border: 3px solid #fb7815;
+  background-color: #fb7815;
+  transition: border-color 1s linear;
+  cursor: pointer;
+}
+.lg-hotspot__label {
+  position: absolute;
+  padding: 0 0 1.1em 0;
+  width: 16em;
+  max-width: 50vw;
+  background-color: #fb7815;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14.5px;
+  line-height: 1.45em;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 2px;
+  user-select: none;
+  opacity: 0;
+  transition: all 0.1s linear;
+}
+.lg-hotspot__label h4 {
+  margin: 0;
+  padding: 0.65em 24px;
+  background-color: #555;
+  font-size: 1.1em;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  color: #fb7815;
+  border-radius: 2px 2px 0 0;
+}
+.lg-hotspot__label p {
+  margin: 0;
+  padding: 1.1em 24px 0 24px;
+  color: #333;
+}
+
+.lg-hotspot--top-left .lg-hotspot__label {
+  top: 24px;
+  left: 24px;
+}
+
+.lg-hotspot--top-right .lg-hotspot__label {
+  top: 24px;
+  right: 24px;
+}
+
+.lg-hotspot--bottom-right .lg-hotspot__label {
+  right: 24px;
+  bottom: 24px;
+}
+
+.lg-hotspot--bottom-left .lg-hotspot__label {
+  bottom: 24px;
+  left: 24px;
+}
+
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+@-webkit-keyframes beat {
+    0% {-webkit-transform: scale(1, 1);}
+    50% {-webkit-transform: scale(0.9, 0.9);}
+    100% {-webkit-transform: scale(1, 1);}
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+  .lg-hotspot__text {
+    position: absolute;
+    width: 12vw;
+    color:#fff;
+    font-size:10px;
+    cursor: pointer;
+}
+.lg-hotspot__button:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    content: "";
+    display: block;
+    height: 6.8px;
+    width: 6.8px;
+    border-radius: 100%;
+    border: 3px solid rgb(216, 59, 59);
+    background-color: rgb(216, 59, 59);
+    transition: border-color 1s linear;
+    cursor: pointer;
+}
+.lg-hotspot__button {
+    border: 3px solid rgb(216, 59, 59);
+    -webkit-border-radius: 30px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    cursor: pointer;
+    opacity: 0.0;
+}
+}
+
+.powered_by {
+  font-family: 'Poppins', sans-serif;
+  /* font-size: 150px; */
+  font-weight: 200;
+  /* transform: rotate(-5deg); */
+  background: linear-gradient(45deg, #fff 20%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 85px;
+  text-align: center;
+  /* padding: 40px 10px 95px; */
+  filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.5));
+  text-outline: 1px solid black;
+  -webkit-animation: beat 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+}
+
+
+    </style>
+    <script>
+//         var selectHotspot = (e) => {
+//   var clickedHotspot = e.target.parentElement;
+//   var container = clickedHotspot.parentElement;
+
+  // only include hotspots within same image to allow one open hotspot per image; change "container" to "document" to allow only one open hotspot for entire page:
+//   var hotspots = container.querySelectorAll(".lg-hotspot");
+//   hotspots.forEach((hotspot) => {
+//     if (hotspot === clickedHotspot) {
+//       hotspot.classList.toggle("lg-hotspot--selected");
+//     } else {
+//       hotspot.classList.remove("lg-hotspot--selected");
+//     }
+//   });
+// };
+
+// (() => {
+//   const buttons = document.querySelectorAll(".lg-hotspot__button");
+//   buttons.forEach((button) => {
+//     button.addEventListener("click", selectHotspot);
+//   });
+// })();
+
+    </script>
+<div style="position: relative;" ng-hide="showvideo">
+  <!-- <div class="legal-line">
+    <marquee>
+      <p>The event is over now, thank you for attending. You can view all the sessions by clicking on the 'Recorded Sessions' tab on the right panel. You can also see products and offerings of our exhibitors by clicking on the 'Partner Expo' tab on the left panel. Please note: You will not be able to talk to anyone since the event is over. We thank you for your participation :)</p>
+    </marquee>
+  </div> -->
+  <img class="rwdimgmap lg-image" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/updated+lobby32.jpg" usemap="#powerpuffgirls" alt="" />
+
+<!-- <div style="top: 42%;left: 29.9%;" class="lg-hotspot lg-hotspot--top-left">
+  <div class="lg-hotspot__button"></div>
+</div> -->
+
+<!-- <div style="top: 19.9%;left: 50.2%;width: 18%;" class="lg-hotspot lg-hotspot--top-left">
+  <img style="width: 100%;" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/ezgif.com-gif-maker+(6).gif">
+</div>
+
+<div style="top: 60.3%;left: 87.95%;width: 9.7%;" class="lg-hotspot lg-hotspot--top-left">
+  <img style="width: 100%;" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/videos/ezgif.com-gif-maker+(3).gif">
+</div> -->
+
+<!-- <div style="top: 34%;left: 24%;width: 14%;" class="lg-hotspot lg-hotspot--top-left">
+  <img style="width: 100%;" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Left.gif">
+</div> -->
+
+<!-- <div style="top: 34%;left: 75.56%;width: 14%;" class="lg-hotspot lg-hotspot--top-left">
+  <img style="width: 100%;" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Right.gif">
+</div> -->
+
+<!-- <div ui-sref="expo-by-category2" style="top: 40%;left: 9%;" class="lg-hotspot lg-hotspot--top-left">
+  <div class="lg-hotspot__button"></div>
+</div> -->
+
+<!-- <a target="_blank" href="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Bio-+India+Catalogue+2021+(1).pdf"><div style="top: 60%;left: 5%;" class="lg-hotspot lg-hotspot--top-left">
+    <div class="lg-hotspot__button"></div>
+  </div></a> -->
+
+<!-- <div ui-sref="atgc" style="top: 12%;right: 39.5%;text-align: center;" class="lg-hotspot lg-hotspot--top-right">
+  <div class="lg-hotspot__text"><h3>Join Inaugural <br>Session at 3:45 PM</h3></div>
+</div>
+
+<div ui-sref="atgc" style="top: 19%;right: 32.9%;" class="lg-hotspot lg-hotspot--top-right">
+  <div class="lg-hotspot__button"></div>
+</div> -->
+
+<!-- <div style="top: 42%; left: 67%;" class="lg-hotspot lg-hotspot--top-right">
+  <div class="lg-hotspot__button"></div>
+</div> -->
+
+<!-- <div style="top: 58.5%;right: 15%;" class="lg-hotspot lg-hotspot--top-right">
+  <div class="lg-hotspot__button"></div>
+</div> -->
+
+<div ui-sref="expo-by-category2({id: 109})" title="Please click here to watch the developer webinar on the projects in your city." style="top: 49%;left: 22.3%;" class="lg-hotspot lg-hotspot--top-right">
+  <div class="lg-hotspot__button"></div>
+</div>
+
+<div ui-sref="sessions" title="Home loan starting at 6.70% p.a. Please click here to know more." style="top: 49%;right: 24.3%;" class="lg-hotspot lg-hotspot--top-right">
+  <div class="lg-hotspot__button"></div>
+</div>
+
+<div ui-sref="expo" title="Please click here to meet top developers from your city." style="top: 49%;left: 48.5%;" class="lg-hotspot lg-hotspot--top-right">
+  <div class="lg-hotspot__button"></div>
+</div> 
+
+<!-- <div ui-sref="support" style="top: 62%;left: 27.5%;" title="Please click here for help." class="lg-hotspot lg-hotspot--top-right">
+  <div class="lg-hotspot__button"></div>
+</div>  -->
+
+<!-- <a><div style="top: 39.5%;right: 10%;" class="lg-hotspot lg-hotspot--top-right">
+  <div class="lg-hotspot__button"></div>
+</div></a> -->
+
+<!-- <div ui-sref="workshop" style="top: 30.5%; left: 77%;" class="lg-hotspot lg-hotspot--top-right" alt="Please enter here for all workshops & brand sessions">
+  <div class="lg-hotspot__button"></div>
+</div>
+<div ui-sref="networking-zone" style="top: 44%; left: 31%;" class="lg-hotspot lg-hotspot--bottom-left" alt="Please enter here to network with fellow attendees">
+  <div class="lg-hotspot__button"></div>
+</div>
+<div ui-sref="networking" style="top: 44%; left: 69%;" class="lg-hotspot lg-hotspot--bottom-right" alt="Please enter here to network with fellow attendees">
+  <div class="lg-hotspot__button"></div>
+</div> -->
+<!-- <div ui-sref="agenda" style="top: 55.5%; left: 21.5%;" class="lg-hotspot lg-hotspot--bottom-left" alt="Click here to view the agenda of conference & workshop sessions">
+  <div class="lg-hotspot__button"></div>
+</div> -->
+<!-- <div ui-sref="leaderboard" style="top: 54.5%; left: 75%;" class="lg-hotspot lg-hotspot--bottom-right" alt="Click here to check out your points on the leaderboard">
+  <div class="lg-hotspot__button"></div>
+</div>
+<div ui-sref="support" style="top: 60.5%; left: 50%;" class="lg-hotspot lg-hotspot--bottom-right" alt="Click here to chat with our help desk personnel">
+  <div class="lg-hotspot__button"></div> -->
+<!-- </div> -->
+<!-- <div ng-click="myTrigger('video')" style="top: 23.5%; left: 49.5%;" class="lg-hotspot lg-hotspot--bottom-right" alt="leaderboard">
+  <div class="lg-hotspot__button"></div>
+</div> -->
+
+    <map name="powerpuffgirls">
+      <!-- <area target="" alt="session" title="session" ui-sref="sessions" coords="1845,809,2116,813,2118,927,1850,936" shape="poly"> -->
+      <!-- <area target="" ui-sref="sessions" alt="session_hall" title="Please click here to watch the developer webinar on the projects in your city." coords="736,988,467,815" shape="rect"> -->
+      <area target="" ui-sref="expo" alt="exhibition_hall" title="Please click here to meet top developers from your city." coords="1092,780,1495,983" shape="rect">
+      <area target="" ng-click="myTrigger('right')" alt="home_loan" title="Home loan starting at 6.70% p.a. Please click here to know more." coords="1851,816,2120,984" shape="rect">
+      <area target="" alt="Help Desk" title="Please click here for help." ui-sref="support" coords="466,1131,559,1133,744,1106,755,1210,614,1238,464,1233" shape="poly">
+      <area target="" alt="session"  ui-sref="sessions" title="session" href="" coords="1840,816,2114,811,2109,980,1850,982" shape="poly">
+      <!-- <area target="" alt="exhibitionhall" title="exhibitionhall" ui-sref="expo" coords="1093,779,1489,779,1496,977,1095,977" shape="poly"> -->
+      <!-- <area target="" ng-click="myTrigger('center')" alt="exhibition_hall" title="Please click here to meet top developers from your city." coords="1092,780,1495,983" shape="rect"> -->
+      <!-- <area target="" alt="Speaker Lounge" title="Speaker Lounge" href="" coords="58,639,353,660,353,703,62,687" shape="poly"> -->
+      <!-- <area target="" alt="Exhibition" title="Exhibition" ui-sref="expo-by-category2" coords="58,719,351,730,355,687,58,674" shape="poly">
+      <area target="_blank" alt="Exhibition Catalogue" title="Exhibition Catalogue" href="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Bio-+India+Catalogue+2021+(1).pdf" coords="76,1071,198,1062,205,1248,80,1280" shape="poly">
+      <area target="" alt="RNA Hall" title="RNA Hall" ui-sref="workshop" coords="700,725,902,721,902,757,698,757" shape="poly">
+      <area target="" alt="ATGC Hall" title="ATGC Hall" ui-sref="atgc" coords="1172,720,1397,720,1395,752,1172,752" shape="poly">
+      <area target="" alt="DNA Hall" title="DNA Hall" ui-sref="dna" coords="1661,720,1867,723,1867,755,1661,755" shape="poly"> 
+      <area target="" alt="Electron Hall" title="Electron Hall" ui-sref="electron" coords="366,701,607,708,607,742,364,737" shape="poly">
+      <area target="" alt="Proton Hall" title="Proton Hall" ui-sref="proton" coords="1969,745,2180,736,2183,697,1969,706" shape="poly"> -->
+      <!-- <area target="" alt="PROTON" title="PROTON HALL" href="" coords="1976,719,2174,710,2169,742,1974,746" shape="poly"> -->
+      <!-- <area target="_blank" alt="Bio Partnering" title="Bio Partnering" href="https://login.inova-event.com/inova-business-platform/webclient/#/bio/9100/home" coords="2210,735,2505,721,2505,669,2212,687" shape="poly"> -->
+      <!-- <area target="" alt="Virtual Library" title="Virtual Library" href="" coords="2015,1167,2108,1167,2105,1333,2015,1333" shape="poly"> -->
+      <!-- <area target="" alt="Please enter here for all conference sessions" title="Please enter here for all conference sessions" ui-sref="stage" coords="421,538,421,711,823,733,821,581" shape="poly"> -->
+      <!-- <area target="" alt="Please enter here to network with fellow attendees" title="Please enter here to network with fellow attendees" ui-sref="networking-zone" coords="569,833,571,1008,1011,985,1011,840" shape="poly"> -->
+      <!-- <area target="" alt="Please enter here to network with fellow attendees" title="Please enter here to network with fellow attendees"ui-sref="networking" coords="1606,833,1613,1015,2065,1024,2065,833" shape="poly"> -->
+      <!-- <area target="" alt="Enter here for virtual booths by our partners" title="Enter here for virtual booths by our partners" ui-sref="expo"coords="1111,833,1102,983,1527,992,1527,838" shape="poly">
+      <area target="" alt="Please enter here for all workshops & brand sessions" title="Please enter here for all workshops & brand sessions"ui-sref="workshop"coords="1745,588,1749,724,2278,695,2281,524" shape="poly">
+      <area target="" alt="Click here to view the agenda of conference & workshop sessions" title="Click here to view the agenda of conference & workshop sessions "ui-sref="agenda" coords="505,1026,657,1019,657,1262,503,1265" shape="poly"> -->
+      <!-- <area target="" alt="Click here to check out your points on the leaderboard" title="Click here to check out your points on the leaderboard" ui-sref="leaderboard" coords="1874,1044,1861,1305,2035,1308,2038,1044" shape="poly"> -->
+      <!-- <area target="" alt="Click here to chat with our help desk personnel" title="Click here to chat with our help desk personnel" ui-sref="support" coords="986,1140,975,1326,1643,1324,1640,1135" shape="poly"> -->
+      <!-- <area target="" alt="Video" title="Video" ng-click="myTrigger('video')" coords="1039,472,1045,763,1534,761,1545,474" shape="poly"> -->
+        <!-- <area target="" alt="briefcase" title="briefcase" ng-click="myTrigger('session')" coords="103,563,99,736,728,724,732,577" shape="poly">
+        <area target="" alt="speaker" title="speaker" ng-click="myTrigger('exibition')" coords="818,786,821,933,1207,933,1200,783" shape="poly">
+        <area target="" alt="agenda" title="agenda" ng-click="myTrigger('experience')" coords="1395,790,1400,913,1799,926,1801,781" shape="poly">
+        <area target="" alt="auditorium" title="auditorium" ng-click="myTrigger('stage')"  coords="1749,558,1763,731,2501,770,2496,538" shape="poly">
+        <area target="" alt="welcome" title="welcome" ng-click="myTrigger('almond')" coords="1189,1003,1193,1067,1461,1069,1461,1001" shape="poly">
+        <area target="" alt="legal-2017" title="legal-2017" ui-sref="legal-2017" coords="432,325,380,509,769,529,700,343" shape="poly">
+        <area target="" alt="legal-2018" title="legal-2018" ui-sref="legal-2018" coords="1193,361,1143,515,1515,527,1450,368" shape="poly">
+        <area target="" alt="legal-2019" title="legal-2019" ui-sref="legal-2019" coords="1906,343,1872,518,2249,486,2176,322" shape="poly">
+        <area target="" alt="quiz" title="quiz" ui-sref="quiz" coords="49,795,44,999,308,949,292,776" shape="poly">
+        <area target="_blank" alt="almond" title="almond" href="https://www.almondvirtex.com/" coords="2317,810,2283,954,2537,1001,2537,824" shape="poly"> -->
+      </map>
+
+    </map>
+
+</div>
+
+
+<!-- <video playsinline id="video1" ng-show="left" preload="">
+  <source src="https://proptiger-right-to-home.s3.ap-south-1.amazonaws.com/updated/walk prop Lobby left (1).mp4" ng-show="showvideo" type="video/mp4">
+</video>
+
+<video playsinline id="video2" ng-show="center" preload="">
+  <source src="https://proptiger-right-to-home.s3.ap-south-1.amazonaws.com/updated/walk prop Lobby center (1).mp4" ng-show="showvideo" type="video/mp4">
+</video>
+
+<video playsinline id="video3" ng-show="right" preload="">
+  <source src="https://proptiger-right-to-home.s3.ap-south-1.amazonaws.com/updated/walk prop Lobby Right (2).mp4" ng-show="showvideo" type="video/mp4">
+</video> -->
+
+<!-- <video playsinline id="video" ng-show="showvideosession" preload="">
+    <source src="videos/BREIFCASE.mp4" ng-show="showvideo" type="video/mp4">
+</video>
+<video playsinline id="video2" ng-show="showvideostage" preload="">
+    <source src="videos/Auditorium Walkthrough.mp4" ng-show="showvideo" type="video/mp4">
+</video>
+<video playsinline id="video3" ng-show="showvideoexhibition" preload="">
+    <source src="videos/SPEAKER_PROFILE.mp4" ng-show="showvideo" type="video/mp4">
+</video>
+ <video playsinline id="video4" ng-show="showvideoexperience" preload="">
+    <source src="videos/AGENDA.mp4" ng-show="showvideo" type="video/mp4">
+</video>
+<video playsinline id="video5" ng-show="showvideohelp" preload="">
+    <source src="videos/to_networking.mp4" ng-show="showvideo" type="video/mp4">
+</video> -->
+
+
+<!-- <div class="lightbox reception_video" ng-if="popupvideo" id="lightbox-1">
+    <div class="video-pop-box">
+      <iframe src="https://player.vimeo.com/video/490168901?autoplay=1" id="popUpVideoAlmond" frameborder="0" allow="autoplay; fullscreen"></iframe>
+      <a class="lightbox__close" ng-click="closePopup()"><img src="images/cross.svg"></a>
+    </div>
+</div> -->
+
+<!-- <span style="position: absolute;bottom: 2%;right: 10%;font-size: 20px;" class="powered_by"><a href="https://almondvirtex.com/" target="_blank" style="color: #fff;font-weight: bold;">Powered by Almond Virtex</a></span> -->
+<div class="lightbox reception_video" ng-show="popupvideoalmond" id="lightbox-1">
+    <div class="video-pop-box">
+        <iframe src="https://player.vimeo.com/video/448545183" id="popUpVideoAlmond" frameborder="0" allow="autoplay; fullscreen"></iframe>
+            <a class="lightbox__close" ng-click="almonpopclose()"><img src="images/cross.svg"></a>
+    </div>
+</div>
+
+
+

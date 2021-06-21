@@ -1,0 +1,244 @@
+<style type="text/css">
+  area:hover {
+      cursor: pointer;
+  }
+  
+  .next{
+    bottom: 0% !important;
+    right: 15%;
+    background-color: #E9931E;
+    padding: 10px;
+    position: absolute;
+  }
+
+
+
+  table{
+      width:50% !important;
+  }
+  marquee{
+    position: relative;
+    bottom: 0px;
+    /* display:none; */
+    padding: 10px;
+    background: #f7941d;
+    color: #fff;
+  }
+
+  marquee span{
+    font-weight: bold;
+    font-size: 18px;
+  }
+  /* .stage-player{
+      position: absolute;
+      top: 16.5%;
+      left: 22.8%;
+      width: 55%;
+      height: 37.8%;
+  } */
+  .stage-player{
+    position: absolute;
+    top: 20.5%;
+    left: 22.8%;
+    width: 55%;
+    height: 45.8%;
+  }
+  .live-image{
+      width: 17vh;
+  }
+  .offers{
+    padding-right: 20px;
+  }
+
+  #name-left{
+      background-color: #b72222  !important;
+  }
+
+  #left{
+          margin-left: 2vh;
+      }
+
+  iframe{
+      width:100% !important;
+      height:100% !important;
+  }    
+
+  @media only screen 
+      and (min-device-width : 320px) 
+      and (max-device-width : 1024px) 
+      and (orientation : landscape) {
+          .footer{
+          margin-top: 0vh;
+      }
+      td, th {
+          padding: 5px;
+          /* border: 1px solid #979797; */
+          text-align: left;
+          font-size: 12px;
+          text-align: center !important;
+          vertical-align: middle;
+      }
+      .leader-name {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 2vh;
+          font-size: 12px;
+      }
+  }
+
+  .developer_logos{
+    position: absolute;
+    top:52%;
+    text-align: center;
+    width:100%;
+    z-index:1;
+  }
+
+  @-webkit-keyframes beat {
+      0% {-webkit-transform: scale(1, 1);}
+      50% {-webkit-transform: scale(0.9, 0.9);}
+      100% {-webkit-transform: scale(1, 1);}
+  }
+  .powered_by {
+      font-family: 'Poppins', sans-serif;
+      /* font-size: 150px; */
+      font-weight: 200;
+      /* transform: rotate(-5deg); */
+      background: linear-gradient(45deg, #fff 20%, #fff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 85px;
+      text-align: center;
+      /* padding: 40px 10px 95px; */
+      filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.5));
+      text-outline: 1px solid black;
+      -webkit-animation: beat 1.5s ease-out;
+          -webkit-animation-iteration-count: infinite;
+  }
+
+</style>
+<link rel="stylesheet" href="css/chat.css">
+<script src="js/chat.js"></script>   
+  <div style="position: relative;">
+      <img class="rwdimgmap" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/STAGE.jpg" usemap="#powerpuffgirls" alt="" />
+      <!-- <div class="table_div" style="width: 100%;position: absolute;overflow: scroll;height: 58vh;top: 0%;z-index: 1;">    
+        <table>
+            <thead>
+                <tr>
+                    <th style="border:none;" id="name-left">Session Name</th>
+                    <th style="border:none;" id="name-left" style="text-align: right !important;"></th>
+                </tr>
+            </thead>
+                <tbody>
+                    <tr ng-repeat="sessions in allsessions">
+                        <td  data-column="Name">
+                        
+                            <div class="leader-name">
+                                <div class="leader-name-txt">
+                                    {{sessions.session_title}}
+                                </div>
+                            </div>
+                        </td>
+                        <td style="cursor: pointer;text-align: right !important;width:30%;">
+                            <a ng-click="currentSession(sessions.vod_link,sessions.id)">
+                                <img class="live-image" src="images/Group-1.png">
+                            </a> -->
+                            <!-- <div ng-if="previous_recording" >
+                                <a href="{{sessions.replay_link}}" ng-if="sessions.replay_link">
+                                    <img class="live-image" src="https://iisfvirtual.in/images/replay.png">
+                                </a>
+                                <span ng-if="!sessions.replay_link">Video On Demand is under processing. Please check after some time. Thank you</span>
+                            </div> -->
+                        <!-- </td>
+                    </tr>
+                    <tr ng-if="allsessions == 'No Record Found'">
+                        <td colspan="3">                            
+                            <div class="leader-name">
+                                <div class="leader-name-txt"> -->
+                                <!-- <span ng-if="currentMessage">{{currentMessage}}</span> -->
+                                <!-- <span>No Sessions Running</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div> -->
+      <!-- <map name="powerpuffgirls">
+          <area shape="poly" coords="5269,3731,7049,3719,7056,3898,5281,3904" ng-click="myTrigger('session')" title="Almond" alt="Almond" href="https://virtex.in/" target="blank" />
+      </map> -->
+      <!-- <div class="stageheight" id="stageheight"> -->
+      
+      <div class="stage-player">
+        <iframe src="https://player.vimeo.com/video/561248410" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+          <!-- <iframe src="https://player.vimeo.com/video/489822256" id="stageVideo" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+      </div>
+      <!-- <iframe id="iframe" iframe-set-dimensions-onload scrolling="no" src="https://www.youtube.com/embed/nqE4TiDcAz4?controls=0&autoplay=1" autoplay frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+      <!-- <iframe src="https://vimeo.com/event/252078/embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+      <!-- </div> -->
+      <div class="developer_logos">
+        <div class="container">
+          <div class="row">
+            <div class="col-2 col-md-2 col-lg-2" style="margin-bottom:25px;" ng-repeat="developers in expobyCategory1" ng-if="developers.company_banners != null">
+              <a ui-sref="expomain2({id: developers.id})"><img src="{{developers.company_banners}}"></a>
+            </div>
+          </div>
+        </div>
+        <!-- <marquee ng-if="offers != 'No Record Found'">
+          <span class="offers" ng-repeat="offer in offers">test</span>
+        </marquee> -->
+  <!-- <span style="position: absolute;margin-bottom: -1%;right: 5%;font-size: 20px;" class="powered_by"><a href="https://almondvirtex.com/" target="_blank" style="color: #fff;font-weight: bold;">Powered by Almond Virtex</a></span> -->
+        <a class="next" ng-click = "goBack()">Back</a> 
+    </div>
+    
+  </div>
+
+  <!-- <div id="chat-app" class="chat-app" style="z-index: 999999 !important;">
+    <div class="chat-app_toggle toggle">
+    <div class="icon send">
+        <a href="javascript:void(0)" ng-click="sendStageMessage(stage_message)"><i class="fas fa-paper-plane"></i></a>
+    </div>
+    <div class="icon open" ng-click="openChat()">
+      <i class="fas fa-comment"></i>
+    </div>
+  </div>
+
+  <div class="chat-app_box">
+    <div class="chat-app_header">
+
+      <div class="close" ng-click="closeChat()"></div>
+
+      <div class="branding">
+        <div class="content">
+          <p class="title">Ask Questions</p>
+         
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="chat-app_content">
+      <div class="messages" id="stage_chat">
+
+        
+
+        <div class="message reply" ng-repeat="chat in stagechat">
+          <h6 class="user_name">{{chat.user_name}}</h6>
+          <p class="text">
+            {{chat.message}}
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="chat-app_footer">
+      <input class="chat-input" type="text" placeholder="Type..." ng-model="stage_message"/>
+    </div>
+
+  </div>
+</div> -->
+  
+  

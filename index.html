@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="respomse.css">
+    <script src="countdown.js"></script>
+    <script>
+      var url = new URL(window.location.href);
+      var utm_source = url.searchParams.get("utm_source");
+      var utm_medium = url.searchParams.get("utm_medium");
+      var utm_campaign = url.searchParams.get("utm_campaign");
+      var utm_location = url.searchParams.get("utm_location");
+      var utm_project = url.searchParams.get("utm_project");
+
+      if(utm_source != null){
+          localStorage.setItem('utm_source',utm_source);
+      }
+
+      if(utm_medium != null){
+          localStorage.setItem('utm_medium',utm_medium);
+      }
+
+      if(utm_campaign != null){
+          localStorage.setItem('utm_campaign',utm_campaign);
+      }
+
+      if(utm_location != null){
+          localStorage.setItem('utm_location',utm_location);
+      }
+
+      if(utm_project != null){
+          localStorage.setItem('utm_project',utm_project);
+      }
+      window.location.href = "login";
+    </script>
+
+
+    <title>Lokmat Property Expo</title>
+
+    <!-- countdown -->
+
+    <style>
+        .container {
+          /* background: rgba(255, 255, 255, 0.1); */
+          padding: 16vh;
+          /* margin-top: 3%; */
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+        }
+        
+        h1 {
+          font-size: 18vw;
+          font-weight: 600;
+          margin: 0;
+          margin-top: -80px;
+        }
+        
+        span {
+            font-size: 3vw;
+            font-weight: 600;
+            margin-top: 207px;
+            color: #2d5d9d;
+        }
+        
+        .countTimer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #252525;
+          margin-top: 40px;
+        }
+        .countTimer .clockBox {
+          width: 10vw;
+          height: 10vw;
+          margin-right: 3vw;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 5px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          font-size: 5vw;
+          padding-bottom: 2vw;
+        }
+        .countTimer .clockBox::after {
+          content: 'Days';
+          width: 100%;
+          background-color: #2b4c9b;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: .5vw 0;
+          font-size: 1.2vw;
+          color: white;
+        }
+        .countTimer .clockBox:nth-child(2)::after {
+          content: 'Hours';
+        }
+        .countTimer .clockBox:nth-child(3)::after {
+          content: 'Minutes';
+        }
+        .countTimer .clockBox:nth-child(4)::after {
+          content: 'Seconds';
+        }
+        .countTimer .clockBox:nth-child(4) {
+          margin-right: 0;
+        }
+        @media(max-width:769px){
+            .container {
+            padding: 13vh !important;
+        }
+        .countTimer {
+            margin-top: 20px !important;
+        }
+          .countTimer .clockBox {
+          width: 15vw !important;
+          height: 15vw !important;
+          margin-right: 3vw;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 5px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          font-size: 5vw;
+          padding-bottom: 2vw;
+        }
+        span {
+            font-size: 4vw !important;
+            font-weight: 600;
+            margin-top: 34vh;
+            color: #2d5d9d;
+        }
+        .countTimer .clockBox::after {
+          content: 'Days';
+          width: 100%;
+          background-color: #2b4c9b;
+          position: absolute;
+          bottom: -20% !important;
+          left: 0;
+          padding: .5vw 0;
+          font-size: 3.2vw !important;
+          font-weight: 600;
+          color: white;
+        }
+        }
+        </style>
+</head>
+
+
+    <body class="bg-img">
+        <!-- <div class="logo">
+        </div> -->
+    
+        <div class="container-fluid" style="width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;">
+            <!-- <h1>2021</h1> -->
+            <span>Event will begin in</span>
+          
+            <div class="countTimer">
+              <div class="clockBox" id="day"><b>24</b></div>
+              <div class="clockBox" id="hour"><b>24</b></div>
+              <div class="clockBox" id="minute"><b>24</b></div>
+              <div class="clockBox" id="second"><b>24</b></div>
+            </div>
+          </div>
+    
+    
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+</body>
+
+</html>

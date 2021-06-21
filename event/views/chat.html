@@ -1,0 +1,9 @@
+<div id="chat-container">
+
+</div>
+<div id="chat-msg" >
+    <div id="input-icon-chat">
+  <i id="input-icon" class="fas fa-paper-plane" ng-click="sendMessage(message)"></i>
+  </div>
+  <input style="border: none;outline-style: none;" ng-model="message" ng-keypress="($event.charCode==13)? sendMessage(message) : return"  class="chat-input" id="chat-input-text" type="text" placeholder="Start Typing..." autofocus>
+</div>

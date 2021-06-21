@@ -1,0 +1,213 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.form-control{
+width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+.bg-img {
+
+    background-image: url("Registration-page.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    /* overflow: hidden; */
+
+}
+
+
+.btn {
+    background-color: #4CAF50;
+    font-weight: 400;
+    ground-color: #4CAF50;
+    color: white;
+    padding: 4px 22px;
+    border: none;
+  float: right;
+    margin-right: 15%;
+}
+
+.col-form-label {
+    margin: 0 !important;
+    padding: 0 !important;
+
+}
+
+.form-control {
+
+    height: calc(2rem + 1px) !important;
+    padding: 0 !important;
+    border: 2px solid #000;
+}
+
+.mt-5 {
+ margin-top: 18% !important;
+    margin-bottom: 2%;
+    padding-left: 18%;
+}
+
+.mt-3 {
+    margin-top: 0rem !important;
+}
+
+
+
+
+.font {
+    font-weight: 700;
+}
+
+.col-form-label {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.form-group {
+    margin-bottom: 2% !important;
+}
+
+
+
+.row {
+    display: flex !important;
+    margin-right: -15px !important;
+    margin-left: -15px !important;
+    flex-wrap: inherit;
+}
+.required {
+    color: red !important;
+}
+
+@media screen and (max-width: 992px) {
+    .bg-img {
+         background-image: url("Registration-Mobile (1).jpg") !important; 
+        background-repeat: no-repeat;
+        background-size: 100% 100vh !important;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background-attachment: fixed;
+        /* overflow: hidden; */
+    }
+
+    .row {
+        display: flex !important;
+        margin-right: -15px !important;
+        margin-left: -15px !important;
+    }
+
+    .form-group {
+        margin-bottom: 1rem !important;
+    }
+
+    .mobile {
+        font-size: 24px;
+    }
+
+    .col-10 {
+        display: contents;
+    }
+
+    .form-control {
+        width: 123% !important;
+        height: calc(1rem + 8px) !important;
+        padding: 0 !important;
+        /* margin-right: 25%; */
+        margin-right: 2%;
+        /* padding-right: 6%; */
+        border: 2px solid #000;
+    }
+
+    .btn {
+        font-weight: 400;
+        ground-color: #4CAF50;
+        color: white;
+        padding: 4px 22px;
+        border: none;
+        cursor: pointer;
+        float: right;
+        margin-right: -8%;
+    }
+
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+    .bg-img {
+        background-image: url("Registration-Mobile (1).jpg") !important; 
+        background-repeat: no-repeat;
+        background-size: 100% 100vh !important;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background-attachment: fixed;
+        /* overflow: hidden; */
+    }
+}
+
+@media only screen
+and (min-device-width : 1024px)
+
+and (orientation : portrait) {
+	span {
+    font-size: 6vw !important;
+    font-weight: 600 !important;
+    margin-top: 351px !important;
+    color: #2d5d9d !important;
+}
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+    .bg-img{
+        background-image: url("Registration-page.jpg") !important;
+    background-size: 100% 100vh !important;
+    }
+    .container {
+    max-width: 415px;
+    }
+    .mobile {
+    font-size: 16px;
+}
+.mt-5 {
+   margin-top: 15% !important;
+    margin-bottom: 1%;
+    padding-left: 26%;
+}
+.form-group {
+    margin-bottom: 1.1% !important;
+}
+    .form-control {
+        width: 100% !important;
+        height: calc(1rem + 7px) !important;
+        padding: 0 !important;
+        margin-right: 15%;
+        border: 2px solid #000;
+    }
+    .btn {
+        font-weight: 400;
+        ground-color: #4CAF50;
+        color: white;
+        padding: 1px 13px;
+        border: none;
+        cursor: pointer;
+        float: right;
+        margin-right: 8%;
+    }
+
+}

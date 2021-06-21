@@ -1,0 +1,73 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+    }
+    
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    #close-card {
+        width: 25px;
+        right: 7vh;
+        top: 4vh;
+        position: absolute;
+        z-index: 5;
+        cursor: pointer;
+        background-color: #2c2c2c;
+        border-radius: 50%;
+    }
+    </style>
+    <div ng-hide="showvideo">
+        <img class="rwdimgmap" src="images/expo_brif_updated_ver2.jpg" usemap="#powerpuffgirls" alt="" />
+        <map name="powerpuffgirls">
+           
+                <area  target="_blank" alt="chat" title="chat" data-target="#chatModal" data-toggle="modal"  coords="40,754,489,757,486,861,35,871" shape="poly">
+                <area  target="_blank" alt="img1" title="img1" href="images/avaya1.jpg" coords="1091,354,1176,354,1176,522,1093,524" shape="poly">
+                <area  target="_blank" alt="img2" title="img2" href="images/avaya1.jpg" coords="1188,357,1269,354,1269,523,1189,523" shape="poly">
+                <area  target="_blank" alt="img3" title="img3" href="images/avaya1.jpg" coords="686,357,874,355,881,464,686,467" shape="poly">
+                <area  target="_blank" alt="img4" title="img4" href="images/avaya1.jpg" coords="653,534,933,533,937,660,658,662" shape="poly">
+     
+            <area shape="poly" coords="59,470,36,504,37,548,49,561,66,580,100,585,134,573,157,544,215,548,477,549,484,517,479,492,223,495,159,495,131,468,94,456" ng-click="myTrigger('video')" title="Almond" alt="Almond" />
+            <area shape="poly" coords="72,610,47,636,40,665,45,680,52,702,67,714,91,724,138,717,152,690,267,688,479,687,481,648,471,632,245,636,153,634,123,605,92,600" ng-click="myTrigger('document')" title="Almond" alt="Almond" />
+            <area target="" alt="" title="" coords="1485,602,1451,612,1436,646,1427,685,1463,719,1504,726,1534,709,1549,690,1873,693,1875,660,1868,634,1704,632,1549,634,1517,607" ng-click="myTrigger('sociamedia')" shape="poly">
+            
+            <area target="" alt="" title="" coords="1487,904,1441,921,1432,971,1446,1012,1509,1027,1549,992,1875,1002,1875,934,1746,934,1561,936,1541,936,1522,910" ng-click="myTrigger('feedback')" shape="poly">
+            <area target="" alt="" title="" coords="1487,456,1548,488,1867,490,1875,544,1546,549,1497,582,1441,549,1432,512,1456,471" onclick="form_cafe()" shape="poly">
+    
+        </map>
+    </div>
+    <div class="lightbox" ng-if="popupvideo" id="lightbox-1">
+        <div class="video-pop-box">
+        <iframe src="https://www.youtube.com/embed/Aeed5hNns1s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" autoplay allowfullscreen></iframe>
+        <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+    </div>
+    </div>
+    <div><a href="https://www.atechnos.com/privacy-policy-atechnos.pdf" id="downloaddocument" target="_blank" download></a></div>
+    <div class="form-pop-up">
+        <div class="form-pop-container">
+            <img onclick="close_form()" id="close-card" src="images/close-Copy.svg">
+            <div class="form-pop-content">
+                <div class="card-body card-block">
+                    <!-- <div class="form-group"><label for="Name" class=" form-control-label">Full name</label><input type="text" id="name" placeholder="Enter Full Name" class="form-control"></div> -->
+                        <!-- <div class="form-group"><label for="vat" class=" form-control-label">Email</label><input type="email" id="email" placeholder="Enter Email" class="form-control"></div> -->
+                        <div class="form-group"><label style="font-weight: 700;line-height: 2;" for="vat" class=" form-control-label">Ask a Question</label><textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea></div>
+                        <!-- <div class="row form-group">
+    
+                            <label for="textarea-input" class=" form-control-label">Textarea</label>
+                            <div class="col-12 col-md-9"><textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea></div>
+                        </div> -->
+                                        <div style="justify-content: center;margin-bottom: 0;" class="row form-group">
+                                        <div class="col-12 col-md-12" id="button-container-form">
+                                        <button id="form-button1" type="button" class="btn btn-primary btn-lg btn-block">Send</button>
+                                        <!-- <button id="form-button2" type="button" class="btn btn-primary btn-lg btn-block">Request Call-Back</button> -->
+                                        </div>
+                                        </div>
+                                       
+                                    </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,677 @@
+<style>
+    /* html{
+      overflow-y: scroll;
+  } */
+    
+    .locality_select {
+        width:45%;
+        padding:13px;
+        border:none;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 15px;
+        background: linear-gradient(90deg, rgba(183,24,24,1) 0%, rgba(183,24,24,1) 100%) !important;
+         text-align: center;
+    }
+
+
+    #exampleSlider {
+        position: absolute !important;
+        overflow: hidden !important;
+        width: 80% !important;
+        left: 9.5%;
+        border-color: transparent;
+    }
+    
+    .col-sm-4 {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .pd_top {
+        padding-top: 6%;
+    }
+    
+    .expo-box {
+        background: #e0e0e0;
+        min-height: 250px;
+        max-height: 250px;
+        padding: 10px;
+    }
+    
+    option {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    
+    .col-sm-3 {
+        text-align: center;
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: 42px;
+        padding: 10px;
+        font-weight: bold;
+    }
+    
+    .bg {
+        background: url('https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Exhibition-Hall-Background1.jpg') no-repeat top fixed;
+        width: 100%;
+        height: 100vh;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
+    .col_5 {
+        /* width:20%; */
+        text-align: center;
+        position: relative;
+        margin: 10px 0px;
+    }
+    
+    .expo_div {
+        overflow-y: auto !important;
+        overflow-x: hidden;
+        height: 40vh;
+        width: 75%;
+        margin: 0px auto;
+    }
+    
+    .expo_div::-webkit-scrollbar {
+        width: 11px;
+    }
+    
+    .expo_div {
+        scrollbar-width: thin;
+        scrollbar-color: #fff;
+    }
+    
+    .expo_div::-webkit-scrollbar-track {
+        background: #fff;
+    }
+    
+    .expo_div::-webkit-scrollbar-thumb {
+        background-color: #df7d21;
+        border-radius: 6px;
+        height: 100px;
+        border: 3px solid #df7d21;
+    }
+    
+    #myInput {
+        position: relative;
+        top: 35%;
+        width: 30%;
+    }
+    
+    .expolist {
+        position: relative;
+        top: 35%;
+    }
+    
+    .catalog {
+        position: relative;
+        top: 35%;
+    }
+    
+    #myInput::placeholder {
+        color: #000 !important;
+    }
+    
+    .margin-t {
+        margin-top: 50px;
+    }
+    
+    @media only screen and (orientation: landscape) and (max-width: 900px) and (min-width: 800px) {
+        /* #myInput{
+          position: relative;
+          top: 28% !important;
+          width:40%; 
+      }
+      .catalog{
+          position: relative;
+          top: 28% !important;
+      }
+      .margin-t{
+          margin-top:30px;
+      }
+      .expolist{
+          position: relative;
+          top: 28%;
+      } */
+    }
+    
+    @media only screen and (orientation: landscape) and (max-width: 799px) and (min-width: 320px) {
+        #myInput {
+            position: relative;
+            top: 25% !important;
+            width: 40%;
+        }
+        .expolist {
+            position: relative;
+            top: 25%;
+        }
+        .catalog {
+            position: relative;
+            top: 25% !important;
+        }
+        .margin-t {
+            margin-top: 30px;
+        }
+
+        .locality_select {
+            width:45%;
+            padding:13px;
+            border:none;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 15px;
+            background: linear-gradient(90deg, rgba(183,24,24,1) 0%, rgba(183,24,24,1) 100%) !important;
+            text-align: center;
+        }
+    }
+    
+    .filter {
+        width: 33%;
+    }
+    
+    #exampleSlider {
+        position: relative;
+        width: 100%;
+        /* border: 1px solid black; */
+    }
+    
+    @media (max-width: 1200px) {
+        #exampleSlider {
+            position: absolute !important;
+            overflow: hidden !important;
+            width: 80% !important;
+            left: 9.5%;
+            border-color: transparent;
+        }
+        .pd_top {
+            padding-top: 3.5% !important;
+        }
+    }
+    
+    @media (max-width: 1240px) and (min-width: 841px) {
+        .item_div {
+            left: 11.5% !important;
+        }
+    }
+    
+    @media (max-width: 1040px) {
+        #exampleSlider {
+            position: absolute !important;
+            overflow: hidden !important;
+            width: 75% !important;
+            left: 13.5%;
+            border-color: transparent;
+        }
+        .pd_top {
+            padding-top: 4% !important;
+        }
+    }
+    
+    @media (max-width: 840px) {
+        #exampleSlider {
+            position: absolute !important;
+            overflow: hidden !important;
+            width: 75% !important;
+            left: 12%;
+            border-color: transparent;
+        }
+        .pd_top {
+            padding-top: 4% !important;
+        }
+        .item_div {
+            left: 14.5% !important;
+        }
+    }
+    
+    @media (max-width: 1000px) {
+        .search_div {
+            padding-top: 20% !important;
+        }
+    }
+    
+    #exampleSlider .MS-content {
+        margin: 15px 5%;
+        overflow: hidden;
+        white-space: nowrap;
+        /* border: 1px solid red; */
+    }
+    
+    @media (max-width: 767px) {
+        /* #exampleSlider .MS-content {
+    margin: 0;
+  } */
+    }
+    
+    #exampleSlider .MS-content .item {
+        display: inline-block;
+        height: 100%;
+        /* overflow: hidden; */
+        position: relative;
+        vertical-align: top;
+        /* border: 1px solid green; */
+        border-right: none;
+        width: 33% !important;
+    }
+    
+    @media (max-width: 1200px) {
+        #exampleSlider .MS-content .item {
+            width: 33% !important;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        #exampleSlider .MS-content .item {
+            width: 33% !important;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        #exampleSlider .MS-content .item {
+            width: 33% !important;
+        }
+    }
+    
+    #exampleSlider .MS-content .item p {
+        font-size: 30px;
+        text-align: center;
+        line-height: 1;
+        vertical-align: middle;
+        margin: 0;
+        padding: 10px 0;
+    }
+    
+    #exampleSlider .MS-controls button {
+        position: absolute;
+        border: none;
+        background: transparent;
+        font-size: 30px;
+        outline: 0;
+        top: 35px;
+    }
+    
+    @media (max-width: 767px) {
+        /* #exampleSlider .MS-controls button {
+    display: none;
+  } */
+    }
+    
+    #exampleSlider .MS-controls button:hover {
+        cursor: pointer;
+    }
+    
+    #exampleSlider .MS-controls .MS-left {
+        left: 10px;
+    }
+    
+    @media (max-width: 992px) {
+        #exampleSlider .MS-controls .MS-left {
+            left: 11px;
+        }
+    }
+    
+    #exampleSlider .MS-controls .MS-right {
+        right: 10px;
+    }
+    
+    @media (max-width: 992px) {
+        #exampleSlider .MS-controls .MS-right {
+            right: -2px;
+        }
+    }
+    
+    .item_div {
+        width: calc(100% - 41%);
+        position: absolute;
+        left: 9.5%;
+        top: 1.3%;
+    }
+    
+    .search_div {
+        padding-top: 17%;
+    }
+    
+    .width_50 {
+        width: 10%
+    }
+    
+    .width_20 {
+        width: 25%;
+    }
+    
+    .mymeetings {
+        animation: shadow-pulse 1s infinite;
+    }
+    
+    @keyframes shadow-pulse {
+        0% {
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.4);
+        }
+        100% {
+            box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+        }
+    }
+    
+    @-webkit-keyframes beat {
+        0% {
+            -webkit-transform: scale(1, 1);
+        }
+        50% {
+            -webkit-transform: scale(0.9, 0.9);
+        }
+        100% {
+            -webkit-transform: scale(1, 1);
+        }
+    }
+    
+    .powered_by {
+        font-family: 'Poppins', sans-serif;
+        /* font-size: 150px; */
+        font-weight: 200;
+        /* transform: rotate(-5deg); */
+        background: linear-gradient(45deg, #fff 20%, #fff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 85px;
+        text-align: center;
+        /* padding: 40px 10px 95px; */
+        filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.5));
+        text-outline: 1px solid black;
+        -webkit-animation: beat 1.5s ease-out;
+        -webkit-animation-iteration-count: infinite;
+    }
+</style>
+<!-- <a style="position: absolute;top: 3%;right: 15%;background-color: rgb(212, 21, 21);padding:10px 15px;" target="_blank" href="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Bio-+India+Catalogue+2021+(1).pdf">Exhibition Catalogue</a> -->
+<div class="bg" style="text-align:center">
+    <!-- <div style="width:100%;">
+        <img class="width_50" style="margin:25px 10px !important;" src="images/sponsor_1.png">
+        <img class="width_50" style="margin:25px 10px !important;" src="images/sponsor_2.png">
+        <img class="width_20" style="margin:25px 10px !important;" src="images/5.png">
+        <img class="width_50" style="margin:25px 10px !important;" src="images/sponsor_3.png"> 
+        <img class="width_50" style="margin:25px 10px !important;max-width:8% !important;" src="images/sponsor_4.png">
+        <img class="width_50" style="margin:25px 10px !important;" src="images/sponsor_5.png">
+    </div>     -->
+    <!-- <a style="position: absolute;bottom:2%;right:13%;z-index: 999;color:#000;font-weight: bold;" href="https://almondvirtex.com" target="_blank">Hosted on Almond Virtex</a> -->
+    <div class="search_div">
+        <!-- <input id="myInput" type="text" placeholder="Search Developers by name" style="border:none;padding:8px;"> -->
+        <select class="expolist mymeetings locality_select" ng-model="boothFilter" ng-change="newBoothFilter()">
+            <option value="" selected>SELECT YOUR PREFERRED LOCALITY</option>
+            <option ng-repeat = "allcity in orderedCities" value="{{allcity.id}}">{{allcity.category_name}}</option>
+        </select>
+    </div>
+
+    <!-- <a class="catalog" style="position: relative;background-color: rgb(212, 21, 21);padding:7px 15px;font-size: 12px;" target="_blank" href="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Bio-+India+Catalogue+2021+(1).pdf">Exhibition Catalogue</a> -->
+    <div class="pd_top">
+        <!-- <div class="expo_div"> -->
+        <div class="container-fluid">
+            <div class="row">
+                <div id="exampleSlider">
+                    <div class="MS-content">
+                        <div class="item filter" ng-repeat="expos1 in filterValue">
+                            <a alt="{{expos1.company_name}}" ng-if="expos1.id % 3 == 2" ui-sref="expomain2({id: expos1.id})"><img style="max-width:100%;" title="{{expos1.company_name}}" alt="{{expos1.company_name}}" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Red1332.png"></a>
+                            <a alt="{{expos1.company_name}}" ng-if="expos1.id % 3 == 1" ui-sref="expomain2({id: expos1.id})"><img style="max-width:100%;" title="{{expos1.company_name}}" alt="{{expos1.company_name}}" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Red1332.png"></a>
+                            <a alt="{{expos1.company_name}}" ng-if="expos1.id % 3 == 0" ui-sref="expomain2({id: expos1.id})"><img style="max-width:100%;" title="{{expos1.company_name}}" alt="{{expos1.company_name}}" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Red1332.png"></a>
+                            <div style="max-width: 40%;position: absolute;left: 12%;top: 7%;" ng-show="expos1.company_banners != null">
+                                <a alt="{{expos1.company_name}}" ui-sref="expomain2({id: expos1.id})"><img ng-if="expos1.company_banners != null" style="width: 100%;height:auto;" src="{{expos1.company_banners}}"></a>
+                            </div>
+                            <!-- <div style="max-width: 18%;position: absolute;left: 41%;top: 7%;" ng-show="expos1.company_banners == null">    
+                            <a alt="{{expos1.name}}" ui-sref="expomain2({id: expos1.id})"><img style="width: 100%;" src="images/IMG-20210227-WA0014.jpg"></a>
+                        </div>     -->
+                            <span style="display: none;">{{expos1.keywordsData}}</span>
+                        </div>
+                    </div>
+                    <!-- <div class="MS-controls">
+                        <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true" style="color: #b82323"></i><i class="fa fa-chevron-left" aria-hidden="true" style="color: #b82323"></i></button>
+                        <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true" style="color: #b82323"></i><i class="fa fa-chevron-right" aria-hidden="true" style="color: #b82323"></i></button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row margin-t">
+              <div style="text-align:center;" class="col_5 filter" ng-repeat = "expos2 in expobyCategory2" ng-if="expos2.page_id == 2">
+                      <a alt="{{expos2.name}}" ui-sref="expomain2({id: expos2.id})"><img style="max-width:100%;" title="{{expos2.name}}" class="" src="images/png-birac (1).png"></a>
+                      <div style="max-width: 18%;position: absolute;left: 41%;top: 5%;" ng-show="expos2.company_banners != null">    
+                          <a alt="{{expos2.name}}" ui-sref="expomain2({id: expos2.id})"><img ng-if="expos2.company_banners != null" style="width: 100%;" src="{{expos2.company_banners}}"></a>
+                      </div>
+                      <div style="max-width: 18%;position: absolute;left: 41%;top: 39%;" ng-show="expos2.company_banners == null">    
+                          <a alt="{{expos2.name}}" ui-sref="expomain2({id: expos2.id})"><img style="width: 100%;" src="images/IMG-20210227-WA0014.jpg"></a>
+                      </div>
+                      <span style="display: none;">{{expos2.name}}</span>
+              </div>
+          </div>
+          
+          <div class="row margin-t">
+              <div class="col_5 filter" ng-repeat = "expos3 in expobyCategory3" ng-if="expos3.page_id == 3">
+                      <a alt="{{expos3.name}}" ui-sref="expomain2({id: expos3.id})"><img style="max-width:100%;" title="{{expos3.name}}" class="" src="images/png-booth-22 (1).png"></a>
+                      <div style="max-width: 9%;position: absolute;left: 46%;top: 2%;" ng-show="expos3.company_banners != null">
+                          <a alt="{{expos3.name}}" ui-sref="expomain2({id: expos3.id})"><img style="width: 100%;" src="{{expos3.company_banners}}"></a>
+                      </div>    
+                      <div style="max-width: 18%;position: absolute;left: 40%;top: 0%;" ng-show="expos3.company_banners == null">    
+                          <a alt="{{expos3.name}}" ui-sref="expomain2({id: expos3.id})"><img style="width: 100%;" src="images/IMG-20210227-WA0014.jpg"></a>
+                      </div>
+                      <span style="display: none;">{{expos3.name}}</span>
+              </div>
+          </div>    
+
+          <div class="row margin-t">
+              <div class="col_5 filter" ng-repeat = "expos4 in expobyCategory4" ng-if="expos4.page_id == 4">
+                      <a alt="{{expos4.name}}" ui-sref="expomain2({id: expos4.id})"><img style="max-width:100%;" class="" title="{{expos4.name}}" src="images/png-booth11 (1).png"></a>
+                      <div style="max-width: 9%;position: absolute;left: 46%;top: 0%;" ng-show="expos4.company_banners != null">
+                          <a alt="{{expos4.name}}" ui-sref="expomain2({id: expos4.id})"><img style="width: 100%;" src="{{expos4.company_banners}}"></a>
+                      </div>    
+                      <div style="max-width: 18%;position: absolute;left: 41%;top: 39%;" ng-show="expos4.company_banners == null">    
+                          <a alt="{{expos4.name}}" ui-sref="expomain2({id: expos4.id})"><img style="width: 100%;" src="images/IMG-20210227-WA0014.jpg"></a>
+                      </div>
+                      <span style="display: none;">{{expos4.name}}</span>
+              </div>
+          </div> -->
+        <!-- </div>     -->
+        <!-- <span style="position: absolute;bottom: 2%;right: 10%;font-size: 20px;" class="powered_by"><a href="https://almondvirtex.com/" target="_blank" style="color: #fff;font-weight: bold;">Powered by Almond Virtex</a></span> -->
+
+    </div>
+</div>
+<div class="searchData">
+
+</div>
+<script>
+    ! function(n) {
+        n.fn.multislider = function(e, t) {
+            var i, s, o, a, r, l, u, c, m, d, f, p = n(this),
+                v = p.find(".MS-content"),
+                g = p.find("button.MS-right"),
+                h = p.find("button.MS-left"),
+                A = v.find(".item:first");
+            if ("string" == typeof e) return i = e, void 0 !== p.data(i) ? p.data(i)() : console.error("Multislider currently only accepts the following methods: next, prev, pause, play"), p;
+
+            function w(n) {
+                p.hasClass("ms-PAUSE") ? (p.removeClass("ms-PAUSE"), n(), p.addClass("ms-PAUSE")) : n(), E()
+            }
+
+            function S() {
+                P(), r = A.width();
+                var n = parseInt(v.find(".item:first").css("padding-left")),
+                    e = parseInt(v.find(".item:first").css("padding-right"));
+                0 !== n && (r += n), 0 !== e && (r += e)
+            }
+
+            function C() {
+                f = setInterval(function() {
+                    p.hasClass("ms-PAUSE") || u()
+                }, m.interval)
+            }
+
+            function E() {
+                0 !== m.interval && !1 !== m.interval && !0 !== m.continuous && (clearInterval(f), C())
+            }
+
+            function P() {
+                A = v.find(".item:first"), s = v.find(".item:last")
+            }
+
+            function U(n) {
+                p.hasClass("ms-animating") || p.hasClass("ms-HOVER") || p.hasClass("ms-PAUSE") || (p.trigger("ms.before.animate"), p.addClass("ms-animating"), n())
+            }
+
+            function y() {
+                p.hasClass("ms-animating") && (p.removeClass("ms-animating"), p.trigger("ms.after.animate"))
+            }
+
+            function b() {
+                o = v.width(), a = Math.floor(o / r)
+            }
+
+            function M() {
+                U(function() {
+                    P(),
+                        function() {
+                            d = m.duration;
+                            var n = parseFloat(v.find(".item:first").css("margin-left"));
+                            d *= 1 - n / -(r - 1)
+                        }(), A.animate({
+                            marginLeft: -(r + 1)
+                        }, {
+                            duration: d,
+                            easing: "linear",
+                            complete: function() {
+                                A.insertAfter(s).removeAttr("style"), y(), M()
+                            }
+                        })
+                })
+            }
+
+            function x() {
+                U(function() {
+                    P(), b();
+                    var e = v.children(".item").clone().splice(0, a);
+                    v.append(e), A.animate({
+                        marginLeft: -o
+                    }, {
+                        duration: d,
+                        easing: "swing",
+                        complete: function() {
+                            n(v.children(".item").splice(0, a)).remove(), y()
+                        }
+                    })
+                })
+            }
+
+            function B() {
+                U(function() {
+                    P(), b();
+                    var e = v.children(".item").length,
+                        t = v.children(".item").clone().splice(e - a, e);
+                    n(n(t)[0]).css("margin-left", -o), v.prepend(t), P(), A.animate({
+                        marginLeft: 0
+                    }, {
+                        duration: d,
+                        easing: "swing",
+                        complete: function() {
+                            e = v.find(".item").length, n(v.find(".item").splice(e - a, e)).remove(), A.removeAttr("style"), y()
+                        }
+                    })
+                })
+            }
+
+            function L() {
+                U(function() {
+                    P(), A.animate({
+                        marginLeft: -r
+                    }, {
+                        duration: d,
+                        easing: "swing",
+                        complete: function() {
+                            A.detach().removeAttr("style").appendTo(v), y()
+                        }
+                    })
+                })
+            }
+
+            function I() {
+                U(function() {
+                    P(), s.css("margin-left", -r).prependTo(v), s.animate({
+                        marginLeft: 0
+                    }, {
+                        duration: d,
+                        easing: "swing",
+                        complete: function() {
+                            s.removeAttr("style"), y()
+                        }
+                    })
+                })
+            }
+            return "object" != typeof e && void 0 !== e || (v.contents().filter(function() {
+                return 3 == this.nodeType && !/\S/.test(this.nodeValue)
+            }).remove(), c = m || {
+                continuous: !1,
+                slideAll: !1,
+                interval: 2e3,
+                duration: 500,
+                hoverPause: !0,
+                pauseAbove: null,
+                pauseBelow: null
+            }, m = n.extend({}, c, e), S(), d = m.duration, m.hoverPause && (m.continuous ? (v.on("mouseover", function() {
+                y(), v.children(".item:first").stop()
+            }), v.on("mouseout", function() {
+                M()
+            })) : (v.on("mouseover", function() {
+                p.addClass("ms-HOVER")
+            }), v.on("mouseout", function() {
+                p.removeClass("ms-HOVER")
+            }))), !0 !== m.continuous && 0 !== m.interval && !1 !== m.interval && !1 !== m.autoSlide && C(), null !== m.pauseAbove && "number" == typeof m.pauseAbove && (window.innerWidth > m.pauseAbove && p.addClass("ms-PAUSE"), n(window).on("resize", function() {
+                window.innerWidth > m.pauseAbove ? p.addClass("ms-PAUSE") : p.removeClass("ms-PAUSE")
+            })), null !== m.pauseBelow && "number" == typeof m.pauseBelow && (window.innerWidth < m.pauseBelow && p.addClass("ms-PAUSE"), n(window).on("resize", function() {
+                window.innerWidth < m.pauseBelow ? p.addClass("ms-PAUSE") : p.removeClass("ms-PAUSE")
+            })), p.data({
+                pause: function() {
+                    p.addClass("ms-PAUSE")
+                },
+                unPause: function() {
+                    p.removeClass("ms-PAUSE")
+                },
+                continuous: function() {
+                    p.removeClass("ms-PAUSE"), M()
+                },
+                next: function() {
+                    w(L)
+                },
+                nextAll: function() {
+                    w(x)
+                },
+                prev: function() {
+                    w(I)
+                },
+                prevAll: function() {
+                    w(B)
+                },
+                settings: m
+            }), m.continuous ? (m.autoSlide = !1, M()) : m.slideAll ? (l = p.data("prevAll"), u = p.data("nextAll")) : (l = p.data("prev"), u = p.data("next"))), g.on("click", u), h.on("click", l), p.on("click", ".MS-right, .MS-left", E), n(window).on("resize", S), p
+        }
+    }(jQuery);
+</script>
+<script>
+    $('#exampleSlider').multislider({
+        interval: false,
+        slideAll: false,
+        duration: 0
+    });
+    //   setInterval(() => {
+    var value = $('#myInput').val().toLowerCase();
+    $(".filter").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        // console.log($(this).text().toLowerCase().indexOf(value));
+        // if ($(this).text().toLowerCase().indexOf(value) > 0) {
+        //     var keyValue = $(this).text();
+        //     for(var key in keyValue){
+        //         $('.searchData').empty().append(key);
+        //     }
+        // }
+    });
+    //   }, 1500);
+</script>

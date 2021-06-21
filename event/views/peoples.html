@@ -1,0 +1,44 @@
+<div id="search-bar-2">
+    <!-- <input id="input-search-2" type="text" placeholder="Search Contact"> -->
+    <!-- <span id="filter-icon"><i class="fas fa-filter"></i></span> -->
+</div>
+<div id="people-text">
+    <!-- <a href="#" onclick="view20()">
+        <div class="people-data">
+            <img class="people-img" src="images/ap.svg" alt="Avatar" >
+            <span class="people-name">Ajish Paul</span>
+            <span class="active-chat-icon"> <i class="green-circle" class="fas fa-circle"></i></span>
+        </div>
+    </a>   -->            
+</div>    
+<div id="people-text2">
+    <div id="people-data2">
+    <h3>No Direct Messages Yet</h3>
+    <p>You can see your direct messages here when you receive one.</p>
+    </div>
+</div> 
+<div id="people-text3">
+    <a href="javascript:void(0)" onclick="view21()">
+    <i id="people-text3-icon1" class="fa fa-caret-square-o-left" aria-hidden="true"></i>
+    </a>
+    <i id="people-text3-icon2" class="fas fa-ellipsis-h" aria-hidden="true"></i>
+    <div id="people-data3">
+            <!-- <img class="people-img3" id="unique-people-name" src="images/ap.svg" alt="Avatar" > -->
+            <span class="people-name3">Ajish Paul</span>
+            <!-- <div id="people-chat-buttons-main">
+            <button id="people-chat-button" type="button" ng-click=inviteToVideo()><i class="fas fa-video">&nbsp; &nbsp;</i>Invite to call</button>
+            <button id="people-chat-button3" type button><i class="fas fa-address-card">&nbsp; &nbsp;</i>Send Business card</button>
+            </div> -->
+        </div>
+</div> 
+<div id="people-chat-box">
+    <div id="people-chat">
+    </div>
+</div>
+<div id="people-chat-msg" >
+    <p style="display: none" id="user_socket_id"></p>
+    <div id="input-icon-people">
+        <i id="input-icon" class="fas fa-paper-plane" ng-click="sendMsg(message)"></i>
+    </div>
+    <input style="border: none;outline-style: none;" ng-model="message" ng-keypress="($event.charCode==13)? sendMessage(message) : return" class="people-chat-input" id="people-chat-input-text" type="text" placeholder="Start Typing..." autofocus>
+</div>

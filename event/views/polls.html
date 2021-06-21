@@ -1,0 +1,39 @@
+<div id="polls-text" ng-if="all_question_ans_data.length <= 0">
+    <!-- <h3 style="color: black; font-size: 18px; line-height: 6;">No Polls yet</h3> -->
+    <p style="color: #757a8a; font-size: 22px;margin-top: 10vh;font-weight: 600;">You can see a poll when your organiser adds one.</p>
+</div>
+<div ng-if="all_question_ans_data.length > 0" class="question_answers">
+    <div id="polls-text">
+        <div id="polls-form">
+            <form id="poll-form-input" action="">
+                <div id="polls-width" ng-repeat="(key,poll) in all_question_ans_data track by $index">
+                    <div class="question">{{poll.question}}</div>
+                    <button class="btn-polls-form" type="button" ng-click="submitAnswer(poll,key,'option_first')">{{poll.first_option}}</button>
+                    <div class="progress" ng-if="poll.first_per>=0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{poll.first_per}}" aria-valuemin="0" aria-valuemax="100" style="width:{{poll.first_per}}%;">
+                            {{poll.first_per | number:0}}%
+                        </div>
+                    </div>
+                    <button class="btn-polls-form" type="button" ng-click="submitAnswer(poll,key,'option_second')">{{poll.second_option}}</button>
+                    <div class="progress" ng-if="poll.second_per>=0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{poll.second_per}}" aria-valuemin="0" aria-valuemax="100" style="width:{{poll.first_per}}%;">
+                            {{poll.second_per | number:0}}%
+                        </div>
+                    </div>
+                    <button class="btn-polls-form" type="button" ng-click="submitAnswer(poll,key,'option_third')">{{poll.third_option}}</button>
+                    <div class="progress" ng-if="poll.third_per>=0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{poll.third_per}}" aria-valuemin="0" aria-valuemax="100" style="width:{{poll.first_per}}%;">
+                            {{poll.third_per | number:0}}%
+                        </div>
+                    </div>
+                    <button class="btn-polls-form" type="button" ng-click="submitAnswer(poll,key,'option_fourth')">{{poll.fourth_option}}</button>
+                    <div class="progress" ng-if="poll.fourth_per>=0">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{poll.fourth_per}}" aria-valuemin="0" aria-valuemax="100" style="width:{{poll.first_per}}%;">
+                            {{poll.fourth_per | number:0}}%
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

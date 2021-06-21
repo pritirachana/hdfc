@@ -1,0 +1,74 @@
+<style>
+    @media(max-width: 769px){
+        .toggle-btn-jury {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 4vh;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+    text-align: center;
+}
+    }
+    #container10{
+        position: relative;
+    }
+
+area:hover {
+    cursor: pointer;
+}
+
+img[usemap] {
+    border: none;
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+    width: auto;
+}
+
+</style>
+
+
+<div id="container10">
+    <div class="agenda-switch">
+        <div class="toggle-btn">
+                <div class="left active3" onclick="lefttoggle()">
+                    <h2>Cafe 1</h2>
+                </div>
+               <!--  <div class="right1" onclick="righttoggle1()">
+                    <h2>Stall 2</h2>
+                </div>
+                <div class="right2" onclick="righttoggle2()">
+                    <h2>Stall 3</h2>
+                </div> -->
+                <!-- <div class="right3" onclick="righttoggle3()">
+                    <h2>3<sup>rd</sup>September</h2>
+                </div> -->
+                <div class="right1" onclick="righttoggle1()">
+                    <h2>Cafe 2</h2>
+                </div>
+            </div>
+           
+        </div>
+    <div class="text-center">
+    	<div ng-hide="showvideo">
+        <img id="left-image" class="rwdimgmap" src="images/cafe1.jpg" class="img-fluid"  usemap="#powerpuffgirlsnewval">
+         <map name="powerpuffgirlsnewval">
+        <area shape="poly" coords="464,86,848,91,862,649,467,652"  ng-click="myTrigger('cafe_left')" title="Almond" alt="Almond" />
+        <area shape="poly" coords="2176,692,2176,1129,2417,1129,2417,688" ng-click="myTrigger('cafe_right')" title="Almond" alt="Almond" />
+        <!-- <area shape="poly" coords="1192,692,1912,695,1912,1102,1189,1095" onclick="form_cafe()" title="Almond" alt="Almond" /> -->
+    </map>
+        <img id="right-image1" src="images/stall2.jpg" class="img-fluid">
+        <!-- <img id="right-image2" src="images/stall3.jpg" class="img-fluid"> -->
+        <!-- <img id="right-image3" src="images/agenda/Day 4.jpg" class="img-fluid"> -->
+        <!-- <img id="right-image1" src="images/cafe2.jpg" class="img-fluid"> -->
+    </div>
+</div>
+
+</div>
+<div class="lightbox lightbox_secnd_Cafe" ng-if="popupvideo" id="lightbox-1">
+    <!-- <h3>Virtex</h3> -->
+    <p>Your coupon is sent to your registered Email Id</p>
+    <a class="lightbox__close" ng-click="closePopup()"><img src="images/close.svg"></a>
+</div>

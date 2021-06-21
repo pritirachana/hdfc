@@ -1,0 +1,101 @@
+<style type="text/css">
+
+    area:hover {
+        cursor: pointer;
+    }
+    
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    #stageheight{
+      position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        top: 18%;
+        left: -0.2%;
+        right: 0;
+        bottom: 56%;
+    }
+    .stage-player {
+        position: absolute;
+        width: 38%;
+        height: 100vh;
+        margin-left: 0vh;
+        top: -4.5vh;
+        background-color: transparent;
+    }
+    .stageheight iframe {
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .modal-body{
+        height: 60vh !important;
+    }
+    
+    </style>
+    <link rel="stylesheet" href="css/chat.css">
+    <script src="js/chat.js"></script>
+       
+        <div style="position: relative;">
+            <img class="rwdimgmap" src="images/board_room.jpg" usemap="#powerpuffgirls" alt="" />
+            <!-- <map name="powerpuffgirls">
+                <area shape="poly" coords="5269,3731,7049,3719,7056,3898,5281,3904" ng-click="myTrigger('session')" title="Almond" alt="Almond" href="https://virtex.in/" target="blank" />
+            </map> -->
+            <div class="modal fade" id="boardRoomJitsi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document" style="max-width: 48% !important;height: 80% !important;margin:0px auto !important;">
+                  <div class="modal-content">
+                    <div class="modal-body" id="jitsiContainer" style="padding:0px !important;width:101.3% !important;">
+                        <!-- <iframe style="width: 100%;height: 100%;" src="https://meetings.virtex.in/meetingroom1" id="stageVideo" frameborder="0" allow="microphone; camera" allowfullscreen></iframe> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- <div class="stageheight" id="stageheight"> -->
+                <!-- <div class="stage-player"> -->
+                    <!-- <iframe src="https://player.vimeo.com/video/489822256" id="stageVideo" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+                <!-- </div> -->
+                <!-- <iframe id="iframe" iframe-set-dimensions-onload scrolling="no" src="https://www.youtube.com/embed/nqE4TiDcAz4?controls=0&autoplay=1" autoplay frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <!-- <iframe src="https://vimeo.com/event/252078/embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+            <!-- </div> -->
+        </div>
+      <script>
+          $("#boardRoomJitsi").modal({backdrop: false});
+      </script>
+      <script>
+          var domain = "meetings.virtex.in";
+          var options = {
+              roomName: "meetingroom1",
+              width: '100%',
+              height: '100%',
+              parentNode: document.querySelector('#jitsiContainer'),
+              configOverwrite: {
+                  prejoinPageEnabled:false,
+                  disable1On1Mode:true,
+                  disableSimulcast: true,
+                  disableProfile:true,
+                  disableInviteFunctions:true
+              },
+              interfaceConfigOverwrite: {
+                  SHOW_JITSI_WATERMARK: false,
+                  SHOW_WATERMARK_FOR_GUESTS: false,
+                  HIDE_INVITE_MORE_HEADER:true,
+                  disableInviteFunctions:true,
+                  DEFAULT_REMOTE_DISPLAY_NAME:'VIRTEX ALMOND'
+                  // TOOLBAR_BUTTONS:['microphone', 'camera','fodeviceselection', 'hangup','mute-everyone']
+                  //filmStripOnly: true
+              },
+              invitees:false
+          }
+          var api = new JitsiMeetExternalAPI(domain, options);
+          api.on('readyToClose', () => {
+              window.location.href = "https://globalbioindiavirtual.com/event/#!";
+          });
+          
+      </script>  
+        

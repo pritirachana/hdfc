@@ -1,0 +1,144 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    area{
+        border: none;
+        outline: none;
+    }
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    .expo-header{
+    background-color: #4a2d16;
+}
+.expo-header p{
+  color: white;
+    margin: auto;
+    margin-left: 6%;
+}
+    </style>
+    <div ng-hide="showvideo" style="position: relative;">
+        <img class="rwdimgmap img-fluid" src="https://d3daqnblwo9fae.cloudfront.net/neo.jpg" usemap="#powerpuffgirlsnew" alt="" />
+        <map name="powerpuffgirlsnew">
+            <area target="" alt="Chat" title="Chat" data-toggle="modal" data-target="#exampleModal6" coords="53,109,53,204,469,211,473,116" shape="poly">
+            <area target="" alt="Video Conf" title="Video Conf" data-toggle="modal" data-target="#exampleModal6" coords="53,241,51,331,462,331,464,238" shape="poly">
+            <area target="" alt="Brochures" title="Brochures" ng-click="brochuretracking()" data-toggle="modal" data-target="#brochureModal"  coords="56,361,56,456,464,461,473,359" shape="poly">
+            <area target="" alt="Games" title="Games" coords="2113,109,2106,202,2533,211,2535,109" shape="poly">
+            <area target="" alt="Link" title="Link" data-toggle="modal" data-target="#linksModal" coords="2113,170,2110,270,2526,272,2530,173" shape="poly">
+            <area target="" alt="Form" title="Form" data-toggle="modal" data-target="#exampleModal6" coords="2110,295,2110,395,2533,402,2530,300" shape="poly">
+            <!-- <area target="blank" alt="brochure1" title="brochure1" href="images/docs/1. IFCAI/IBS AACSB Accr Ad.pdf" coords="201,713,196,790,432,795,408,711" shape="poly">
+            <area target="blank" alt="brochure2" title="brochure2" href="images/docs/1. IFCAI/IBS Case Studies brochure.pdf" coords="201,822,190,897,426,901,432,820" shape="poly">
+            <area target="blank" alt="brochure3" title="brochure3" href="images/docs/1. IFCAI/IBSAT 2 folder 2021 - updated.pdf" coords="630,929,635,1040,957,1044,952,924" shape="poly">
+            <area target="blank" alt="brochure4" title="brochure4" href="images/docs/1. IFCAI/IBSAT-flyer2021 - updated.pdf" coords="2174,713,2174,808,2401,801,2403,697" shape="poly">
+            <area target="blank" alt="brochure5" title="brochure5" href="images/docs/1. IFCAI/Icfai Group Profile Flyer 2020.pdf" coords="2178,820,2181,904,2412,901,2390,815" shape="poly">
+            <area target="" alt="video" title="video"  ng-click="myTrigger('video')" coords="1509,819,1502,919,1806,933,1806,817" shape="poly"> -->
+            
+        </map>
+        <div class="back-button">
+            <button ui-sref="expo" class="back-btn"><i class="fas fa-arrow-circle-left"></i> &nbsp;<span>Back</span></button>
+        </div>
+        <div class="expo-msg-box">
+            <p>{{booth_message}}</p>
+         </div>
+    </div>
+    <!-- <div class="lightbox" ng-if="popupvideo" id="lightbox-1">
+        <div class="video-pop-box">
+        <iframe src="https://player.vimeo.com/video/485863898?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+    </div>
+    </div>
+    <div class="lightbox" ng-if="popupvideo2" id="lightbox-1">
+        <div class="video-pop-box">
+        <iframe src="images/brochure/2. RIGHT_Driving Real Connections with Connected Consumers.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+    </div>
+    </div> -->
+    
+
+    
+          <!-- brochure-modal -->
+          <div class="modal fade" id="brochureModal" tabindex="-1" role="dialog" aria-labelledby="brochureModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header expo-header">
+                  <h5 class="modal-title" id="brochureModalLabel">Brochures List</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                    <div id="modalbrochureBody" class="modal-body">
+                        <div class="videos">
+                            <ul class="videos-list">
+                              <a href="brochures/nowfloats/Brochure 2.pdf" target="blank" ng-click="brochurePoints()"><li>NowFloats Products</li></a>
+                              <a href="brochures/nowfloats/Brochure 1.pdf" target="blank" ng-click="brochurePoints()"><li>Introducing Kit-Proxy</li></a>
+                            </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+          </div>
+
+              <!-- links modal -->
+    <div class="modal fade" id="linksModal" tabindex="-1" role="dialog" aria-labelledby="linksModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header expo-header">
+              <h5 class="modal-title" id="linksModalLabel">Links List</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+                <div id="modallinksBody" class="modal-body">
+                    <div class="videos">
+                        <ul class="videos-list">
+                          <a href="https://www.getkitsune.com/" target="blank"><li>Kitsune</li></a>
+                          <a href="https://docs.google.com/presentation/d/1i-J99RpNTVF8pOjp3AiXEIg_zUcbQaPX8zi3hTbUX1c/edit#slide=id.ga426be2053_0_1149" target="blank"><li>Case Study: NowFloats - Kitsune</li></a>
+                          <a href="https://docs.google.com/spreadsheets/d/1x3pC6zbaQK9bMZWhWlS9Jnb_2mHXbzkUrKGj1Jk3S94/edit?usp=sharing" target="blank"><li>FAQs</li></a>
+                        </ul>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+
+         <!-- form modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header expo-header">
+              <h5 class="modal-title" id="formModalLabel">Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+                <div id="modalformBody" class="modal-body">
+                  <h2 style="font-size:30px">Not Available</h2>
+
+                  </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+               <p>"Thank you for visiting us, the event is over now."</p>   
+            </div>
+          </div>
+        </div>
+      </div>

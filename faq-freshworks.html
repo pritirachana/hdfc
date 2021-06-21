@@ -1,0 +1,232 @@
+
+<style>
+    /*FAQ section, where the accordion is kept, including section specific css*/
+#faq {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 96vh;
+}
+
+#faq .add {
+	/*Add is the name for the plus icon*/
+	display: block;
+}
+
+#faq .remove {
+	/*Remove is the name for the less icon*/
+	display: none;
+}
+
+#faq i {
+	font-size: 30px;
+}
+
+/*Accordion container and each item*/
+.accordion {
+    max-width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.accordion-item {
+	background-color: transparent;
+	border-bottom: 3px solid black;
+
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+/*Styles for the question*/
+
+.accordion-title {
+	display: flex;
+
+	align-items: center;
+	justify-content: space-around;
+
+	color: black;
+	font-size: 18px;
+	font-family: Open Sans;
+	font-weight: 600;
+
+	width: 100%;
+	padding: 1rem 0;
+	cursor: pointer;
+	transition-duration: 0.5s;
+}
+
+.accordion-title:hover {
+	color: black;
+}
+
+.accordion-title h2 {
+	width: 100%;
+	font-size: 18px;
+}
+
+/*Styles for the answer*/
+
+.accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	position: relative;
+	background-color: #939393;
+	transition: max-height 0.6s;
+	font-family: Open Sans;
+    font-weight: 400;
+    overflow: hidden !important;
+    overflow-y: scroll !important;
+}
+
+.accordion-content p {
+	padding: 20px;
+	color: white;
+}
+.heading-block{    
+    font-size: 34px;
+    font-weight: 600;
+    color: #3f3ff9;
+    margin-top: 5vh;
+}
+.main-heading-block{    
+    font-size: 38px;
+    font-weight: 700;
+    color: #3f3ff9;
+
+}
+.list1{
+    list-style: circle;
+    margin-left: 5vh;
+    color: white;
+}
+.list2{
+    list-style: disc;
+    margin-left: 5vh;
+}
+.list2 li{
+    margin-left: 2vh;
+}
+.list3{
+    list-style: circle;
+    margin-left: 5vh;
+    color: white;
+    padding-bottom: 2vh;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+    .accordion {
+    max-width: 90% !important;
+    height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+}
+
+</style>
+
+	<section id="faq">
+		<div class="accordion">
+			<div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>1. Does my business need an Omnichannel Support Strategy? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Do you have a variety of support channels that your customers rely on in order to communicate with you? Do you want to maintain consistency across all these channels and also keep track on what is happening where, while providing superior customer service? If your answers are a resounding yes, then you definitely need an Omnichannel Support strategy!</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>2. What are the benefits of adopting an Omnichannel customer engagement strategy?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>An Omnichannel Customer Engagement Strategy helps your business stand out from the rest. Not only that, it also helps offer smoother customer service, higher CSAT scores and earn customer loyalty! </p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>3. Why should I choose Freshdesk Omnichannel Support? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>With Freshdesk’s out-of-the-box omnichannel solution, managing customer communications across different channels is incredibly easy. It’s built from the ground up and solves for all the unique challenges that come with supporting multiple channels.  Admins can easily set up well-orchestrated workflows across email, phone, messaging, social media and any other touchpoint and reduce the load on your support agents. You can effortlessly scale-up and deliver the best experience to your customers. </p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>4. Does my business need to be on Whatsapp? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Interactions with physical stores are expected to come down by 50% over the next 8-9 months, more so due to the pandemic. Customers who are moving online want to find your business on accessible channels like Whatsapp, that they are already familiar with. </p>
+				</div>
+            </div>
+
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>5. How can the Freshchat + Whatsapp integration benefit my business? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+                        <ul class="list1">
+                            <li>Brings conversations across web, mobile, and social messengers under the Freshchat Inbox with customer timeline.</li>
+                            <li>Take business on WhatsApp live in 5 days</li>
+                            <li>Reduce spends by 60%</li>
+                            <li>Scale with AI chatbots</li>
+                            <li>Market, sell, or support - all on WhatsApp</li>
+                            <li>Connects with payments, order management, or CRM tools for real-time conversations on order updates, refunds, and more</li>
+                            <li>All disputes & conflicts subject to Ahmedabad jurisdiction only</li>
+                        </ul>
+                    </p>
+				</div>
+            </div>
+
+		</div>
+
+		<script>
+            const questions = document.getElementsByClassName("accordion-title"); //Gets all the questions (plus icon)
+
+for (const question of questions) {
+	const answer = question.parentElement.querySelector(".accordion-content");
+	const remove = question.parentElement.querySelector(".remove");
+	const add = question.parentElement.querySelector(".add");
+	let open = false; //Variable to check if the answer is visible or not
+
+	function openAnswer() {
+		if (open == true) {
+			//If you click the question while the answer is visible it will stop being visible and open will change it's value to false
+			add.style.display = "block";
+			remove.style.display = "none";
+			answer.style.overflow = "hidden";
+			answer.style.maxHeight = "0";
+			open = false;
+		} else {
+			//If you click the question while the answer is not visible it will start being visible and open will change it's value to true
+			add.style.display = "none";
+			remove.style.display = "block";
+			answer.style.maxHeight = "300px";
+			answer.style.overflow = "visible";
+			open = true;
+		}
+	}
+
+	question.addEventListener("click", openAnswer);
+}
+
+        </script>
+	</section>

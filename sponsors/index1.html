@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <title>Realty+ Conclave & Excellence Awards - 2020 West</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #copyright {
+    background: #0b0b0b;
+    text-align: center;
+}
+#copyright p {
+    line-height: 42px;
+    color: #fff;
+    margin: 0;
+}
+#copyright p a {
+    color: #fff;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+#banner img {
+    width: 100%;
+}
+.section-padding {
+    padding: 0px 0;
+}
+.section-title {
+    font-size: 36px;
+    color: #212121;
+    line-height: 40px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin: 0;
+}
+.container-form {
+    left: 0%;
+    /* padding: 40px 15px; */
+    z-index: 99;
+}
+.container-form .form-wrapper {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.container-form .form-wrapper .form-group {
+    margin-bottom: 30px;
+}
+.container-form .form-wrapper .form-control {
+    display: block;
+    width: 100%;
+    line-height: 26px;
+    font-size: 14px;
+    box-shadow: none;
+    color: #848484;
+/*    text-transform: capitalize;
+*/    background: #f7f7f7;
+    border: 1px solid transparent;
+    padding: 7px 19px;
+    border-radius: 0px;
+    background-image: none;
+    background-clip: padding-box;
+}
+.form-submit .btn-common {
+    width: 100%;
+}
+.btn {
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    display: inline-block;
+}
+  .btn-common {
+    background-color: #0c1825;
+    position: relative;
+    z-index: 1;
+}
+  .btn.disabled, .btn:disabled {
+    opacity: .65;
+}
+  .btn-common:hover {
+    color: #fff;
+    background: #1c2834;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+    transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+}
+fieldset {
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: #f7f7f7;
+    border-image: initial;
+    background: #f7f7f7;
+}
+  legend {
+    display: block;
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    width: auto;
+    line-height: 26px;
+    font-size: 16px;
+    box-shadow: none;
+    color: #6c757d;
+    text-transform: capitalize;
+    padding: 0 5px;
+}
+.error{
+    color: red;
+}
+.virtex_bottom{
+        color: #026994;
+}
+.virtex_copy{
+    text-transform: uppercase;
+}
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* TIMER */
+
+.timer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* left: 50%;
+  top: 18%;
+  transform: translate(-50%, -50%); */
+margin-bottom: 8vh;
+  height: 150px;
+  width: 100%;
+}
+
+.timer__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Varela;
+  font-size: 80px;
+  color: white;
+  margin-bottom: -2vh;
+  height: 100%;
+  background-color: #1a1a1a;
+  min-width: 150px;
+  border-radius: 33px;
+}
+
+.timer__label {
+  position: absolute;
+  margin-top: 220px;
+  color: black;
+  font-size: 36px;
+}
+
+/* FOOTER */
+
+.footer {
+  position: relative;
+  bottom: 0 !important;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 0;
+  width: 100%;
+  background-color: #1a1a1a;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+  transition: 0.3s ease-in;
+}
+
+.logo:hover {
+  opacity: 0.5;
+}
+
+.footer__rights {
+  font-family: "Nunito";
+  color: white;
+}
+
+.footer__rights a {
+  color: white;
+}
+
+.footer__rights a:hover {
+  text-decoration: none;
+}
+@media(max-width:769px){
+	.timer {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-bottom: 0vh;
+    height: 150px;
+    width: 100%;
+}
+.footer {
+  position: absolute;
+  bottom: 0 !important;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 0;
+  width: 100%;
+  background-color: #1a1a1a;
+}
+.timer__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Varela;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 11vh;
+    height: 35%;
+    background-color: #1a1a1a;
+    min-width: 20%;
+    border-radius: 9px;
+}
+.timer__label {
+    position: absolute;
+    margin-top: 90px;
+    color: black;
+    font-size: 14px;
+}
+.footer h2{
+	    font-size: 14px !important;
+}
+#copyright {
+    background: #0b0b0b;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174896706-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-174896706-2');
+</script>
+</head>
+
+<body>
+    <section id="banner">
+        <div class="container-fluid">
+            <div class="row">
+                <div style="margin: 0;padding: 0;" class="col-md-12"> <img src="../images/rel.jpg" > </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us Section -->
+    <section id="contact-map" class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-xs-12 mt-3">
+                    <div class="container-form wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="form-wrapper">
+                            <div class="timer">
+                                <div class="timer__container" style="background-color: #0c1825">
+                                  <span id="days">0</span>
+                                  <p class="timer__label">Days</p>
+                                </div>
+                              
+                                <div class="timer__container" style="background-color: #0c1825">
+                                  <span id="hrs">0</span>
+                                  <p class="timer__label">Hours</p>
+                                </div>
+                              
+                                <div class="timer__container" style="background-color: #0c1825">
+                                  <span id="mins">0</span>
+                                  <p class="timer__label">Minutes</p>
+                                </div>
+                              
+                                <div class="timer__container" style="background-color: #0c1825">
+                                  <span id="seconds">0</span>
+                                  <p class="timer__label">Seconds</p>
+                                </div>
+                              
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us Section End -->
+    <div id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow fadeInUp">
+                    <div class="site-info">
+                      <!--   <p>COPYRIGHT © 2020 BW HOTELIER IHA . ALL&nbsp;RIGHT RESERVED. <a href="http://www.businessworld.in/" rel="nofollow"> BW BUSINESSWORLD</a> | --> <p><span class="virtex_copy">Virtual Event Hosted on <a href="https://almondvirtex.com"><span class="virtex_bottom">VIRTEX</span></a></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.js"></script>
+<script type="text/javascript">
+    // if (localStorage.getItem("ngStorage-currentUser")) {
+    //      window.location.replace("event");
+    // }
+
+    $(function() {
+            $("#registerForm").submit(function(e) {
+            console.log("test");
+            //prevent Default functionality
+            e.preventDefault();
+
+            //get the action-url of the form
+           var actionurl = 'https://realtyplus.virtex.in:1289/api/users/register'
+
+            //do your own request an handle the results
+            $.ajax({
+                url: actionurl,
+                type: 'post',
+                data: $("#registerForm").serialize(),
+                success: function(data) {
+                    if (data.status == true) {
+                        localStorage.setItem("ngStorage-currentUser", JSON.stringify(data.data));
+                        window.location.replace("event");
+                    }
+                },
+                error: function(data) {
+                    console.log("no login");
+                    // console.log(data);
+                    $('#msgSubmit').show();
+                    setTimeout(function () {
+                        $('#msgSubmit').hide();
+                    }, 3000);
+                }
+            });
+        });
+
+    });
+</script>
+
+<script type="text/javascript">
+	function setTimer() {
+  /* enter the event date down there */
+  let timeLeft = getTimeLeft(2020, 09, 9, 14, 0, 0, 0);
+
+  days.innerHTML = timeLeft[0];
+  hrs.innerHTML = timeLeft[1];
+  mins.innerHTML = timeLeft[2];
+  seconds.innerHTML = timeLeft[3];
+}
+
+getTimeLeft = (year, month, day, hour, minute, second, milisecond) => {
+  const currentDate = new Date();
+
+  const expectedDate = new Date(
+    year,
+    month,
+    day,
+    hour,
+    minute,
+    second,
+    milisecond
+  );
+console.log(expectedDate);
+  const timeLeft = expectedDate.getTime() - currentDate.getTime();
+
+  if (timeLeft > 0) {
+    let s = timeLeft / 1000;
+    let mins = s / 60;
+    let hrs = mins / 60;
+    let days = hrs / 24;
+
+    let secondsLeft = Math.floor(s % 60);
+    let minsLeft = Math.floor(mins % 60);
+    let hrsLeft = Math.floor(hrs % 24);
+    let daysLeft = Math.floor(days);
+
+    return [daysLeft, hrsLeft, minsLeft, secondsLeft];
+  } else {
+    return ["X", "X", "X", "X"];
+  }
+};
+
+const seconds = document.getElementById("seconds");
+const days = document.getElementById("days");
+const hrs = document.getElementById("hrs");
+const mins = document.getElementById("mins");
+
+window.onload = setTimer();
+var myVar = setInterval(setTimer, 1000);
+
+</script>
+<script type="text/javascript">
+
+    $('map').imageMapResize();
+
+</script>
+
+</html>

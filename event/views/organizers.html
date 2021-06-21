@@ -1,0 +1,198 @@
+<style>
+.feedback{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+a{
+    color: #132f42;
+}
+#left{
+    margin-left: 2vh;
+}
+.footer{
+    margin-top: 10vh;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+    .footer{
+    margin-top: 0vh;
+}
+}
+td, th {
+    padding: 10px;
+    /* border: 1px solid #979797; */
+    text-align: left;
+    font-size: 18px;
+    text-align: left !important;
+    vertical-align: middle;
+}
+</style>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<div class="container-fluid feedback">
+    <div class="header">
+        <img class="img-fluid" src="images/header-bg.jpg">
+    </div>
+    <div class="row justify-content-center org-table">
+    <div class="col-10 col-lg-8">
+        <table>
+            <thead>
+                <tr>
+                    <th id="name-left">Name</th>
+                    <th id="name-left">Responsibility</th>
+                    <th id="th-small">Chat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="table-name" data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Minal Agarwal
+                            </div>
+                        </div>
+                    </td>
+                    <td  data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Speakers and Main Conference Room
+                            </div>
+                        </div>
+                    </td>
+                    <td style="cursor: pointer;text-align: center !important;">
+                        <!-- <a href="mailto:minal.a@endurance.com" target="blank"> -->
+                        <i class="fas fa-video" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(0)"></i><i id="left" class="fas fa-comment-alt" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(0)"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="table-name" data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Simran Mehta	
+                            </div>
+                        </div>
+                    </td>
+                    <td  data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Workshop and Brand Sessions Room
+                            </div>
+                        </div>
+                    </td>
+                    <td style="cursor: pointer;text-align: center !important;">
+                        <!-- <a href="mailto:simran.m@endurane.com" target="blank"> -->
+                            <i class="fas fa-video" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(1)"></i><i id="left" id="left" class="fas fa-comment-alt" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(1)"></i>
+                            </a>                    
+                    </td>
+                </tr>
+                <tr>
+                    <td id="table-name" data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Tanya Noronha	
+                            </div>
+                        </div>
+                    </td>
+                    <td  data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Partner/Sponsors
+                            </div>
+                        </div>
+                    </td>
+                    <td style="cursor: pointer;text-align: center !important;">
+                        <!-- <a href="mailto:tanya.n@endurance.com" target="blank"> -->
+                            <i class="fas fa-video" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(2)"></i><i id="left" class="fas fa-comment-alt" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(2)"></i>
+                            </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="table-name" data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Viraj Shetty	
+                            </div>
+                        </div>
+                    </td>
+                    <td  data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Presence Networking Room
+                            </div>
+                        </div>
+                    </td>
+                    <td style="cursor: pointer;text-align: center !important;">
+                        <!-- <a href="mailto:viraj.s@endurance.com" target="blank"> -->
+                            <i class="fas fa-video" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(3)"></i><i id="left" class="fas fa-comment-alt" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(3)"></i>
+                            </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="table-name" data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Siddharth Pereira	
+                            </div>
+                        </div>
+                    </td>
+                    <td  data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Scale Networking Room
+                            </div>
+                        </div>
+                    </td>
+                    <td style="cursor: pointer;text-align: center !important;">
+                        <!-- <a href="mailto:siddharth.p@endurance.com" target="blank"> -->
+                            <i class="fas fa-video" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(4)"></i><i id="left" class="fas fa-comment-alt" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(4)"></i>
+                            </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="table-name" data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                               Priyank Limbachiya	
+                            </div>
+                        </div>
+                    </td>
+                    <td data-column="Name">
+                       
+                        <div class="leader-name">
+                            <div class="leader-name-txt">
+                                Help Desk (24x7 Support)
+                            </div>
+                        </div>
+                    </td>
+                    <td style="cursor: pointer;text-align: center !important;">
+                        <!-- <a href="mailto:priyank.li@endurance.com" target="blank"> -->
+                            <i class="fas fa-video" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(5)"></i><i id="left" class="fas fa-comment-alt" data-toggle="modal" data-target="#chatModal" ng-click="organiserChat(5)"></i>
+                            </a>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            <div class="footer">
+                <img class="img-fluid" src="images/footer-bg.jpg">
+            </div>
+    </div>
+   
+</div>

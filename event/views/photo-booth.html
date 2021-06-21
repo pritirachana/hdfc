@@ -1,0 +1,362 @@
+<style>
+  video {
+      max-width: 100%;
+      min-width: 100%;
+  }
+  img{
+      width: 100%;
+  }
+  #cameraCanvas{
+      display: none;
+  }
+  
+  .lg-hotspot {
+position: absolute;
+margin: 0;
+padding: 0;
+transform: translate(-50%, -50%);
+z-index: 0;
+}
+/* .lg-hotspot:hover .lg-hotspot__button, .lg-hotspot:active .lg-hotspot__button {
+border-color: #ff774c;
+}
+.lg-hotspot:hover .lg-hotspot__button:after, .lg-hotspot:active .lg-hotspot__button:after {
+background-color: #ff774c;
+}
+.lg-hotspot--selected {
+z-index: 999;
+}
+.lg-hotspot--selected .lg-hotspot__label {
+opacity: 1;
+} */
+.lg-hotspot__button {
+  border: 3px solid #ff0000;
+  -webkit-border-radius: 30px;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  -webkit-animation: pulsate 1.5s ease-out;
+  -webkit-animation-iteration-count: infinite; 
+  cursor: pointer;
+  opacity: 0.0
+
+}
+.lg-hotspot__button:after {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+pointer-events: none;
+content: "";
+display: block;
+height: 16.8px;
+width: 16.8px;
+border-radius: 100%;
+border: 3px solid #ff0000;
+background-color: #ff0000;
+transition: border-color 1s linear;
+cursor: pointer;
+}
+.lg-hotspot__label {
+position: absolute;
+padding: 0 0 1.1em 0;
+width: 16em;
+max-width: 50vw;
+background-color: white;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+font-family: "Open Sans", sans-serif;
+font-size: 14.5px;
+line-height: 1.45em;
+z-index: -1;
+pointer-events: none;
+border-radius: 2px;
+user-select: none;
+opacity: 0;
+transition: all 0.1s linear;
+}
+.lg-hotspot__label h4 {
+margin: 0;
+padding: 0.65em 24px;
+background-color: #555;
+font-size: 1.1em;
+font-weight: normal;
+letter-spacing: 0.02em;
+color: white;
+border-radius: 2px 2px 0 0;
+}
+.lg-hotspot__label p {
+margin: 0;
+padding: 1.1em 24px 0 24px;
+color: #333;
+}
+
+.lg-hotspot--top-left .lg-hotspot__label {
+top: 24px;
+left: 24px;
+}
+
+.lg-hotspot--top-right .lg-hotspot__label {
+top: 24px;
+right: 24px;
+}
+
+.lg-hotspot--bottom-right .lg-hotspot__label {
+right: 24px;
+bottom: 24px;
+}
+
+.lg-hotspot--bottom-left .lg-hotspot__label {
+bottom: 24px;
+left: 24px;
+}
+
+
+@-webkit-keyframes pulsate {
+  0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+  50% {opacity: 1.0;}
+  100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+.lg-hotspot__button:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  content: "";
+  display: block;
+  height: 6.8px;
+  width: 6.8px;
+  border-radius: 100%;
+  border: 3px solid #ff0000;
+  background-color: #ff0000;
+  transition: border-color 1s linear;
+  cursor: pointer;
+}
+.lg-hotspot__button {
+  border: 3px solid #ff0000;
+  -webkit-border-radius: 30px;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  -webkit-animation: pulsate 1.5s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  cursor: pointer;
+  opacity: 0.0;
+}
+.modal-body {
+  min-height: auto !important;
+  max-height: auto !important;
+  overflow: hidden;
+  overflow-y: hidden;
+  height: auto !important;
+}
+.capturedButtons img {
+  width: 25px !important;
+}
+.capturedButtons>div {
+  margin-right: 5vh !important;
+  cursor: pointer;
+}
+.modal-content {
+  background-color: #4992d8;
+  margin-top: 10vh !important;
+}
+}
+  
+  .videoPopup{
+          margin: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0.9;
+          background-color: black
+      }
+  
+      .videoPopup .popup{
+          position: absolute;
+          min-height: 40%;
+          min-width: 40%;
+      }
+  
+      iframe {
+          min-width: 100%;
+          min-height: 40vh;
+      }
+  
+      .closeIcon {
+          position: absolute;
+          top: 24%;
+          right: 30%;
+      }
+  
+      .closeIcon img{
+          width: 20px;
+      }
+      .modal{
+          display: block;
+      }
+  
+      #capturedImage {
+        width: 45%;
+  height: auto;
+  position: absolute;
+  top: 11%;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+      /*  Selefie screem */
+      .modal-body {
+          min-height: auto;
+          overflow: hidden;
+          overflow-y: hidden;
+      }
+  
+  .modal-content {
+    background-color: #4992d8;
+    margin-top: 7vh;
+  }
+  
+      .selfieScreen {
+          top: 0;
+          z-index: 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+      }
+  
+      .modal-footer{
+          width: auto!important;
+          margin: auto;
+      }
+  
+      #selfiephoto{
+
+          z-index: 9;
+      }
+      
+  
+      .closeButton{
+          width: 4%;
+          position: absolute;
+          float: right;
+          top: -8%;
+          right: 0;
+          cursor: pointer;
+  
+      }
+  
+        #selfiephotos {
+          width: 58%;
+          height: auto;
+          position: absolute;
+          top: 0%;
+          z-index: -1;
+          left: 0px;
+          right: 0;
+          margin: auto;
+      }
+      #capturedImageWithFrame{
+          display: none;
+      }
+  
+      .capturedButtons{
+          display: flex;
+          flex-direction: row;
+      }
+  
+      .capturedButtons>div{
+          margin: 10px;
+          cursor: pointer;
+      }
+  
+      .capturedButtons img{
+          width: 35px;
+      }      
+      .frame{
+        /* max-width: 76% !important;
+        min-width: 76% !important; */
+        max-width: 59% !important;
+    min-width: 58% !important;
+      } 
+
+      .games{
+position: absolute;
+  top: 30%;
+  left: 12%;
+}
+      
+  </style>
+  <div style="position: relative;" ng-hide="showvideo">
+    
+    <img class="rwdimgmap lg-image" src="images/Selfie _Booth-1201.jpg" usemap="#powerpuffgirls" alt="" />
+    
+    <!-- <div style="top: 53%; left: 44%;" class="lg-hotspot lg-hotspot--top-left"  ng-click="showCamera()">
+      <div class="lg-hotspot__button"></div>    
+    </div> -->
+
+
+    <map name="powerpuffgirls">
+      <!-- <area target="" alt="selfie booth" title="selfie booth" coords="543,373,537,411,610,411,604,374" shape="poly" ng-click="showCamera()">  -->
+    </map>
+    <div class="container-fluid games">
+      <div class="row justify-content-center">
+          <div class="col-10 col-lg-10">
+              <button class="game-btn" ng-click="showCamera()" >Click Photo</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- <div class="hotspot">
+  <div class="cameraHotspot"><a ng-click="showCamera()" class="hotspot-link">Click Here to Take a Selfie</a></div>
+</div> -->
+  <div class="modal fade show" ng-show="videoPopup" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <img src="images/cancel.svg" class="closeButton" ng-click="stopCamera()">
+          <div class="modal-body">
+              <!-- <div id="selfiephotos">                
+                  <video autoplay></video>
+              </div> -->
+              <div id="selfiephoto">
+                  <div class="selfieScreen">
+                    <img src="images/Untitled-1.png" class="img-fluid frame">
+                    <div id="selfiephotos">                
+                      <video autoplay></video>
+                  </div>
+                  </div>
+                  <img src="" id="capturedImage">
+              </div>
+            <img src="" id="capturedImageWithFrame">
+            <a href="" id="downloadImage"></a>
+           <canvas id="cameraCanvas"></canvas> 
+          </div>
+          <div class="modal-footer">
+              <div class="capturedButtons">
+                  <div ng-click="captureVideo()" ng-if="!photoCaptured" >
+                      <img src="images/camera_selfie.svg" >
+                  </div>
+                  <div ng-click="downloadImage()" ng-if="photoCaptured" >
+                      <img src="images/cloud-computing_selfie.svg" >
+                  </div>
+                  <div ng-click="reloadImage()" ng-if="photoCaptured" >
+                      <img src="images/reload_selfie.svg" >
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>

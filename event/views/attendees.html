@@ -1,0 +1,43 @@
+<style>
+    #points i{
+        width: 40%;
+    font-size: 3vh;
+    }
+</style>
+<div id="container9">
+    <div class="leader-box">
+        <input ng-model="searchtxt.name" type="text" placeholder="Search By Name">
+        <input ng-model="searchtxt.designation" type="text" placeholder="Search By Designation">
+        <input ng-model="searchtxt.organization" type="text" placeholder="Search By Organization">
+<table>
+    <thead>
+        <tr>
+            <th id="th-small">S.no</th>
+            <th id="name-left">Name</th>
+            <th id="th-small">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="delegate in attendee | filter : searchtxt">
+            <td id="serial-no" data-column="S.no">{{$index + 1}}</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-image">
+                    <img src="images/user.svg">
+                </div>
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        {{delegate.first_name}} {{delegate.last_name}}	
+                    </div>
+                    <div class="leader-name-desig">
+                        {{delegate.designation}}, {{delegate.organization}}
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">
+                <a href="javascript:void(0)" data-toggle="modal" data-target="#chatModal"><i class="fas fa-comment"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>

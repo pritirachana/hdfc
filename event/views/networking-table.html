@@ -1,0 +1,44 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+    }
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+        height: 100vh !important;
+    }
+    iframe {
+    min-width: 100% !important;
+    min-height: 60vh !important;
+}
+    </style>
+    <div ng-hide="showvideo">
+        <img class="rwdimgmap img-fluid" src="images/networking-table.jpg" usemap="#powerpuffgirlsnew" alt="" />
+        <map name="powerpuffgirlsnew">
+        
+            <area target="" alt="" title=""  coords="46,35,44,361,423,361,423,38" shape="poly" data-toggle="modal" data-target=".bd-example-modal-lg">
+            <area target="" alt="" title=""  coords="466,38,466,361,840,363,844,34" shape="poly" data-toggle="modal" data-target=".bd-example-modal-lg">
+            <area target="" alt="" title=""  coords="46,403,41,725,423,724,424,401" shape="poly" data-toggle="modal" data-target=".bd-example-modal-lg">
+            <area target="" alt="" title=""  coords="465,397,464,724,842,724,845,399" shape="poly" data-toggle="modal" data-target=".bd-example-modal-lg">
+            <area target="" alt="" title=""  coords="46,763,46,999,842,1001,845,766" shape="poly" data-toggle="modal" data-target=".bd-example-modal-lg">
+            <area target="" alt="" title=""  coords="887,36,884,198,1562,198,1561,34" shape="poly" data-toggle="modal" data-target=".bd-example-modal-lg">
+            <area target="" alt="" title=""  coords="884,218,884,1001,1562,999,1559,219" shape="poly" data-toggle="modal" data-target=".bd-example-modal-lg">
+        
+        
+        </map>
+    </div>
+    <video playsinline id="video" preload="" ng-show="showvideo">
+        <source src="videos/STALL RENDERS.mp4" type="video/mp4">
+    </video>
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <iframe allow="camera; microphone; fullscreen; display-capture" src="https://meetings.virtex.in/meetingroom1" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>

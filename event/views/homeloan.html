@@ -1,0 +1,1139 @@
+<style>
+
+    .chat-text a {
+        color: #E9931E;
+    }
+
+
+    img{
+        width:100%;
+    }
+    .individual_slug{
+        position: relative;
+    }
+    .previousSlide{
+        position: absolute;
+        cursor: pointer;
+        bottom: 14%;
+        left: 45%;
+    }
+    .nextSlide{
+        position: absolute;
+        bottom: 14%;
+        right: 45%;
+        cursor: pointer;
+    }
+
+    .previousSlide img{
+        width: 25px;
+    }
+
+    .nextSlide img{
+        width: 25px;
+    }
+
+    .expo_assets{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .videoPopup{
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .videoPopup .popup{
+        position: absolute;
+        min-height: 40%;
+        min-width: 40%;
+    }
+
+    iframe {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .closeIcon {
+        position: absolute;
+        top: 24%;
+        right: 30%;
+    }
+
+    .closeIcon img{
+        width: 20px;
+    }
+
+    .stall_name{
+        width: calc(100% - 65%);
+        position: absolute;
+        text-align: center;
+        top: 14.5%;
+        right: 28.5%;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: black;
+        font-weight: 900;
+    }
+
+    .stall_name4{
+        width: calc(100% - 45%);
+        position: absolute;
+        text-align: center;
+        top: 19.5%;
+        right: 12%;
+        font-size: 21px;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 900;
+    }
+
+    .youtube{
+        width: calc(100% - 96%);
+        position: absolute;
+        top: 57.5%;
+        left: 28.5%;
+        cursor: pointer;
+    }
+
+    .broucher_download{
+        width: calc(100% - 94%);
+        position: absolute;
+        top: 37%;
+        right: 20%;
+        height: 32vh;
+        /* background-color: white; */
+        display: block;
+    }
+
+    .broucher_download a{
+        width: 100%;
+        display: block;
+        cursor: pointer;
+        height: 32vh;
+         
+    }
+
+    .horizontal_banner{
+        width: calc(100% - 86.6%);
+        height: calc(100% - 66.5%);
+        position: absolute;
+        top: 22.6%;
+        right: 20%;
+    }
+
+    .horizontal_banner4{
+        width: calc(100% - 85.6%);
+        height: calc(100% - 87.1%);
+        position: absolute;
+        top: 70.7%;
+        right: 13.5%;
+    }
+
+    .vertical_banner_left{
+        width: calc(100% - 86.6%);
+        height: calc(100% - 66.5%);
+        position: absolute;
+        top: 22.6%;
+        left: 28.4%;
+    }
+
+    .vertical_banner_left4{
+        width: calc(100% - 89.6%);
+        height: calc(100% - 72.5%);
+        position: absolute;
+        top: 33.6%;
+        left: 23.4%;
+    }
+
+    .social_icons{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 52%;
+        right: 33%;
+        cursor: pointer;
+    }
+
+    .social{
+        width: 44px;
+        margin: 6px;
+    }
+
+    .socialico{
+        padding: 5px;
+    }
+
+    .company_logo{
+        width: calc(100% - 87.2%);
+        position: absolute;
+        top: 8.6%;
+        height: calc(100% - 82%);
+        left: 8.7%;
+    }
+
+    .company_logo4{
+        width: calc(100% - 92.2%);
+        position: absolute;
+        top: 14.6%;
+        /* height: calc(100% - 86%); */
+        left: 22%;
+    }
+
+    .company_logo1{
+        width: calc(100% - 79%);
+        position: absolute;
+        top: 11%;
+        /* background: #f00; */
+        /* height: calc(100% - 86%); */
+        left: 13%;
+
+    }
+
+    .insta{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 52%;
+        height: calc(100% - 98.4%);
+        right: 49.6%;
+    }
+
+    .linkedin{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 52%;
+        height: calc(100% - 98.4%);
+        right: 46.4%;
+    }
+
+    .twitter{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 52%;
+        height: calc(100% - 98.4%);
+        right: 43.3%;
+    }
+
+    .fb{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 52%;
+        height: calc(100% - 97.4%);
+        right: 40.1%;
+    }
+
+    .website{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 52%;
+        height: calc(100% - 97.8%);
+        right: 36.89%;
+    }
+
+    /*   */
+    .insta3{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 59%;
+        height: calc(100% - 98.4%);
+        right: 49.6%;
+    }
+
+    .linkedin3{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 59%;
+        height: calc(100% - 98.4%);
+        right: 46.4%;
+    }
+
+    .twitter3{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 59%;
+        height: calc(100% - 98.4%);
+        right: 43.3%;
+    }
+
+    .fb3{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 59%;
+        height: calc(100% - 97.4%);
+        right: 40.1%;
+    }
+
+    .website3{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 59%;
+        height: calc(100% - 97.8%);
+        right: 36.89%;
+    }
+
+    .insta4{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 61%;
+        height: calc(100% - 98.4%);
+        right: 49.6%;
+    }
+
+    .linkedin4{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 61%;
+        height: calc(100% - 98.4%);
+        right: 46.4%;
+    }
+
+    .twitter4{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 61%;
+        height: calc(100% - 98.4%);
+        right: 43.3%;
+    }
+
+    .fb4{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 61%;
+        height: calc(100% - 97.4%);
+        right: 40.1%;
+    }
+
+    .website4{
+        width: calc(100% - 97.8%);
+        position: absolute;
+        top: 61%;
+        height: calc(100% - 97.8%);
+        right: 36.89%;
+    }
+
+
+    .chat_with_us{
+        width: calc(100% - 96%);
+        position: absolute;
+        top: 49.7%;
+        height: calc(100% - 96.4%);
+        left: 17.59%;
+    }
+
+    .chat_with_us4{
+        width: calc(100% - 87%);
+        position: absolute;
+        top: 34.6%;
+        height: calc(100% - 88.4%);
+        right: calc(100% - 84.8%);
+    }
+
+    .chat_with_us2{
+        width: calc(100% - 96%);
+        position: absolute;
+        top: 46.6%;
+        height: calc(100% - 95.4%);
+        left: calc(100% - 85.8%);
+    }
+
+    .chat_with_us1{
+        width: calc(100% - 85%);
+        position: absolute;
+        /* background-color: #cf3303; */
+        /* opacity: 0.5; */
+        top: 38.6%;
+        height: calc(100% - 95.7%);
+        right: 27.2%;
+    }
+
+    .chat_with_us3{
+        width: calc(100% - 96%);
+        position: absolute;
+        top: 34.6%;
+        height: calc(100% - 95.4%);
+        right: calc(100% - 75.8%);
+    }
+
+    /* .jitsi_meet{
+        width: calc(100% - 78.1%);
+        position: absolute;
+        top: 30.6%;
+        height: calc(100% - 82.4%);
+        left: 43.33%;
+    } */
+
+    .jitsi_meet4{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 45.8%;
+        height: calc(100% - 97.4%);
+        left: 55%;
+    }
+
+    .jitsi_meet2{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 38.3%;
+        height: calc(100% - 97.4%);
+        left: 48.4%;
+    }
+
+    .jitsi_meet1{
+        width: calc(100% - 85.1%);
+        position: absolute;
+        top: 34.8%;
+        height: calc(100% - 97.4%);
+        left: 49.1%;
+    }
+
+    .jitsi_meet3{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 45.5%;
+        height: calc(100% - 97.4%);
+        right: 32.9%;
+    }
+
+    .videos{
+        width: calc(100% - 93.3%);
+        position: absolute;
+        top: 24.3%;
+        height: calc(100% - 94.8%);
+        left: 51.5%;
+    }
+
+    .videos4{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 37.8%;
+        height: calc(100% - 97.4%);
+        left: 55%;
+    }
+
+    .videos2{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 30.2%;
+        height: calc(100% - 97.4%);
+        left: 48.5%;
+    }
+
+    .videos1{
+        width: calc(100% - 85.1%);
+        position: absolute;
+        top: 53.42%;
+        opacity: 0.5;
+        height: calc(100% - 91%);
+        left: 57.8%;
+    }
+
+    .videos3{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 37.6%;
+        height: calc(100% - 97.4%);
+        left: 55.24%;
+    }
+
+    .representatives2{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 46.2%;
+        height: calc(100% - 97.4%);
+        left: 48.5%;
+    }
+
+    .representatives4{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 53.8%;
+        height: calc(100% - 97.4%);
+        left: 55%;
+    }
+
+    .representatives3{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 53.6%;
+        height: calc(100% - 97.4%);
+        left: 55.3%;
+    }
+
+    .representatives1{
+        width: calc(100% - 85.1%);
+        position: absolute;
+        top: 43.6%;
+        height: calc(100% - 97.4%);
+        left: 49.3%;
+    }
+
+    .brochures4{
+        width: calc(100% - 94.1%);
+        position: absolute;
+        top: 59.8%;
+        height: calc(100% - 76.4%);
+        left: 12%;
+    }
+
+    .brochures2{
+        width: calc(100% - 88.1%);
+        position: absolute;
+        top: 69.8%;
+        opacity: 0.5;
+        height: calc(100% - 96.4%);
+        left: 19%;
+    }
+
+    .brochures1{
+        width: calc(100% - 94.1%);
+        position: absolute;
+        top: 64.8%;
+        height: calc(100% - 81.4%);
+        left: 12%;
+    }
+
+    .brochures3{
+        width: calc(100% - 94.1%);
+    position: absolute;
+    top: 58.8%;
+    height: calc(100% - 77.4%);
+    right: 29%;
+    }
+
+    .ticker {
+        position: absolute;
+        overflow: hidden;
+        height: 56%;
+        width: 9%;
+        top: 15%;
+        right: 2%;
+        text-align: center;
+        z-index: 1;
+    }
+
+.ticker p {
+     -moz-transition:  opacity 1.5s ease-out; 
+       -o-transition: opacity 1.5s ease-out; 
+  -webkit-transition: opacity 1.5s ease-out; 
+      -ms-transition: opacity 1.5s ease-out; 
+    
+    -webkit-animation: moveSlideshow 15s linear infinite;
+    -moz-animation:    moveSlideshow 15s linear infinite;
+}
+
+@-webkit-keyframes moveSlideshow {
+    0% { margin-top: 0px; }
+    100% { margin-top: -400px; }
+}
+
+@-moz-keyframes moveSlideshow {
+    0% { margin-top: 0px; }
+    100% { margin-top: -400px; }
+}
+
+.company_logo2{
+    width: calc(100% - 90.2%);
+    position: absolute;
+    top: 13.6%;
+    /* height: calc(100% - 86%); */
+    left: 10.3%;
+}
+.company_logo3{
+    width: calc(100% - 95.2%);
+    position: absolute;
+    top: 9.6%;
+    /* height: calc(100% - 86%); */
+    left: 14.3%;
+}
+
+.stall_name2{
+    width: calc(100% - 40%);
+    /* background-color: #f00; */
+    position: absolute;
+    text-align: center;
+    top: 15.3%;
+    right: 15%;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 900;
+}
+
+.stall_name1{
+    width: calc(100% - 60%);
+    position: absolute;
+    text-align: center;
+    top: 20.3%;
+    right: 22%;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 900;
+}
+
+.stall_name3{
+    width: calc(100% - 58%);
+    /* background-color: #f00; */
+    position: absolute;
+    text-align: center;
+    top: 13.3%;
+    right: 20.6%;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 900;
+}
+
+.vertical_banner_left2{
+    width: calc(100% - 89.6%);
+    height: calc(100% - 72.5%);
+    position: absolute;
+    top: 27.6%;
+    left: 29.4%;
+}
+
+.vertical_banner_left1{
+    width: calc(100% - 90%);
+    height: calc(100% - 71%);
+    position: absolute;
+    top: 38.5%;
+    left: 20%;
+}
+
+.vertical_banner_left1_2{
+    width: calc(100% - 91.6%);
+    height: calc(100% - 77.5%);
+    position: absolute;
+    top: 23.6%;
+    left: 30.4%;
+}
+
+.horizontal_banner2{
+    width: calc(100% - 82%);
+    height: calc(100% - 85.9%);
+    position: absolute;
+    top: 30.3%;
+    left: 6.2%;
+}
+
+.vertical_banner_left3{
+    width: calc(100% - 89.6%);
+    height: calc(100% - 72.5%);
+    position: absolute;
+    top: 33.6%;
+    left: 19.4%;
+}
+
+.callback{
+    width: calc(100% - 84.9%);
+    height: calc(100% - 95.6%);
+    position: absolute;
+    top: 43.6%;
+    right: 27.2%;
+}
+
+.horizontal_banner3{
+    width: calc(100% - 82%);
+    height: calc(100% - 85.9%);
+    position: absolute;
+    top: 33.6%;
+    left: 32.2%;
+}
+
+.horizontal_banner1{
+    width: calc(100% - 79%);
+    height: calc(100% - 78.5%);
+    position: absolute;
+    top: 38.5%;
+    right: 46%;
+}
+
+@media only screen and (orientation: landscape) and (max-width: 990px) and (min-width: 800px)  {
+    .homeloan{
+        left:42% !important;
+        bottom: 5% !important;
+    }
+    .stall_name1{
+        font-size:11px;
+    }
+    .stall_name2{
+        font-size:11px;
+    }
+    .stall_name3{
+        font-size:11px;
+    }
+    .stall_name4{
+        font-size:11px;
+    }
+    .meetings{
+        right:40% !important;
+    }
+    .prev{
+        bottom: 5% !important;
+    }
+    .next{
+        bottom: 5% !important;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 799px) and (min-width: 320px)  {
+    .homeloan{
+        left:42% !important;
+        bottom: 5% !important;
+    }
+    .prev{
+        bottom: 5% !important;
+    }
+    .next{
+        bottom: 5% !important;
+    }
+    .stall_name1{
+        font-size:11px;
+    }
+    .stall_name2{
+        font-size:11px;
+    }
+    .stall_name3{
+        font-size:11px;
+    }
+    .stall_name4{
+        font-size:11px;
+    }
+    .meetings{
+        right:40% !important;
+    }
+}
+
+.modal-content {
+    background-color: #fb7815;
+}
+
+.modal-header .close{
+    color: #000 !important;
+    opacity: 0.8 !important;
+}
+.mymeetings{
+    animation: shadow-pulse 1s infinite;
+}
+@keyframes shadow-pulse
+{
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
+
+.meetings{
+    position: absolute;
+    top: 3%;
+    right: 30%;
+    z-index: 999;
+    background: #cf3303;
+    padding: 5px 13px;
+    font-weight: bold;
+}
+
+.homeloan{
+    position: absolute;
+    bottom: 10%;
+    left: 45%;
+    z-index: 999;
+    background: #cf3303;
+    padding: 5px 13px;
+    font-weight: bold;
+}
+
+.prev{
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    z-index: 999;
+    background: #cf3303;
+    padding: 5px 13px;
+    font-weight: bold;
+}
+
+.next{
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+    z-index: 999;
+    background: #cf3303;
+    padding: 5px 13px;
+    font-weight: bold;
+}
+
+.lg-container {
+      max-width: 100%;
+      position: relative;
+      padding: 0;
+    }
+    
+    .lg-image {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: scale-down;
+    }
+    .lg-hotspot {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    .lg-hotspot__button {
+        border: 3px solid #fff;
+        -webkit-border-radius: 30px;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        -webkit-animation: pulsate 1.5s ease-out;
+        -webkit-animation-iteration-count: infinite; 
+        cursor: pointer;
+        opacity: 0.0
+    
+    }
+    .lg-hotspot__button:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      content: "";
+      display: block;
+      height: 16.8px;
+      width: 16.8px;
+      border-radius: 100%;
+      border: 3px solid #fff;
+      background-color: #fff;
+      transition: border-color 1s linear;
+      cursor: pointer;
+    }
+    .lg-hotspot__label {
+      position: absolute;
+      padding: 0 0 1.1em 0;
+      width: 16em;
+      max-width: 50vw;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      font-family: "Open Sans", sans-serif;
+      font-size: 14.5px;
+      line-height: 1.45em;
+      z-index: -1;
+      pointer-events: none;
+      border-radius: 2px;
+      user-select: none;
+      opacity: 0;
+      transition: all 0.1s linear;
+    }
+    .lg-hotspot__label h4 {
+      margin: 0;
+      padding: 0.65em 24px;
+      background-color: #555;
+      font-size: 1.1em;
+      font-weight: normal;
+      letter-spacing: 0.02em;
+      color: white;
+      border-radius: 2px 2px 0 0;
+    }
+    .lg-hotspot__label p {
+      margin: 0;
+      padding: 1.1em 24px 0 24px;
+      color: #333;
+    }
+    
+    .lg-hotspot--top-left .lg-hotspot__label {
+      top: 24px;
+      left: 24px;
+    }
+    
+    .lg-hotspot--top-right .lg-hotspot__label {
+      top: 24px;
+      right: 24px;
+    }
+    
+    .lg-hotspot--bottom-right .lg-hotspot__label {
+      right: 24px;
+      bottom: 24px;
+    }
+    
+    .lg-hotspot--bottom-left .lg-hotspot__label {
+      bottom: 24px;
+      left: 24px;
+    }
+    
+    
+    @-webkit-keyframes pulsate {
+        0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+        50% {opacity: 1.0;}
+        100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+    }
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape) {
+      .lg-hotspot__button:after {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+          content: "";
+          display: block;
+          height: 6.8px;
+          width: 6.8px;
+          border-radius: 100%;
+          border: 3px solid #fff;
+          background-color: #fff;
+          transition: border-color 1s linear;
+          cursor: pointer;
+      }
+      .lg-hotspot__button {
+          border: 3px solid #fff;
+          -webkit-border-radius: 30px;
+          height: 20px;
+          width: 20px;
+          position: absolute;
+          -webkit-animation: pulsate 1.5s ease-out;
+          -webkit-animation-iteration-count: infinite;
+          cursor: pointer;
+          opacity: 0.0;
+      }
+    }
+
+    @-webkit-keyframes beat {
+        0% {-webkit-transform: scale(1, 1);}
+        50% {-webkit-transform: scale(0.9, 0.9);}
+        100% {-webkit-transform: scale(1, 1);}
+    }
+    .powered_by {
+        font-family: 'Poppins', sans-serif;
+        /* font-size: 150px; */
+        font-weight: 200;
+        /* transform: rotate(-5deg); */
+        background: linear-gradient(45deg, #fff 20%, #fff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 85px;
+        text-align: center;
+        /* padding: 40px 10px 95px; */
+        filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.5));
+        text-outline: 1px solid black;
+        -webkit-animation: beat 1.5s ease-out;
+            -webkit-animation-iteration-count: infinite;
+    }
+
+    .chatTimeOverMessage{
+        font-size: 22px;
+        margin:5% 20px;
+    }
+
+    @media screen and (max-width: 980px) and (orientation : landscape) {
+        .chatTimeOverMessage{
+            font-size: 18px;
+            margin:5% 20px;
+        }
+    }
+
+</style>
+
+<!-------------------------------------- Category 1 --------------------->
+<h1 style="display:none;" class="exhi_id">{{exhi_id}}</h1>
+<a ui-sref="pitcherlounge" class="mymeetings meetings">My Meetings</a>
+<!-- <a ui-sref="expo" style="position: absolute;top: 3%;right: 20%;z-index: 999;background: #cf3303;padding: 5px 13px;font-weight: bold;">Exhibition Hall</a> -->
+<!-- <a class="prev" ng-if = "previous != 'No Record Found'" href="https://rth.proptiger.com/event/#!/expomain2/{{previous}}">Previous</a> -->
+<a style="position: absolute;top: 3%;right: 20%;z-index: 999;background: #cf3303;padding: 5px 13px;font-weight: bold;" ui-sref="stage({id: access_category_id})">Webinars</a>
+
+<a ui-sref="expomain2({id: 109})" class="mymeetings homeloan">Home Loan Support</a>
+<!-- <a class="next" ng-if = "next != 'No Record Found'" href="https://rth.proptiger.com/event/#!/expomain2/{{next}}">Next</a> -->
+<a class="next" ng-click = "goBack()">Back</a>
+<!-- <a ng-if = "next == 'No Record Found'" href="https://rth.proptiger.com/event/#!/expomain2/18" style="position: absolute;bottom: 10%;right: 20%;z-index: 999;background: #cf3303;padding: 5px 13px;font-weight: bold;">Next</a> -->
+<div class="individual_slug">
+    <div class="expo_slide_image">
+        <img src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/booth2+(1).jpg" class="img-fluid">
+    </div>
+    <div class="ticker" ng-if="products != 'No Record Found'">
+        <p>
+          <a ng-repeat="product in products" ng-click="imagepop(product.file_link)" ng-if="product.file_link != null"><img src="{{product.file_link}}" style="width: 100%;height:100%;"></a>    
+        </p>
+    </div>
+
+    <div style="top: 39%; left: 56%;" class="lg-hotspot lg-hotspot--bottom-right" alt="">
+        <div class="lg-hotspot__button"></div>
+    </div>
+
+    <div class="expo_assets">
+            <div class="stall_name1">{{company_name}}</div>
+            <a data-toggle="modal" data-target="#videoModal"><div class="videos1"></div></a>
+                <a ng-click="expolist()">    
+                    <div class="chat_with_us1"></div>   
+                </a> 
+
+                <!-- <a ng-click="expolist()">    
+                    <div class="chat_with_us1"></div>   
+                </a> -->
+                
+                
+                <a ng-click="scheduleCallback()"><div class="callback"></div></a>    
+                <!-- <a data-toggle="modal" data-target="#representativesModal" ng-click="videolist()"><div class="representatives1"></div></a> -->
+                <a data-toggle="modal" data-target="#brochuresModal"><div class="brochures1"></div></a>
+                <a data-toggle="modal" data-target="#brochuresModal"><div class="brochures2"></div></a>
+                <a data-toggle="modal" data-target="#jitsiModal" ng-click="jitsiModal()"><div class="jitsi_meet1 jitsi_meet"></div></a>
+                <div class="company_logo1" ng-if="company_banners != null" ng-click="imagepop(company_banners)"><a><img style="height: 100% !important;width:100%;" src="{{company_banners}}" class="img-fluid"></a></div>    
+                <div class="vertical_banner_left1" ng-if="thumbnailBannerImage != null" ng-click="imagepop(thumbnailBannerImage)"><a><img style="height: 100% !important;" src="{{thumbnailBannerImage}}" class="img-fluid"></a></div>
+                <!-- <div class="vertical_banner_left1_2" ng-if="company_banners_v != null"><a href="{{company_banners_v}}" target="_blank"><img style="height: 100% !important;" src="{{company_banners_v}}" class="img-fluid"></a></div> -->
+                <div class="horizontal_banner1" ng-if="secondBannerImage != null" ng-click="imagepop(secondBannerImage)"><a><img src="{{secondBannerImage}}" style="height: 100%;" class="img-fluid"></a></div>
+                <div class="social_div" style="position: absolute;bottom:45%;right:36%;float:left;width: 15%;">
+                    <a ng-if="insta_link != null" ng-click="instaClick()" href="{{insta_link}}" target="_blank">
+                        <img style="max-width: 13%;" src="images/Layer-1.png">
+                    </a>
+                    <a ng-if="linkd_link != null" ng-click="linkedinClick()" href="{{linkd_link}}" target="_blank">
+                        <img style="max-width: 13%;" src="images/Layer-2.png">
+                    </a>
+                    <a ng-if="twitter_link != null" ng-click="twitterClick()" href="{{twitter_link}}" target="_blank">
+                        <img style="max-width: 13%;" src="images/Layer-3.png">
+                    </a>
+                    <a ng-if="fb_link != null" ng-click="fbClick()" href="{{fb_link}}" target="_blank">
+                        <img style="max-width: 13%;" src="images/Layer-4.png">
+                    </a>
+                    <a ng-if="website != null" ng-click="websiteClick()" href="{{website}}" target="_blank">
+                        <img style="max-width: 13%;" src="images/Layer-5.png">
+                    </a>  
+                </div> 
+    <!-- <span style="position: absolute;bottom: 2%;right: 5%;font-size: 20px;" class="powered_by"><a href="https://almondvirtex.com/" target="_blank" style="color: #fff;font-weight: bold;">Powered by Almond Virtex</a></span> -->
+
+    </div>
+</div>
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" > 
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Videos</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div> 
+        <div class="modal-body" id="" style="padding: 0px !important;width: 101.3% !important;overflow:auto !important;height: auto !important;min-height: 40vh !important;overflow: scroll;">
+            <ul class="list-group list-group-flush" style="width: 80%;position: absolute;top: 20px;">
+                <span ng-repeat = "video in videos"><a ng-click="videolist(video.video_link)" style="color:#000"><li class="list-group-item" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold;">{{video.title}}</li></a></span>                    
+                <li ng-if="videos == 'No Record Found'" class="list-group-item" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold;">No Videos Found</li>
+            </ul>
+        </div>
+      </div>
+    </div> 
+</div>
+
+<div class="modal fade" id="brochuresModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" > 
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Brochures</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div> 
+        <div class="modal-body" id="" style="padding: 0px !important;width: 101.3% !important;overflow:auto !important;height: auto !important;min-height: 40vh !important;overflow: scroll;">
+            <ul class="list-group list-group-flush" style="width: 80%;position: absolute;top: 20px;">
+                <span ng-repeat = "brochure in brochures"><a style="color:#000;"><li class="list-group-item" ng-click="brochuress(brochure.link)" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold;">{{brochure.title}}</li></a></span>                    
+                <li ng-if="brochures == 'No Record Found'" class="list-group-item" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold;">No Brochures Found</li>
+            </ul>
+        </div>
+      </div>
+    </div> 
+</div>
+
+<div class="modal fade" id="representativesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" > 
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Representatives</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div> 
+        <div class="modal-body" id="" style="padding: 0px !important;width: 101.3% !important;overflow:auto !important;height: auto !important;min-height: 40vh !important;overflow: scroll;">
+            <ul class="list-group list-group-flush" style="width: 80%;position: absolute;top: 20px;">
+                <span ng-repeat = "rep in exhiRepresentatives"><li class="list-group-item" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold;">{{rep.name}}<a target="_blank" ng-click="repClick()" href="https://api.whatsapp.com/send?phone=91{{rep.number}}" style="color:#000;float:right">{{rep.number}}<i class="fab fa-whatsapp" style="margin-left: 10px;"></i></a></li></span>                    
+                <li ng-if="exhiRepresentatives == 'No Record Found'" class="list-group-item" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold;">No Representatives Found</li>
+            </ul>
+        </div>
+      </div>
+    </div> 
+</div>
+
+<div class="modal fade" id="jitsiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: 48% !important;height: 80% !important;margin:0px auto !important;">
+      <div class="modal-content">
+        <div class="modal-body" id="jitsiContainer2" style="padding:0px !important;width:101.3% !important;">
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="chatTimeOverModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: 48% !important;height: 80% !important;margin:0px auto !important;">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        </div>              
+        <div class="modal-body" style="padding:0px !important;width:101.3% !important;text-align: center;color: #fff;overflow: hidden;">
+            <p class="chatTimeOverMessage">Our chat feature is operational from 10:00 am to 7:30 pm. You can click on below <strong style="font-weight: 900;">Whatsapp Number</strong> to speak to our Property Expert, who will assist you end to end in your queries.</p>
+            <ul class="list-group list-group-flush" style="width: 50%; position: relative;top: 20px; margin: 0 auto;">
+                <span ng-repeat = "rep in exhiRepresentatives"><li class="list-group-item" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold; text-align: center;">{{rep.name}}<a target="_blank" ng-click="repClick()" href="https://api.whatsapp.com/send?phone=91{{rep.number}}" style="color:#000;float:right"><i class="fab fa-whatsapp" style="margin-left: 10px; color: #62C450;font-size: 18px;"></i>&nbsp;&nbsp;{{rep.number}}</a></li></span>                    
+                <li ng-if="exhiRepresentatives == 'No Record Found'" class="list-group-item" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold; text-align: center">No Representatives Found</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" data-dismiss="modal" style="max-width: 45% !important;">
+      <div class="modal-content">    
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        </div>            
+        <div class="modal-body">
+            <div class="vertical-banner-modal">
+                    <img src="" class="imagepreview" style="width: 100%; height: inherit;" >      
+            </div>
+        </div> 
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="documentmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" data-dismiss="modal" style="max-width: 50% !important;">
+      <div class="modal-content">    
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        </div>            
+        <div class="modal-body" style="height: 70vh !important;">
+          <iframe class="document_preview" src=""></iframe>
+        </div> 
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="videomodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" data-dismiss="modal" style="max-width: 48% !important;">
+      <div class="modal-content">    
+        <div class="modal-header">
+            <button type="button" class="close close_video_modal" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+        </div>            
+        <div class="modal-body" style="height: 60vh !important;">
+          <iframe class="video_preview" src="https://www.youtube.com/embed/AziQcH-Ycbg" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <!-- <video src="" class="video_preview"></video> -->
+        </div> 
+      </div>
+    </div>
+</div>
+

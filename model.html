@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <script src="https://avayaapis.virtex.in/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Manage Model</h1>
+    <!--   <textarea name="emails" placeholder="Enter Emails to Show Popup in comma seprate" id="email"></textarea>
+    <textarea name="popdata" placeholder="Enter Popup Data" id="popdata"></textarea> -->
+    <!--  <button onclick="showmodel()">Show Model</button>
+    <button onclick="closemodel()">Close Model</button> -->
+    <button onclick="startconcert()">Start Concert</button>
+    <button onclick="stopconcert()">Stop Concert</button>
+    <button onclick="resetconcert()">Reset Concert</button>
+    <!-- <button onclick="unmutevideo()">Un Mute Video</button> -->
+    <div class="showquestion_answer ">
+        <form>
+            <button class="btn btn-success add-more after-add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+            <!-- Copy Fields -->
+            <div class="copy hide">
+                <div class="control-group input-group" style="margin-top:10px">
+                    <input type="text" name="data[0][question]" class="form-control" placeholder="Enter Question Here">
+                    <div><input type="text" name="data[0][option_first]" value="">Option First</div>
+                    <div><input type="text" name="data[0][option_second]" value=""> Option Second</div>
+                    <div><input type="text" name="data[0][option_third]" value=""> Option Third</div>
+                    <div><input type="text" name="data[0][option_fourth]" value=""> Option Fourth</div>
+                    <div><select name="data[0][correct_answer]">
+                            <option value="0">First</option>
+                            <option value="1">Second</option>
+                            <option value="2">Third</option>
+                            <option value="3">Fourth</option>
+                        </select></div>
+                    <div class="input-group-btn">
+                        <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br><br>
+    <button onclick="pushquestion()">Push Questions</button><br><br>
+    <button onclick="closemodelqns()">Close Push Questions Model</button>
+    <input type="text" name="seekvideo" id="seedvideo">
+    <button onclick="seekvideo()">Seek Video Second</button>
+    <script>
+    var socket = io.connect('https://avayaapis.virtex.in');
+    socket.on('connect', function() {
+
+        console.log('connected');
+
+
+    });
+
+
+
+    function pushquestion() {
+
+        var formdata = $('form').serializeArray();
+        var userdata = [];
+        console.log(formdata);
+        var j = 0;
+        var t = 0;
+
+        for (var i = 0; i < formdata.length; i++) {
+
+            if (j > 5) {
+                j = 0;
+                t += 1;
+            }
+
+            console.log(typeof userdata[t]);
+
+            if (typeof userdata[t] == 'undefined') {
+                console.log('matched');
+                userdata[t] = {};
+            }
+            if (j == 0) {
+                console.log(userdata[t]);
+                userdata[t]['question'] = formdata[i]['value'];
+
+            } else if (j == 1) {
+
+                userdata[t]['first_option'] = formdata[i]['value'];
+
+            } else if (j == 2) {
+
+                userdata[t]['second_option'] = formdata[i]['value'];
+
+            } else if (j == 3) {
+
+                userdata[t]['third_option'] = formdata[i]['value'];
+
+            } else if (j == 4) {
+
+                userdata[t]['fourth_option'] = formdata[i]['value'];
+
+            } else if (j == 5) {
+
+                userdata[t]['answer'] = formdata[i]['value'];
+
+            }
+            console.log(userdata);
+
+            j++;
+        }
+        console.log('userdata', userdata);
+
+        socket.emit('showquestionsanswer', userdata);
+
+        // $('.showquestion_answer').show();
+
+    }
+
+    $(document).ready(function() {
+
+        $(".add-more").click(function() {
+            var total_length = $(".control-group").length;
+            var html = '<div class="copy hide"><div class="control-group input-group" style="margin-top:10px"><input type="text" name="data[' + total_length + '][question]" class="form-control" placeholder="Enter Question Here"><div><input type="text" name="data[' + total_length + '][option_first]" value="">Option First</div><div><input type="text" name="data[' + total_length + '][option_second]" value=""> Option Second</div><div><input type="text" name="data[' + total_length + '][option_third]" value=""> Option Third</div><div><input type="text" name="data[' + total_length + '][option_fourth]" value=""> Option Fourth</div><div><select name="data[' + total_length + '][correct_answer]"><option value="0">First</option><option value="1">Second</option><option value="2">Third</option><option value="3">Fourth</option></select></div><div class="input-group-btn"><button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button></div></div></div>';
+            $(".after-add-more").after(html);
+        });
+
+
+        $("body").on("click", ".remove", function() {
+            $(this).parents(".control-group").remove();
+        });
+
+    });
+
+    function showmodel() {
+        var emails = $("#email").val();
+        var popdata = $("#popdata").val();
+        socket.emit('showfrontmodel', { 'emails': emails.toLowerCase(), 'popdata': popdata });
+    }
+
+    function startconcert() {
+        socket.emit('startconcertredis');
+    }
+
+    function resetconcert() {
+        socket.emit('resetconcert');
+    }
+
+
+    function stopconcert() {
+        socket.emit('stopconcertredis');
+    }
+
+    function closemodel() {
+        socket.emit('closefrontmodel');
+    }
+
+
+    function closemodelqns() {
+        socket.emit('closemodelqns');
+    }
+
+    function unmutevideo() {
+        socket.emit('playuservideo');
+    }
+
+    function seekvideo() {
+
+        var seedvideo = $("#seedvideo").val();
+        console.log(seedvideo);
+        socket.emit('changeuserduration', seedvideo);
+
+    }
+    </script>
+</body>
+
+</html>

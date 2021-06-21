@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hopin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="hopin">
+    <div class="wrapper d-flex align-items-stretch">
+        <button id="sidebar-down" onclick="down()"><i class="fas fa-arrow-circle-down"></i></button>
+        <button id="sidebar-up" onclick="up()"><i class="fas fa-arrow-circle-up"></i></button>
+        <nav id="sidebar" class="order-last">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                </button>
+            </div>
+            <div id="sidebar-icons">
+                <ul style="list-style: none;">
+                    <li>
+                        <a href="#" style="text-decoration: none;" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">
+                            <span id="username-box-side"><span style="line-height:1.7;">BK</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">
+                            <i style="padding-top: 25px; margin-left: 40%;" class="fas fa-chevron-down"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">
+                            <i style="padding: 25px; margin-left: 5%;" class="fas fa-bell"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="link-style3" onclick="view8()" href="#">
+                            <div class="box-side-icons">
+                                <i style="padding: 20px;" class="fas fa-comment-alt"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="link-style4" onclick="view9()" href="#">
+                            <div class="box-side-icons">
+                                <i style="padding: 20px;" class="fas fa-signal"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="link-style5" onclick="view10()" href="#">
+                            <div class="box-side-icons">
+                                <i style="padding: 20px;" class="fas fa-user-friends"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="">
+                <div id="top-bar">
+                    <div id="circle">
+                        <i style="color: rgb(50, 253, 43); font-size: 10px;" class="fas fa-circle"></i>
+                        <span style="color: rgb(115, 115, 115); font-size: 15px; font-weight: 400;margin-left: 4%;"> 1</span>
+                    </div>
+                    <div id="not">
+                        <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content"><i style="color: rgb(115, 115, 115); font-size: 18px;margin-left: 10px;" class="fas fa-bell"></i></a>
+                        <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content"><i style="color: rgb(115, 115, 115); font-size: 18px; margin-left: 10px;" class="far fa-envelope"></i></a>
+                        <a href="#" style="text-decoration: none;" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content"><span id="username-box"><span style="line-height:1.7;">BK</span></span></a>
+                        <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content"><i style="color: rgb(115, 115, 115); font-size: 18px; margin-left: 30%;" class="fas fa-chevron-down"></i></a>
+                    </div>
+                </div>
+                <div id="buttons-sidebar">
+                    <ul id="side-menu" style="list-style: none;">
+                        <li class="list-style2">
+                            <a onclick="view5()" class="link-style2" href="">
+                                <div id="chat-container1">
+                                    <span class="buttons-text">Chat</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-style2">
+                            <a onclick="view6()" class="link-style2" href="">
+                                <div id="chat-container2">
+                                    <span class="buttons-text">Polls</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-style2">
+                            <a onclick="view7()" class="link-style2" href="">
+                                <div id="chat-container3">
+                                    <span class="buttons-text">People</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="chat">
+                    <div id="chat-container">
+                        <div class="chat-box" style="background-color:#e2ebff;">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <a href="#"><span class="chat-desig">Organiser</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-img">
+                                <img class="chat-img-1" src="images/img2.jpg" alt="Avatar">
+                            </div>
+                            <div class="chat-text">
+                                <a href="#"><span class="chat-name">Maria Olive</span></a>
+                                <span class="chat-time">11:00</span>
+                                <div class="chat-para">
+                                    <p style="color:black;">Welcome everyone - the session starts in 5 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="chat-msg">
+                        <i id="input-icon" class="fas fa-paper-plane"></i>
+                        <input style="border: none;outline-style: none;" class="chat-input" id="chat-input-text" type="text" placeholder="Start Typing...">
+                    </div>
+                </div>
+                <div id="polls">
+                    <div class="switch-button"><span class="active"></span>
+                        <button class="switch-button-case left active-case" onclick="view14()">People</button>
+                        <button class="switch-button-case right" onclick="view15()">Messages</button>
+                    </div>
+                    <div id="polls-text">
+                        <h3 style="color: black; font-size: 18px; line-height: 6;">No Polls yet</h3>
+                        <p style="color: black; font-size: 18px;">You can see the polls here when your organiser adds one.</p>
+                    </div>
+                    <div id="polls-text2">
+                        <h3 style="color: black; font-size: 18px; line-height: 6;">No Messages yet</h3>
+                        <p style="color: black; font-size: 18px;">You can see the polls-messages here when your organiser adds one.</p>
+                    </div>
+                </div>
+                <div id="people">
+                    <div class="switch-button2"><span class="active2"></span>
+                        <button class="switch-button-case2 left active-case2" onclick="view12()">People</button>
+                        <button class="switch-button-case2 right" onclick="view13()">Messages</button>
+                    </div>
+                    <div id="search-bar-2">
+                        <input id="input-search-2" type="text" placeholder="Search Contact">
+                        <span id="filter-icon"><i class="fas fa-filter"></i></span>
+                    </div>
+                    <div id="people-text">
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                        <div class="people-data">
+                            <img class="people-img" src="images/img2.jpg" alt="Avatar">
+                            <span class="people-name">Ajish Paul</span>
+                        </div>
+                    </div>
+                    <div id="people-text2">
+                        <div id="people-data2">
+                            <h3>No Direct Messages Yet</h3>
+                            <p>You can see your direct messages here when you receive one.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div id="navbar">
+                <div id="logo-1">
+                    <img id="img-1" src="images/logo.png">
+                </div>
+                <ul id="nav-menu">
+                    <li class="list-style active">
+                        <a onclick="view()" class="link-style" href="#">
+                            <span class="icon-style"><i class="fas fa-home" aria-hidden="true"></i></span><br>
+                            <span class="text-style">Reception</span>
+                        </a>
+                    </li>
+                    <li class="list-style">
+                        <a onclick="view1()" class="link-style" href="#">
+                            <span class="icon-style"><i class="fa fa-video-camera" aria-hidden="true"></i></span><br>
+                            <span class="text-style">Stage</span>
+                        </a>
+                    </li>
+                    <li class="list-style">
+                        <a onclick="view2()" class="link-style" href="#">
+                            <span class="icon-style"><i class="fas fa-users" aria-hidden="true"></i></span><br>
+                            <span class="text-style">Sessions</span>
+                        </a>
+                    </li>
+                    <li class="list-style">
+                        <a onclick="view3()" class="link-style" href="#">
+                            <span class="icon-style"><i class="fas fa-handshake" aria-hidden="true"></i></span><br>
+                            <span class="text-style">Networking</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- container 1 -->
+            <div id="container1">
+                <div id="header-31">
+                    <div class="header-text21">
+                        <div id="logo-31">
+                            <img id="img-41" src="images/logo.png">
+                        </div>
+                        <div id="header-para-main1">
+                            <p id="para-header1">Almond<span id="para-header21">Hosted by Almond</span></p>
+                        </div>
+                    </div>
+                    <div id="time21">
+                        <p class="pt1">Time Left</p>
+                        <p class="pt2">1h:2m</p>
+                        <div class="progress" style="height: 4px;">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-banner">
+                    <img id="img-2" src="images/img1.jpg">
+                </div>
+                <div class="header-text">
+                    <div id="logo-2">
+                        <img id="img-3" src="images/logo.png">
+                    </div>
+                    <div id="header-para-main">
+                        <p id="para-header">Almond<span id="para-header2">Hosted by Almond</span></p>
+                    </div>
+                </div>
+                <div id="time1">
+                    <p class="pt1">Time Left</p>
+                    <p class="pt2">1h:2m</p>
+                    <div class="progress" style="height: 4px;">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                <div class="header-text-2">
+                    <p id="para-header3">What's happening now</p>
+                    <div id="black-box">
+                        <img id="b-img" src="images/happening-now-session.png">
+                        <button id="btn1">Go to Stage</button>
+                    </div>
+                </div>
+                <br class="br-1">
+                <div id="content1">
+                    <div id="content-d-1">
+                        <p id="content-para-1">Description</p>
+                        <p>Welcome! We are glad you are here. If this is your first joining, please say hello in the chat --></p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam natus voluptate rerum molestiae maiores, illum molestias, eaque deleniti temporibus odit reprehenderit assumenda pariatur consequuntur, consequatur quis ullam id doloremque similique.</p>
+                    </div>
+                </div>
+                <br class="br-1"><br class="br-1">
+                <div id="support">
+                    <h3>Proudly Supported By</h3>
+                    <br>
+                    <div id="box2">
+                        <a href="#">
+                            <img id="img3" src="images/aws.png">
+                        </a>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+            <!-- container 2  -->
+            <div id="container2">
+                <div id="header-3">
+                    <div class="header-text2">
+                        <div id="logo-3">
+                            <img id="img-4" src="images/logo.png">
+                        </div>
+                        <div id="header-para-main">
+                            <p id="para-header">Almond<span id="para-header2">Hosted by Almond</span></p>
+                        </div>
+                    </div>
+                    <div id="time2">
+                        <p class="pt1">Time Left</p>
+                        <p class="pt2">1h:2m</p>
+                        <div class="progress" style="height: 4px;">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="banner-para">
+                    <p id="banner-text1">Welcome & Overview</p>
+                    <p id="banner-text2">Stream Starting Now</p>
+                    <p id="banner-text3">01 June, 3:30</p>
+                </div>
+            </div>
+            <!-- container 3  -->
+            <div id="container3">
+                <div id="header-32">
+                    <div class="header-text2">
+                        <div id="logo-3">
+                            <img id="img-4" src="images/logo.png">
+                        </div>
+                        <div id="header-para-main">
+                            <p id="para-header">Almond<span id="para-header2">Hosted by Almond</span></p>
+                        </div>
+                    </div>
+                    <div id="time2">
+                        <p class="pt1">Time Left</p>
+                        <p class="pt2">1h:2m</p>
+                        <div class="progress" style="height: 4px;">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="search-bar">
+                    <input id="input-search" type="text" placeholder="Search">
+                    <button id="add-session" type="button">+ Add Session</button>
+                </div>
+                <br>
+                <div class="session-box1">
+                    <img class="img5" src="images/guitar.jpg">
+                    <div class="session-text">
+                        <h4 class="heading-session4">Feel the Music with Mandy Harvey</h4>
+                        <p class="session-para">Learn to feel the music with Mandy Harvey, America’s Got Talent finalist, award winning singer, songwriter, and motivational speaker.</p>
+                        <div class="view-main">
+                            <span class="views"><i class="fas fa-eye"> 23</i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="session-box2">
+                    <img class="img5" src="images/guitar.jpg">
+                    <div class="session-text">
+                        <h4 class="heading-session4">Feel the Music with Mandy Harvey</h4>
+                        <p class="session-para">Learn to feel the music with Mandy Harvey, America’s Got Talent finalist, award winning singer, songwriter, and motivational speaker.</p>
+                        <div class="view-main">
+                            <span class="views2"><i class="fas fa-eye"> 23</i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="session-box3">
+                    <img class="img5" src="images/guitar.jpg">
+                    <div class="session-text">
+                        <h4 class="heading-session4">Feel the Music with Mandy Harvey</h4>
+                        <p class="session-para">Learn to feel the music with Mandy Harvey, America’s Got Talent finalist, award winning singer, songwriter, and motivational speaker.</p>
+                        <div class="view-main">
+                            <span class="views"><i class="fas fa-eye"> 23</i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="session-box4">
+                    <img class="img5" src="images/guitar.jpg">
+                    <div class="session-text">
+                        <h4 class="heading-session4">Feel the Music with Mandy Harvey</h4>
+                        <p class="session-para">Learn to feel the music with Mandy Harvey, America’s Got Talent finalist, award winning singer, songwriter, and motivational speaker.</p>
+                        <div class="view-main">
+                            <span class="views2"><i class="fas fa-eye"> 23</i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="session-box5">
+                    <img class="img5" src="images/guitar.jpg">
+                    <div class="session-text">
+                        <h4 class="heading-session4">Feel the Music with Mandy Harvey</h4>
+                        <p class="session-para">Learn to feel the music with Mandy Harvey, America’s Got Talent finalist, award winning singer, songwriter, and motivational speaker.</p>
+                        <div class="view-main">
+                            <span class="views2"><i class="fas fa-eye"> 23</i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- container - 4 -->
+            <div id="container4">
+                <div id="header-3">
+                    <div class="header-text2">
+                        <div id="logo-3">
+                            <img id="img-4" src="images/logo.png">
+                        </div>
+                        <div id="header-para-main">
+                            <p id="para-header">Almond<span id="para-header2">Hosted by Almond</span></p>
+                        </div>
+                    </div>
+                    <div id="time2">
+                        <p class="pt1">Time Left</p>
+                        <p class="pt2">1h:2m</p>
+                        <div class="progress" style="height: 4px;">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="banner-para">
+                    <p id="banner-text1">Are You Ready ?</p>
+                    <p id="banner-text2">Click The Button Below To Meet Someone</p>
+                    <button id="btn4">Ready</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

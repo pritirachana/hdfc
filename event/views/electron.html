@@ -1,0 +1,114 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+    }
+    
+    table{
+        width:50% !important;
+    }
+    .stage-player{
+        position: absolute;
+        top: 16.6%;
+        left: 20.1%;
+        width: 59.8%;
+        height: 41.3%;
+    }
+    .live-image{
+        width: 20vh;
+    }
+
+    #name-left{
+        background-color: #8ed59d !important;
+    }
+
+    #left{
+            margin-left: 2vh;
+        }
+
+    iframe{
+        width:100% !important;
+        height:100% !important;
+    }    
+
+    @media only screen 
+        and (min-device-width : 320px) 
+        and (max-device-width : 1024px) 
+        and (orientation : landscape) {
+            .footer{
+            margin-top: 0vh;
+        }
+        td, th {
+            padding: 5px;
+            /* border: 1px solid #979797; */
+            text-align: left;
+            font-size: 12px;
+            text-align: center !important;
+            vertical-align: middle;
+        }
+        .leader-name {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 2vh;
+            font-size: 12px;
+        }
+    }
+    
+
+</style>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <div class="content-wrapper new-class" style="position: relative;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 ">
+                        <img class="rwdimgmap" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/ELECTRON-STAGE+(1).jpg" usemap="#powerpuffgirls" alt="" />
+                        <div class="table_div" style="width: 100%;position: absolute;overflow: scroll;height: 60vh;top: 20%;z-index: 999999999;">    
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="border:none;" id="name-left">Session Name</th>
+                                        <th style="border:none;" id="name-left" style="text-align: right !important;"></th>
+                                    </tr>
+                                </thead>
+                                    <tbody>
+                                        <tr ng-repeat="sessions in allsessions" ng-if="allsessions.length != 0">
+                                            <td  data-column="Name">
+                                            
+                                                <div class="leader-name">
+                                                    <div class="leader-name-txt">
+                                                        {{sessions.session_title}}
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td style="cursor: pointer;text-align: right !important;width:16%;">
+                                                <a ng-if="!previous_recording" ng-click="currentSession(sessions)">
+                                                    <img class="live-image" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/Group-1-copy.png">
+                                                </a>
+                                                <div ng-if="previous_recording" >
+                                                    <a href="{{sessions.replay_link}}" ng-if="sessions.replay_link">
+                                                        <img class="live-image" src="https://iisfvirtual.in/images/replay.png">
+                                                    </a>
+                                                    <span ng-if="!sessions.replay_link">Video On Demand is under processing. Please check after some time. Thank you</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr ng-if="allsessions.length == 0">
+                                            <td colspan="3">                            
+                                                <div class="leader-name">
+                                                    <div class="leader-name-txt">
+                                                    <span ng-if="currentMessage">{{currentMessage}}</span>
+                                                    <span ng-if="!currentMessage">No Sessions Running</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                        </div>
+                        <div class="stage-player">
+                            <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ytb17ut0zdI?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>    

@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.login{
+    background-image: url(https://d3daqnblwo9fae.cloudfront.net/background-login-d.png);
+    /* background-image: url(images/index-bg.jpg); */
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    height: auto;
+}
+p{
+    color: white;
+    margin-top: 1.5%;
+    font-size: 15px;
+    margin-right: 0%;
+}
+.container-fluid{
+    padding-top: 26%;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+button{
+    border: none;
+    outline: none;
+    background-color: #56607E;
+    color: white;
+    font-size: 20px;
+    padding: 1.5vh 10vh;
+    border-radius: 8px;
+    margin-top: 3%;
+    margin-right: 0%;
+}
+.login-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 2.5%;
+}
+.col-12,.col-md-7,.col-md-12{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+
+}
+input{
+    background-color: #F1F5F7;
+    color: #464c5c;
+    padding: 1vh;
+    width: 50%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 1vh;
+    margin-right: 0%;
+}
+input::placeholder{
+    color: #464c5c;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+.mobile{
+    display: none;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+    .login{
+        background-image: url(../images/background-login-m.png);
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        height: auto;
+        /* overflow: hidden; */
+    }
+    .mobile{
+        display: block;
+    }
+    .img-fluid{
+        max-width: 80%;
+    }
+    .login-input{
+        margin-left: 0%;
+    }
+    input{
+        background-color: #F1F5F7;
+        color: #464c5c;
+        padding: 1vh;
+        width: 80%;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        font-size: 18px;
+        padding: 1vh;
+        margin-right: 0%;
+    }
+    .container-fluid{
+        padding-top: 60%;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    button {
+        border: none;
+        outline: none;
+        background-color: #56607E;
+        color: white;
+        font-size: 14px;
+        padding: 1.5vh 10vh;
+        border-radius: 8px;
+        margin-top: 3%;
+        margin-right: 0%;
+    }
+    p {
+        color: white;
+        margin-top: 1.5%;
+        font-size: 12px;
+        margin-right: 0%;
+    }
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+    .login-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-left: 2.5%;
+    }
+    input {
+        margin-right: 42%;
+        border-radius: 7px;
+        font-size: 18px;
+    }
+    button {
+        margin-right: 42%;
+    }
+    p{
+        margin-right: 42%;
+    }
+    .container-fluid{
+        padding-top: 30%;
+    }
+}

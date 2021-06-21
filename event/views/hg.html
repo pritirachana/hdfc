@@ -1,0 +1,243 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    area{
+        border: none;
+        outline: none;
+    }
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    .expo-header{
+    background-color: #4a2d16;
+}
+.modal-title{
+  display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.modal-title img{
+  max-width: 15%;
+  margin-left: 2vh;
+  margin-right: 2vh;
+
+}
+.expo-header p{
+  color: white;
+    margin: auto;
+    margin-left: 6%;
+}
+    </style>
+    <div ng-hide="showvideo" style="position: relative;">
+        <img class="rwdimgmap img-fluid" src="https://d3daqnblwo9fae.cloudfront.net/HG.jpg" usemap="#powerpuffgirlsnew" alt="" />
+        <map name="powerpuffgirlsnew">
+            <area target="" alt="Chat" title="Chat" data-toggle="modal" data-target="#exampleModal6" coords="53,109,53,204,469,211,473,116" shape="poly">
+            <area target="" alt="Video Conf" data-toggle="modal" data-target="#exampleModal6" data-target="#chatModal" coords="53,241,51,331,462,331,464,238" shape="poly">
+            <area target="" alt="Videos" title="Videos" ng-click="videotracking()" data-toggle="modal" data-target="#videosModal" coords="56,361,56,456,464,461,473,359" shape="poly">
+            <area target="" alt="Brochures" title="Brochures" ng-click="brochuretracking()" data-toggle="modal" data-target="#brochureModal" coords="51,486,53,586,462,590,476,495" shape="poly">
+            <area target="" alt="Games" title="Games" ng-click="gametracking()"  data-toggle="modal" data-target="#gameModal2" coords="2113,173,2110,263,2530,266,2528,168" shape="poly">
+            <area target="" alt="Link" title="Link" data-toggle="modal" data-target="#linksModal" coords="2110,293,2113,397,2528,400,2523,300" shape="poly">
+            <area target="" alt="FAQ" title="FAQ" data-toggle="modal" data-target="#faqModal" coords="2110,418,2110,513,2519,520,2526,420" shape="poly">
+            <!-- <area target="blank" alt="brochure1" title="brochure1" href="images/docs/1. IFCAI/IBS AACSB Accr Ad.pdf" coords="201,713,196,790,432,795,408,711" shape="poly">
+            <area target="blank" alt="brochure2" title="brochure2" href="images/docs/1. IFCAI/IBS Case Studies brochure.pdf" coords="201,822,190,897,426,901,432,820" shape="poly">
+            <area target="blank" alt="brochure3" title="brochure3" href="images/docs/1. IFCAI/IBSAT 2 folder 2021 - updated.pdf" coords="630,929,635,1040,957,1044,952,924" shape="poly">
+            <area target="blank" alt="brochure4" title="brochure4" href="images/docs/1. IFCAI/IBSAT-flyer2021 - updated.pdf" coords="2174,713,2174,808,2401,801,2403,697" shape="poly">
+            <area target="blank" alt="brochure5" title="brochure5" href="images/docs/1. IFCAI/Icfai Group Profile Flyer 2020.pdf" coords="2178,820,2181,904,2412,901,2390,815" shape="poly">
+            <area target="" alt="video" title="video"  ng-click="myTrigger('video')" coords="1509,819,1502,919,1806,933,1806,817" shape="poly"> -->
+            
+        </map>
+        <div class="back-button">
+            <button ui-sref="expo" class="back-btn"><i class="fas fa-arrow-circle-left"></i> &nbsp;<span>Back</span></button>
+        </div>
+        <div class="expo-msg-box">
+            <p>{{booth_message}}</p>
+         </div>
+    </div>
+    <div class="lightbox" ng-if="popupvideo" id="lightbox-1">
+        <div class="video-pop-box">
+        <iframe src="https://www.youtube.com/embed/znUidlaqK-I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+    </div>
+    </div>
+    <div class="lightbox" ng-if="popupvideo2" id="lightbox-1">
+        <div class="video-pop-box">
+        <iframe src="https://www.youtube.com/embed/znUidlaqK-I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+    </div>
+    </div>
+    
+        <!-- video-modal -->
+        <div class="modal fade" id="videosModal" tabindex="-1" role="dialog" aria-labelledby="videosModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header  expo-header">
+                  <h5 class="modal-title" id="VideoModalLabel">Videos List</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                    <div id="modalVideoBody" class="modal-body">
+                        <div class="videos">
+                            <ul class="videos-list">
+                              <a  ng-click="myTrigger('video')"><li>How to Network during Covid-19</li></a>
+                              <a  ng-click="myTrigger('video2')"><li>How to host a website</li></a>
+                              <!-- <a href=""><li>video 3</li></a>
+                              <a href=""><li>video 4</li></a>
+                              <a href=""><li>video 5</li></a>
+                              <a href=""><li>video 6</li></a> -->
+                            </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- brochure-modal -->
+          <div class="modal fade" id="brochureModal" tabindex="-1" role="dialog" aria-labelledby="brochureModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header expo-header">
+                  <h5 class="modal-title" id="brochureModalLabel">Brochures List</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                    <div id="modalbrochureBody" class="modal-body">
+                        <div class="videos">
+                            <ul class="videos-list">
+                              <a href="brochures/hostgator/HostGator Affiliate Program.pdf" target="blank" ng-click="brochurePoints()"><li>HostGator Affiliate Program</li></a>
+                              <a href="brochures/hostgator/HostGator Product.pdf" target="blank" ng-click="brochurePoints()"><li>HostGator Product</li></a>
+                              <!-- <a href=""><li>brochure 3</li></a>
+                              <a href=""><li>brochure 4</li></a>
+                              <a href=""><li>brochure 5</li></a>
+                              <a href=""><li>brochure 6</li></a> -->
+                            </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+          </div>
+
+              <!-- links modal -->
+    <div class="modal fade" id="linksModal" tabindex="-1" role="dialog" aria-labelledby="linksModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header expo-header">
+              <h5 class="modal-title" id="linksModalLabel">Links List</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+                <div id="modallinksBody" class="modal-body">
+                    <div class="videos">
+                        <ul class="videos-list">
+                          <a href="https://www.hostgator.in/optimized-wordpress-hosting.php" target="blank"><li>WordPress Hosting</li></a>
+                          <a href="https://www.hostgator.in/vps-hosting" target="blank"><li>VPS Hosting</li></a>
+                          <a href="https://www.hostgator.in/cloud-hosting" target="blank"><li>Cloud Hosting</li></a>
+                          <a href="https://www.hostgator.in/reseller-hosting.php" target="blank"><li>Linux Reseller Hosting</li></a>
+                          <a href="https://www.hostgator.in/windows-reseller-hosting.php" target="blank"><li>Window Reseller Hosting</li></a>
+                          <a href="https://www.hostgator.in/web-hosting/linux-shared-hosting" target="blank"><li>Linux Shared Hosting</li></a>
+                          <a href="https://www.hostgator.in/web-hosting/windows-hosting.php" target="blank"><li>Windows Shared Hosting</li></a>
+                          <a href="https://www.hostgator.in/windows-reseller-hosting.php" target="blank"><li>Windows Reseller Hosting</li></a>
+                        </ul>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+
+              <!-- faq modal -->
+              <div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header expo-header">
+                      <h5 class="modal-title" id="faqModalLabel">FAQ</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                        <div id="modalfaqBody" class="modal-body">
+                           <iframe src="https://cloudbazaar.virtex.in/faq-hg.html" frameborder="0"></iframe>
+                          </div>
+                  </div>
+                </div>
+              </div>
+
+                         <!-- games modal -->
+    <!-- <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
+      <div style="margin-top: 2%;" class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header expo-header">
+            <h5 class="modal-title" id="gameModalLabel">: Score with <img src="images/hostgator-logo.png">& a OnePlus 8T 5G with<span style="font-size: 10px; margin-left: 1vh;">(Instructions for desktop users: use mouse for navigation)</span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              <div id="modalgameBody" class="modal-body">
+                 <iframe id="myFrame" class="accordion" frameborder="0"></iframe>
+                </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="modal fade" id="gameModal2" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
+      <div style="margin-top: 2%;" class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header expo-header">
+            <h5 class="modal-title" id="gameModalLabel"><img src="images/hostgator-logo.png"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              <div id="modalgameBody2" class="modal-body">
+                <h2>Instructions</h2>
+                <ol>
+                  <li>Use mouse for navigation</li>
+                  <li>You have only 5 chances</li>
+                </ol>
+                <button type="button" class="game-btn" onclick="open_gameHg()">Play Game</button>
+                </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- onclick="open_gameBlue()" -->
+
+    <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
+      <div style="margin-top: 2%;" class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header expo-header">
+            <h5 class="modal-title" id="gameModalLabel">Score with <img src="images/hostgator-logo.png">& a OnePlus 8T 5G</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal(this)">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              <div id="modalgameBody" class="modal-body">
+                 <iframe id="myFrame" class="accordion" frameborder="0"></iframe>
+                </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <p>"Thank you for visiting us, the event is over now."</p>   
+          </div>
+        </div>
+      </div>
+    </div>

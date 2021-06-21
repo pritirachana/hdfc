@@ -1,0 +1,47 @@
+<style type="text/css">
+area:hover {
+    cursor: pointer;
+}
+
+img[usemap] {
+    border: none;
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+    width: auto;
+}
+
+</style>
+<div ng-hide="showvideo">
+    <img class="rwdimgmap" src="images/reception_new_summit_updated_ver3.png" usemap="#powerpuffgirls" alt="" />
+    <map name="powerpuffgirls">
+        <area shape="poly" coords="827,485,829,643,1100,641,1100,487" ng-click="myTrigger('session')" title="Almond" alt="Almond" />
+        <area shape="poly" coords="3,231,1,339,537,434,533,341" ng-click="myTrigger('cafe')" title="Almond" alt="Almond" />
+        <area shape="poly" coords="471,473,474,653,778,629,779,488" ng-click="myTrigger('exibition')" title="Almond" alt="Almond" />
+         <!-- <area shape="poly" coords="1483,329,1371,354,1374,429,1893,332,1892,219" ng-click="myTrigger('chat')" title="Almond" alt="Almond" /> -->
+        <area shape="poly" coords="1142,487,1146,637,1476,651,1466,466" ng-click="myTrigger('newtworking')" title="Almond" alt="Almond" />
+        <area ng-click="myTrigger('almond')" coords="738,3,802,157,1130,160,1191,4" shape="poly">
+    </map>
+</div>
+<video playsinline id="video" ng-show="showvideocafe" preload="">
+    <source src="videos/lobby 05.mp4" ng-show="showvideo" type="video/mp4">
+</video>
+<video playsinline id="video2" ng-show="showvideoexibition" preload="">
+    <source src="videos/lobby 04.mp4" type="video/mp4">
+</video>
+<video playsinline id="video3" ng-show="showvideosession" preload="">
+    <source src="videos/lobby 03.mp4" type="video/mp4">
+</video>
+<video playsinline id="video4" ng-show="showvideonetworking" preload="">
+    <source src="videos/lobby 02.mp4" type="video/mp4">
+</video>
+<div class="lightbox reception_video" ng-if="popupvideo" id="lightbox-1">
+    <iframe src="https://almond.atechnos.net/videostream.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="lightbox__close" ng-click="closePopup()">X</a>
+</div>
+<div class="lightbox reception_video" ng-if="popupvideoalmond" id="lightbox-1">
+    <div class="video-pop-box">
+        <iframe src="https://player.vimeo.com/video/448545183?autoplay=1" frameborder="0" allow="autoplay; fullscreen"></iframe>
+            <a class="lightbox__close" ng-click="almonpopclose()"><img src="images/close.svg"></a>
+</div>
+</div>

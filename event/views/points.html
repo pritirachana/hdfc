@@ -1,0 +1,309 @@
+<style>
+    .points-btn{
+        position: absolute;
+    top: 1%;
+    right: 1%;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: #132f42;
+    padding: 1vh;
+    border-radius: 6px;
+    }
+    #container9{
+        position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    }
+    .leader-box2 {
+    background-color: #2c2c4000;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+    margin-top: 5%;
+    height: 55vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.para-points1{
+    text-align: center;
+    margin-top: 3vh;
+    font-size: 18px;
+    font-weight: 700;
+    color: #132f42;
+}
+.para-points2{
+    text-align: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 24px;
+    font-weight: 700;
+    color: #132f42;
+}
+.logos{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logo-img1{
+    width: 20%;
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+
+}
+.logo-img2{
+    width: 30%;
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+.logo-img3{
+    width: 30%;
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+
+}
+.logo-cb{
+    margin-left: 1vh;
+    margin-left: 1vh;
+}
+.points-paragraph{
+    text-align: center;
+    font-weight: 600;
+    color: #132f42;
+}
+.img-fluid1 {
+    max-width: 30%;
+    height: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.img-fluid2 {
+    max-width: 55%;
+    height: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.img-fluid3 {
+    max-width: 17%;
+    height: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+</style>
+
+<div id="container9">
+    <button type="button" class="points-btn" ui-sref="leaderboard">Leaderboard</button>
+    <div class="leader-box2">
+<table>
+    <thead>
+        <tr>
+            <th id="th-small">S.no</th>
+            <th id="name-left">Be an Engaged Attendee & Acquire Points at Cloudbazaar By:</th>
+            <th id="th-small">Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="serial-no" data-column="S.no">1</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Updating Your Profile Fields Along With a Photo
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">60</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">2</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Watching Manish Dalal's Keynote for Day 1 & 2
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">30</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">3</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Adding Sessions at the Conference & Workshop Rooms to Your Calendar
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">20</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">4</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Attending Sessions at the Conference & Workshop Rooms
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">30</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">5</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Watching the Event Welcome Video
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">10</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">6</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Access Social Media
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">20</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">7</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Speaking to Brands at Their Virtual Booths
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">10</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">8</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Watching Brand Videos at Their Virtual Booths
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">10</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">9</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Reading Brochures at the Virtual Booth
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">10</td>
+        </tr>
+         <tr>
+            <td id="serial-no" data-column="S.no">10</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Playing Booth Games
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">10</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">11</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Filling Forms at Their Virtual Booths
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">10</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">12</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Attends demos at Brand booths
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">10</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">13</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Networking With Fellow Web Pros at the Networking Rooms
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">20</td>
+        </tr>
+        <tr>
+            <td id="serial-no" data-column="S.no">14</td>
+            <td id="table-name" data-column="Name">
+                <div class="leader-name">
+                    <div class="leader-name-txt">
+                        Engage with other participants
+                    </div>
+                </div>
+            </td>
+            <td id="points" data-column="Points">10</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<p class="para-points1">Collect 150 points to receive a virtual goodie bag with industry insights, coupons, discounts with partners and gifts!</p>
+<p class="para-points2">Top 3 Leaderboard entries will get:</p>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-4 col-lg-4 center">
+            <p class="points-paragraph">Grand Prize -1- GoPro HERO9</p>
+            <img class="img-fluid1" src="images/gopro.png">
+            <div class="logo-points">
+                <p class="logos">Brought to you by CloudBazaar & <img class="logo-img1" src="images/org-logo.png"></Google></p>
+                </div>
+        </div>
+        <div class="col-4 col-lg-4 center">
+            <p class="points-paragraph">Grand Prize -2- Bose Noise Cancelling Earbuds</p>
+            <img class="img-fluid2" src="images/earbuds.png">
+            <div class="logo-points">
+            <p class="logos">Brought to you by CloudBazaar & <img class="logo-img2" src="images/fresh-logo.png"></Google></p>
+            </div>
+        </div>
+        <div class="col-4 col-lg-4 center">
+            <p class="points-paragraph">Grand Prize -3- HUAWEI Watch GT 2 Sport </p>
+            <img class="img-fluid3" src="images/watch.png">
+            <div class="logo-points">
+                <p class="logos">Brought to you by CloudBazaar & <img class="logo-img3" src="images/google-cloud-logo.png"></Google></p>
+                </div>
+        </div>
+    </div>
+</div>
+
+</div>

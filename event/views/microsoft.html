@@ -1,0 +1,345 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+    }
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    /* resource */
+    .resource-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .close-data{
+        width: 3vh;
+        position: absolute;
+        top: 1vh;
+        right: 1vh;
+        cursor: pointer;
+    }
+    .resource-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .resource-box ul{
+        color: white;
+        width: 100%;
+    }
+    .resource-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .resource-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .heading{
+        text-align: center;
+        width: 100%;
+        padding-bottom: 2vh;
+        color: white;
+    }
+    .heading h1{
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+
+    /* video */
+    .video-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .video-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .video-box ul{
+        color: white;
+        width: 100%;
+    }
+    .video-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .video-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    /* brochure */
+    .brochure-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .brochure-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .brochure-box ul{
+        color: white;
+        width: 100%;
+    }
+    .brochure-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+    }
+    .brochure-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .modal-dialog{
+      margin-top: 10%;
+    }
+    iframe{
+      width: 100%;
+      max-height: 56vh;
+      min-height: 56vh;
+    }
+    a{
+      text-decoration: none !important;
+      color: white;
+    }
+    .text{
+      width: 85%;
+    /* text-overflow: ellipsis; */
+    word-break: break-word;
+    }
+    .alert{
+        background-color: #9f9f9f;
+        color: white;
+    }
+    .alert h1{
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .close{
+        color: white;
+        font-size: 26px;
+    }
+    .modal-body p{
+        font-size: 18px;
+    }
+        .text{
+      width: 85%;
+    /* text-overflow: ellipsis; */
+    word-break: break-word;
+    }
+    .company-name{
+    text-align: center;
+    width: 100%;
+    background-color: rgb(210 210 208);
+    padding: 1vh;
+
+}
+.company-name h1{
+    font-size: 18px;
+    font-weight: 700;
+}
+.chat-pop{
+        background-color: white;
+    height: 45vh;
+    width: 21%;
+    z-index: 999999;
+    position: absolute;
+    bottom: 20%;
+    border-radius: 8px;
+    right: 25vh;
+    display: block;
+    }
+    .message-container{
+        height: 90%;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        background-color: white;
+        padding:1vh;
+        
+    }
+    .close-chat-expo{
+        position: absolute;
+        top: -1vh;
+        right: -1vh;
+        width: 3vh;
+        cursor: pointer;
+    }
+    .name-time{
+        display: flex;
+        justify-content: space-between;
+    }
+    .expo-name{
+        margin-right: 3vh;
+    }
+    .expo-chat{
+        margin-bottom: 2vh;
+    }
+    .expo-message{
+        color: #7c7c7c;
+    }
+    </style>
+    <div ng-hide="showvideo">
+        <img class="rwdimgmap img-fluid" src="images/stalls/Powered by_Microsoft.jpg" usemap="#powerpuffgirlsnew" alt="" />
+        <map name="powerpuffgirlsnew">
+            <area target="" alt="brochure" title="brochure"  onclick="boothbrochure()" coords="69,579,62,722,337,708,337,572" shape="poly">
+            <area target="" alt="resources" title="resources" onclick="resources()" coords="578,654,576,772,789,772,784,661" shape="poly">
+            <area target="" alt="chat" title="chat" ng-click="showchatWithUs()"  coords="1213,726,1211,820,1381,817,1379,722" shape="poly">
+            <area target="" alt="video" title="video" data-toggle="modal" data-target="#myModal2"  coords="1799,656,1799,767,2004,770,2006,652" shape="poly">
+        </map>
+        <div class="chat-pop" ng-show="chatwithuspopup">
+        <img class="close-chat-expo" src="images/criss-cross.svg" ng-click="hidechatWithUs()">
+        <div class="company-name">
+            <h1 id="">Microsoft</h1>
+            </div>
+        <div class="message-container">          
+            
+        </div>
+        <div id="chat-msg" >
+            <div id="input-icon-chat">
+          <i id="input-icon" class="fas fa-paper-plane" ng-click="sendMessage(message)"></i>
+          </div>
+          <input style="border: none;outline-style: none;" ng-model="message" ng-keypress="($event.charCode==13)? sendMessage(message) : return"  class="chat-input" id="chat-input-text1" type="text" placeholder="Start Typing..." autofocus>
+        </div>
+    </div>
+    </div>
+    <div class="resource-main">
+        <div class="heading">
+            <h1>Resources</h1>
+        </div>
+         <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+         <div class="resource-box">
+             <ul>
+               <a href="videos/Microsoft/Cloud Migration Simplified.pdf" target="blank"><li><span class="text">Cloud Migration Simplified</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+               <a href="videos/Microsoft/Cloud Scale.pdf" target="blank"><li><span class="text">Cloud Scale</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+               <a href="videos/Microsoft/Four ways to maximise your business inteligence investments.pdf" target="blank"><li><span class="text">Four ways to maximise your business inteligence investments</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+               <a href="videos/Microsoft/Seven Key Principles of Cloud Security and Privacy.pdf" target="blank"><li><span class="text">Seven Key Principles of Cloud Security and Privacy</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+               <a href="videos/Microsoft/Three Ways Analytics Can Help.pdf" target="blank"><li><span class="text">Three Ways Analytics Can Help</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+               <a href="videos/Microsoft/Understanding Migration Strategies.pdf" target="blank"><li><span class="text">Understanding Migration Strategies</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+
+                 <!-- <li onclick="open_video_modal('videos/Google/Contact_Center_AI_inancial_Services.mp4')"><span class="text">Contact Center AI Financial Services</span><span><i class="far fa-play-circle"></i></span></li>
+                 <li onclick="open_video_modal('videos/Google/Contact_Center_AI_Telecommunications.mp4')"><span class="text">Contact Center AI Telecommunications</span><span><i class="far fa-play-circle"></i></span></li>
+                 <li onclick="open_video_modal('videos/Google/Google_Cloud_and_Avaya-Contact_Center_AI_for_Healthcare.mp4')"><span class="text">Google Cloud and Avaya Contact Center AI for Healthcare</span><span><i class="far fa-play-circle"></i></span></li>
+                 <li onclick="open_video_modal('videos/Google/How_Google_Contact_Center_AI_transforms_the_retail_call_center.mp4')"><span class="text">How Google Contact Center AI transforms the retail call center</span><span><i class="far fa-play-circle"></i></span></li> -->
+             </ul>
+         </div>
+     </div>
+     <!-- <div class="video-main">
+         <div class="heading">
+             <h1>Videos</h1>
+         </div>
+          <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+          <div class="video-box">
+              <ul>
+                  <li onclick="open_video_modal('videos/Google/Contact_Center_AI_inancial_Services.mp4')"><span class="text">Contact Center AI Financial Services</span><span><i class="far fa-play-circle"></i></span></li>
+                  <li onclick="open_video_modal('videos/Google/Contact_Center_AI_Telecommunications.mp4')"><span class="text">Contact Center AI Telecommunications</span><span><i class="far fa-play-circle"></i></span></li>
+                  <li onclick="open_video_modal('videos/Google/Google_Cloud_and_Avaya-Contact_Center_AI_for_Healthcare.mp4')"><span class="text">Google Cloud and Avaya Contact Center AI for Healthcare</span><span><i class="far fa-play-circle"></i></span></li>
+                  <li onclick="open_video_modal('videos/Google/How_Google_Contact_Center_AI_transforms_the_retail_call_center.mp4')"><span class="text">How Google Contact Center AI transforms the retail call center</span><span><i class="far fa-play-circle"></i></span></li>
+              </ul>
+          </div>
+      </div> -->
+      <div class="brochure-main">
+         <div class="heading">
+             <h1>Brochures</h1>
+         </div>
+          <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+          <div class="brochure-box">
+              <ul>
+                <a ng-click="broucherDownload('videos/Microsoft/Cloud Migration Simplified.pdf')" data-category="pdf_download" data-label="Cloud Migration Simplified" data-value="Brochure" listen  target="blank"><li><span class="text">Cloud Migration Simplified</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a ng-click="broucherDownload('videos/Microsoft/Cloud Scale.pdf')" data-category="pdf_download" data-label="Cloud Scale" data-value="Brochure" listen  target="blank"><li><span class="text">Cloud Scale</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a ng-click="broucherDownload('videos/Microsoft/Four ways to maximise your business inteligence investments.pdf')"  data-category="pdf_download" data-label="Four ways to maximise your business inteligence investments" data-value="Brochure" listen  target="blank"><li><span class="text">Four ways to maximise your business inteligence investments</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a ng-click="broucherDownload('videos/Microsoft/Seven Key Principles of Cloud Security and Privacy.pdf')" data-category="pdf_download" data-label="Seven Key Principles of Cloud Security and Privacy" data-value="Brochure" listen  target="blank"><li><span class="text">Seven Key Principles of Cloud Security and Privacy</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a ng-click="broucherDownload('videos/Microsoft/Three Ways Analytics Can Help.pdf')" data-category="pdf_download" data-label="Three Ways Analytics Can Help" data-value="Brochure" listen  target="blank"><li><span class="text">Three Ways Analytics Can Help</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a ng-click="broucherDownload('videos/Microsoft/Understanding Migration Strategies.pdf')" data-category="pdf_download" data-label="Understanding Migration Strategies" data-value="Brochure" listen  target="blank"><li><span class="text">Understanding Migration Strategies</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+              </ul>
+          </div>
+      </div>
+      <div class="modal fade" id="myModal">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+         
+           <!-- Modal Header -->
+           <div class="modal-header">
+             
+             <button type="button" class="close video_close" onclick="closeModal()">&times;</button>
+           </div>
+           
+           <!-- Modal body -->
+           <div class="modal-body video_body">
+            <!-- <iframe src=""></iframe> -->
+           </div>
+           
+           
+         </div>
+       </div>
+     </div>
+     <div class="lightbox reception_video" ng-if="popupVideoSolution" ng-init="startVideo()" id="lightbox-1">
+        <div class="video-pop-box">
+            <iframe ng-src="{{currentpopupvideo}}" id="popupVideoSolution" frameborder="0" allow="autoplay; fullscreen"></iframe>
+            <a class="lightbox__close" ng-click="hideVideoSolution()"><img src="images/close.svg"></a>
+        </div>
+    </div> 
+     <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content alert">
+            <div class="modal-header">
+                <h1>Alert</h1>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Content Not Available</p>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div> -->
+          </div>
+          
+        </div>
+      </div>
+      

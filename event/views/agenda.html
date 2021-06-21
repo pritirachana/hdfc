@@ -1,0 +1,1871 @@
+<link rel="stylesheet" href="css/agenda-main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- <----------------------->
+
+
+<div class="container">
+ 
+  <!-- Trigger the modal with a button -->
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+           
+        </div>
+        <div class="modal-body">
+          <p>Alert has been added.</p>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<!-- <------------------------------ -->
+<div id="container10">
+    
+    <div id="agenda2_panel" style="">
+        <div class="hidden" id="hidden-display-name">Agenda</div>    
+        <ul id="custom_tabs" class="nav nav-tabs">
+          <li id="day1" class="active">
+          <a data-toggle="tab" href="" onclick="tab1()"> DAY 1</a>
+      </li>
+            <li id="day2" class="">
+          <a data-toggle="tab" href="" onclick="tab2()"> DAY 2</a>
+      </li>
+          </ul>
+          <div id="tab-content1" class="tab-content">
+              <div id="747" class="tab-pane fade in active">
+              <div class="agenda_listing ">
+            <div class="Event_time">14th September 2020</div>
+             <div class="agenda_box " data-module="1691" id="licontainer1691">
+                  <div class="agenda_timing">
+                  10:30 AM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Welcome Address        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                10:30 AM - 10:40 AM 
+                <span style="margin:20px;" id="live-buttons" >
+                  
+                  <a ui-sref="isa"><button style="float: right;" frameborder="0" allow="autoplay preload fullscreen" allowfullscreen id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button></a>
+                    <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button> -->
+                    <!-- <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>   -->
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box"onclick="speaker1()">
+                  <img class="agenda-speaker-image" src="data:image/jpeg;base64,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" data-picture="int_1595431306.jpg">
+                  <div class="floating_right">
+                    <h6>Mr.Mukesh Ambani</h6><h6>
+                    <span>Managing Director, Reliance Industries Ltd.</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1692" id="licontainer1692">
+                  <div class="agenda_timing">
+                  10:42 AM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Chief Guest Address        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                10:42 AM - 11:01 AM 
+                <span style="margin:20px;" id="live-buttons">
+                  <a ui-sref="stage"><button style="float: right;" id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button></a>
+                  <!-- <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button>
+                  <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>   -->
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X.jpg" data-picture="file_1592502950_Suresh_Prabhu.jpeg">
+                  <div class="floating_right">
+                    <h6>Mr.Bill Gates</h6><h6>
+                    <span>Co-founder of Microsoft</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1693" id="licontainer1693">
+                  <div class="agenda_timing">
+                  11:03 AM </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Keynote Address: Organizational response to the global pandemic        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                11:03 AM - 11:28 AM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+                  <button style="float: right;" id="btn-agenda"  data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>
+                </span>
+
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg" data-picture="int_1594028561.jpg">
+                  <div class="floating_right">
+                    <h6>Mr.Sundar Pichai</h6><h6>
+                    <span>CEO of Alphabet and Google</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1694" id="licontainer1694">
+                  <div class="agenda_timing">
+                  11:33 AM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Change Management - The Lighthouse for Culture of Lifelong Learning        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                11:33 AM - 11:55 AM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+
+                  <button id="btn-agenda"   data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594729995.jpg" data-picture="int_1594729995.jpg">
+                  <div class="floating_right">
+                    <h6>Srikantan Moorthy (tan)</h6><h6>
+                    <span>Executive Vice President, Head - US Delivery Operations and Global Head Education, Training &amp; Assessments, Infosys</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1695" id="licontainer1695">
+                  <div class="agenda_timing">
+                  12:00 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              New Skills for a New World        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                12:00 PM - 12:20 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+
+                  <button id="btn-agenda" data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593426003.jpg" data-picture="int_1593426003.jpg">
+                  <div class="floating_right">
+                    <h6>Raghav Gupta</h6><h6>
+                    <span>MD, Coursera India &amp; APAC</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1696" id="licontainer1696">
+                  <div class="agenda_timing">
+                  12:25 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Panel Discussion: The 'new-age' global skill conundrum        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                12:25 PM - 01:16 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+
+                  <button id="btn-agenda"  data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594050052.jpg" data-picture="int_1594050052.jpg">
+                  <div class="floating_right">
+                    <h6>Santhosh Babu</h6><h6>
+                    <span>Chairman, OD Alternatives, CEO, Orglens, Author, Advisor &amp; Coach</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594029424.jpg" data-picture="int_1594029424.jpg">
+                  <div class="floating_right">
+                    <h6>Madhavi Lall</h6><h6>
+                    <span>Managing Director, Head-HR, India, Deutsche Bank</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593426003.jpg" data-picture="int_1593426003.jpg">
+                  <div class="floating_right">
+                    <h6>Raghav Gupta</h6><h6>
+                    <span>MD, Coursera India &amp; APAC</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593427013.jpg" data-picture="int_1593427013.jpg">
+                  <div class="floating_right">
+                    <h6>Srikanth Karra</h6><h6>
+                    <span>Chief Human Resource Officer, Mphasis</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592911341.jpg" data-picture="int_1592911341.jpg">
+                  <div class="floating_right">
+                    <h6>Manu N Wadhwa</h6><h6>
+                    <span>Chief Human Resources Officer, Sony Pictures &amp; Networks India</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592379490.jpg" data-picture="int_1592379490.jpg">
+                  <div class="floating_right">
+                    <h6>Anurag Kumar</h6><h6>
+                    <span>Global Head, HR, GP Global Group</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592375853.jpg" data-picture="int_1592375853.jpg">
+                  <div class="floating_right">
+                    <h6>Amrita Das</h6><h6>
+                    <span>Vice President HR, Head Total Rewards &amp; Talent Management, HCL Technologies</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1697" id="licontainer1697">
+                  <div class="agenda_timing">
+                  01:21 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              The changing landscape of learning in today's workplace        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                01:21 PM - 01:41 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+
+                  <button id="btn-agenda"  data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593620645.jpg" data-picture="int_1593620645.jpg">
+                  <div class="floating_right">
+                    <h6>Michelle Boockoff-bajdek</h6><h6>
+                    <span>Chief Marketing Officer, Skillsoft</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1699" id="licontainer1699">
+                  <div class="agenda_timing">
+                  01:46 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Coffee Table Talk: Bridging the gap        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                01:46 PM - 02:59 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+
+                  <button id="btn-agenda"  data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594628398.jpg" data-picture="int_1594628398.jpg">
+                  <div class="floating_right">
+                    <h6>Prof. Christopher Abraham</h6><h6>
+                    <span>CEO &amp; Head - Dubai Campus, Sr Vice President - Institutional Development, S P Jain School of Global Management </span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594461890.jpg" data-picture="int_1594461890.jpg">
+                  <div class="floating_right">
+                    <h6>Thirumala Arohi</h6><h6>
+                    <span>VP &amp; Head of Education, Training and Assessment (ETA) unit, Infosys</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593513596.jpg" data-picture="int_1593513596.jpg">
+                  <div class="floating_right">
+                    <h6>Chris Dede</h6><h6>
+                    <span>Timothy E. Wirth Professor, Learning Technologies, Harvard University</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593432731.jpg" data-picture="int_1593432731.jpg">
+                  <div class="floating_right">
+                    <h6>Raman Kumar Singh</h6><h6>
+                    <span>Chief Human Resources Officer, ABB India Ltd</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592819619.jpg" data-picture="int_1592819619.jpg">
+                  <div class="floating_right">
+                    <h6>Wayne Brockbank</h6><h6>
+                    <span>Clinical Professor of Business, Ross School of Business, University of Michigan</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592379941.jpg" data-picture="int_1592379941.jpg">
+                  <div class="floating_right">
+                    <h6>Vasanthi Srinivasan</h6><h6>
+                    <span>Professor, Organizational Behaviour and Human Resource Management, IIM Bangalore</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1701" id="licontainer1701">
+                  <div class="agenda_timing">
+                  03:04 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Panel Discussion: The Transformational focus        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                03:04 PM - 04:01 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+
+                  <button id="btn-agenda"  data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593755294.jpg" data-picture="int_1593755294.jpg">
+                  <div class="floating_right">
+                    <h6>Amit Joshi</h6><h6>
+                    <span>Head - Global L&amp;D, Talent, OD, Commercial Capability, Business &amp; HR Transformation, Meril</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593509982.jpg" data-picture="int_1593509982.jpg">
+                  <div class="floating_right">
+                    <h6>Harpreet Ghumman</h6><h6>
+                    <span>Head - Learning &amp; Organizational Development, Raymond Limited</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593066817.jpg" data-picture="int_1593066817.jpg">
+                  <div class="floating_right">
+                    <h6>Anupam Trehan</h6><h6>
+                    <span>Director, People &amp; Communities, Cisco India &amp; SAARC</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592890661.jpg" data-picture="int_1592890661.jpg">
+                  <div class="floating_right">
+                    <h6>Prithvi Shergill</h6><h6>
+                    <span>Founder, Advisor, Chief Business Officer-KPISOFT, Co-Founder, Smarten Spaces, Previously, CHRO, HCL Technologies</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592890364.jpg" data-picture="int_1592890364.jpg">
+                  <div class="floating_right">
+                    <h6>Guy Whitcher</h6><h6>
+                    <span>Global Head, Learning, Standard Chartered Bank</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592456852.jpg" data-picture="int_1592456852.jpg">
+                  <div class="floating_right">
+                    <h6>Kavita Kurup</h6><h6>
+                    <span>Global Head - Talent &amp; Organizational Transformation, UST Global</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592379595.jpg" data-picture="int_1592379595.jpg">
+                  <div class="floating_right">
+                    <h6>Dr. Swatee Sarangi</h6><h6>
+                    <span>Global Head - Learning, Leadership &amp; Organization Development, Dr. Reddy's Laboratories</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1703" id="licontainer1703">
+                  <div class="agenda_timing">
+                  04:06 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Learning Unusual - Creating a Skill Revolution        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                04:06 PM - 04:18 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+                  <button id="btn-agenda"  data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594711582.jpg" data-picture="int_1594711582.jpg">
+                  <div class="floating_right">
+                    <h6>Venguswamy Ramaswamy</h6><h6>
+                    <span>Senior Vice President and Global Head – TCS iON, Tata Consultancy Services</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1704" id="licontainer1704">
+                  <div class="agenda_timing">
+                  04:23 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Panel Discussion: Leadership Viewpoint        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                04:23 PM - 05:24 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+                  <button id="btn-agenda"  data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>   
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594292072.jpg" data-picture="int_1594292072.jpg">
+                  <div class="floating_right">
+                    <h6>Sanket Atal</h6><h6>
+                    <span>Managing Director, Intuit India </span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594186649.jpg" data-picture="int_1594186649.jpg">
+                  <div class="floating_right">
+                    <h6>Kamal Bali</h6><h6>
+                    <span>President and Managing Director, Volvo Group India</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594028862.jpg" data-picture="int_1594028862.jpg">
+                  <div class="floating_right">
+                    <h6>Amit Dayal</h6><h6>
+                    <span>VP &amp; GM, Adobe Inc</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593512601.jpg" data-picture="int_1593512601.jpg">
+                  <div class="floating_right">
+                    <h6>Prakash Iyer</h6><h6>
+                    <span>Founder and CEO, Leadership Works</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592455898.jpg" data-picture="int_1592455898.jpg">
+                  <div class="floating_right">
+                    <h6>Abhilash Misra</h6><h6>
+                    <span>CEO, NSE Academy Ltd. (A wholly owned subsidiary of National Stock Exchange Ltd.)</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592382097.jpg" data-picture="int_1592382097.jpg">
+                  <div class="floating_right">
+                    <h6>Sairee Chahal</h6><h6>
+                    <span>Founder &amp; CEO, SHEROES</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1706" id="licontainer1706">
+                  <div class="agenda_timing">
+                  05:29 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Fast Forward: Learning at the pace of Business        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                05:29 PM - 06:01 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+                  <button id="btn-agenda"  data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595060298.jpg" data-picture="int_1595060298.jpg">
+                  <div class="floating_right">
+                    <h6>Vikrant Gupta</h6><h6>
+                    <span>Vice President, Human Resources, HARMAN International</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594987179.jpg" data-picture="int_1594987179.jpg">
+                  <div class="floating_right">
+                    <h6>Pankaj Bansal</h6><h6>
+                    <span>Co-founder and CEO, PeopleStrong</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594985904.jpg" data-picture="int_1594985904.jpg">
+                  <div class="floating_right">
+                    <h6>Nishchae Suri</h6><h6>
+                    <span>President Asia Pacific, Middle East &amp; Africa, EdCast</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1707" id="licontainer1707">
+                  <div class="agenda_timing">
+                  06:06 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Closing Remarks by ETHRWorld Advisory Board        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                06:06 PM - 06:16 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+                  <button id="btn-agenda"  data-toggle="modal" data-target="#myModal"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>    
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595350300.jpg" data-picture="int_1595350300.jpg">
+                  <div class="floating_right">
+                    <h6>Capt. Raghu Raman</h6><h6>
+                    <span>Founding CEO NATGRID &amp; Former President Reliance Industries</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595349460.jpg" data-picture="int_1595349460.jpg">
+                  <div class="floating_right">
+                    <h6>Vikramjeet Singh</h6><h6>
+                    <span>Chief Human Resources Officer, Bajaj Allianz General Insurance Company</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/img_file_1598848658_21126.jpg" data-picture="img_file_1598848658_21126.jpg">
+                  <div class="floating_right">
+                    <h6>Sv Nathan</h6><h6>
+                    <span>Deloitte India</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595348839.jpg" data-picture="int_1595348839.jpg">
+                  <div class="floating_right">
+                    <h6>Nandita Gurjar</h6><h6>
+                    <span>Independent  Director on Boards and Advisor to Startups, Former CHRO, Infosys Group</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/img_file_1598848433_14915.jpg" data-picture="img_file_1598848433_14915.jpg">
+                  <div class="floating_right">
+                    <h6>Dr Aquil Busrai</h6><h6>
+                    <span>Aquil Busrai Consulting</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594896718.jpg" data-picture="int_1594896718.jpg">
+                  <div class="floating_right">
+                    <h6>Aparna Mittal</h6><h6>
+                    <span>Leading Diversity &amp; Inclusion Advisor and Corporate Lawyer &amp; Founder Sam?na Centre for Gender, Policy and Law</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594896327.jpg" data-picture="int_1594896327.jpg">
+                  <div class="floating_right">
+                    <h6>Amit Das</h6><h6>
+                    <span>Director - HR and CHRO, Bennett Coleman &amp; Company Ltd</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592890661.jpg" data-picture="int_1592890661.jpg">
+                  <div class="floating_right">
+                    <h6>Prithvi Shergill</h6><h6>
+                    <span>Founder, Advisor, Chief Business Officer-KPISOFT, Co-Founder, Smarten Spaces, Previously, CHRO, HCL Technologies</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+            <div id="761" class="tab-pane fade in ">
+              <div class="agenda_listing ">
+            <div class="Event_time">24th Jul 2020</div>        <div class="agenda_box " data-module="1708" id="licontainer1708">
+                  <div class="agenda_timing">
+                  10:42 AM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Special Address        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                10:42 AM - 10:51 AM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+                  <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/file_1595527162_sri_prabhakar.jpg" data-picture="file_1595527162_sri_prabhakar.jpg">
+                  <div class="floating_right">
+                    <h6>Gurudev Sri Sri Ravi Shankar</h6><h6>
+                    <span>Founder, Art of Living</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1709" id="licontainer1709">
+                  <div class="agenda_timing">
+                  03:04 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              ChatShow: Skill need and impact analysis        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                03:04 PM - 03:53 PM 
+                <span style="margin:20px;">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+                  <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                    </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594294037.jpg" data-picture="int_1594294037.jpg">
+                  <div class="floating_right">
+                    <h6>Deepshikha Sikarwar</h6><h6>
+                    <span>Editor-Economics, The Economic Times</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594050422.jpg" data-picture="int_1594050422.jpg">
+                  <div class="floating_right">
+                    <h6>Vandana Bhatnagar</h6><h6>
+                    <span>Chief Program Officer, National Skill Development Corporation</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592819914.jpg" data-picture="int_1592819914.jpg">
+                  <div class="floating_right">
+                    <h6>Amit Aggarwal</h6><h6>
+                    <span>CEO, IT-ITES Sector Skill Council, NASSCOM</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592380001.jpg" data-picture="int_1592380001.jpg">
+                  <div class="floating_right">
+                    <h6>Navin Mittal</h6><h6>
+                    <span>Commissioner, Collegiate Education &amp; Technical Education, Government of Telangana</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1710" id="licontainer1710">
+                  <div class="agenda_timing">
+                  03:55 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              StandUp Act Blending humour and learning        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                03:55 PM - 04:27 PM 
+                <span style="margin:20px;" id="live-buttons">
+                  <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                  <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+                  <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+                  <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>    
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594878417.jpg" data-picture="int_1594878417.jpg">
+                  <div class="floating_right">
+                    <h6>Vikram Poddar</h6><h6>
+                    <span>Humour Resource Manager, BoredRoom Comedy</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <div class="agenda_box " data-module="1711" id="licontainer1711">
+                  <div class="agenda_timing">
+                  05:40 PM          </div>
+                <div class="time-circle"></div>
+                <div class="agenda_details_box">
+                  <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+              Interactive Chat: Promoting Skills for a Resilient Youth &amp; Fireside Chat: Leadership Evolution        </h5>
+                <div class="times ">
+                <span class="feather icon-clock"></span> 
+                05:40 PM - 06:13 PM 
+                <span style="margin:20px;">
+                  <button id="_buttonlaunchschd_1122" class="btn stander_btn launch-video " data-playinauditoruim="0" data-cat="0" data-url="#category=0&amp;module=761" data-id="1122"> Launch</button>
+                </span>
+        
+                  </div>
+              <div class="speaker_list">
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/file_1595527225_IMG_20190727_164614_1_01_removebg_preview.png" data-picture="file_1595527225_IMG_20190727_164614_1_01_removebg_preview.png">
+                  <div class="floating_right">
+                    <h6>Apeksha Kaushik</h6><h6>
+                    <span>Timesinternet</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595352045.jpg" data-picture="int_1595352045.jpg">
+                  <div class="floating_right">
+                    <h6>Kamal Dutta</h6><h6>
+                    <span>MD, Skillsoft India</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/img_file_1598848433_14915.jpg" data-picture="img_file_1598848433_14915.jpg">
+                  <div class="floating_right">
+                    <h6>Dr Aquil Busrai</h6><h6>
+                    <span>Aquil Busrai Consulting</span>
+                  </h6></div>
+                </div>
+                    <div class="speaker_box">
+                  <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594878126.jpg" data-picture="int_1594878126.jpg">
+                  <div class="floating_right">
+                    <h6>Ramanan Ramanathan</h6><h6>
+                    <span>Mission Director - Atal Innovation Mission, NITI Aayog, Government of India</span>
+                  </h6></div>
+                </div>
+                  </div>
+              <div class="item-schedules_items" style="display:none;">
+                  <div class="item-wrapper">
+                    <div class="description-schedules">
+                                            
+                    </div>
+                    <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div id="tab-content2" class="tab-content">
+          <div id="747" class="tab-pane fade in active">
+          <div class="agenda_listing ">
+        <div class="Event_time">15th September 2020</div>
+         <div class="agenda_box " data-module="1691" id="licontainer1691">
+              <div class="agenda_timing">
+              10:30 AM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Welcome Address        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            10:30 AM - 10:40 AM 
+            <span style="margin:20px;" id="live-buttons">
+              <button style="float: right;" id="btn-agenda" href="isa.html"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+                <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button> -->
+                <!-- <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>   -->
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box"onclick="speaker1()">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595431306.jpg" data-picture="int_1595431306.jpg">
+              <div class="floating_right">
+                <h6>Saumya Bhattacharya</h6><h6>
+                <span>Senior Editor, The Economic Times</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1692" id="licontainer1692">
+              <div class="agenda_timing">
+              10:42 AM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Chief Guest Address        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            10:42 AM - 11:01 AM 
+            <span style="margin:20px;" id="live-buttons">
+              <button style="float: right;" id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button>
+
+              <!-- <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>   -->
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/file_1592502950_Suresh_Prabhu.jpeg" data-picture="file_1592502950_Suresh_Prabhu.jpeg">
+              <div class="floating_right">
+                <h6>Shri Suresh Prabhu</h6><h6>
+                <span>G7 &amp; Member of Parliament</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1693" id="licontainer1693">
+              <div class="agenda_timing">
+              11:03 AM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Keynote Address: Organizational response to the global pandemic        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            11:03 AM - 11:28 AM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button style="float: right;" id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594028561.jpg" data-picture="int_1594028561.jpg">
+              <div class="floating_right">
+                <h6>Dr. Allen Partridge</h6><h6>
+                <span>Head of Evangelism, Digital Learning Solutions, Adobe</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1694" id="licontainer1694">
+              <div class="agenda_timing">
+              11:33 AM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Change Management - The Lighthouse for Culture of Lifelong Learning        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            11:33 AM - 11:55 AM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594729995.jpg" data-picture="int_1594729995.jpg">
+              <div class="floating_right">
+                <h6>Srikantan Moorthy (tan)</h6><h6>
+                <span>Executive Vice President, Head - US Delivery Operations and Global Head Education, Training &amp; Assessments, Infosys</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1695" id="licontainer1695">
+              <div class="agenda_timing">
+              12:00 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          New Skills for a New World        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            12:00 PM - 12:20 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593426003.jpg" data-picture="int_1593426003.jpg">
+              <div class="floating_right">
+                <h6>Raghav Gupta</h6><h6>
+                <span>MD, Coursera India &amp; APAC</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1696" id="licontainer1696">
+              <div class="agenda_timing">
+              12:25 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Panel Discussion: The 'new-age' global skill conundrum        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            12:25 PM - 01:16 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594050052.jpg" data-picture="int_1594050052.jpg">
+              <div class="floating_right">
+                <h6>Santhosh Babu</h6><h6>
+                <span>Chairman, OD Alternatives, CEO, Orglens, Author, Advisor &amp; Coach</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594029424.jpg" data-picture="int_1594029424.jpg">
+              <div class="floating_right">
+                <h6>Madhavi Lall</h6><h6>
+                <span>Managing Director, Head-HR, India, Deutsche Bank</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593426003.jpg" data-picture="int_1593426003.jpg">
+              <div class="floating_right">
+                <h6>Raghav Gupta</h6><h6>
+                <span>MD, Coursera India &amp; APAC</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593427013.jpg" data-picture="int_1593427013.jpg">
+              <div class="floating_right">
+                <h6>Srikanth Karra</h6><h6>
+                <span>Chief Human Resource Officer, Mphasis</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592911341.jpg" data-picture="int_1592911341.jpg">
+              <div class="floating_right">
+                <h6>Manu N Wadhwa</h6><h6>
+                <span>Chief Human Resources Officer, Sony Pictures &amp; Networks India</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592379490.jpg" data-picture="int_1592379490.jpg">
+              <div class="floating_right">
+                <h6>Anurag Kumar</h6><h6>
+                <span>Global Head, HR, GP Global Group</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592375853.jpg" data-picture="int_1592375853.jpg">
+              <div class="floating_right">
+                <h6>Amrita Das</h6><h6>
+                <span>Vice President HR, Head Total Rewards &amp; Talent Management, HCL Technologies</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1697" id="licontainer1697">
+              <div class="agenda_timing">
+              01:21 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          The changing landscape of learning in today's workplace        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            01:21 PM - 01:41 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593620645.jpg" data-picture="int_1593620645.jpg">
+              <div class="floating_right">
+                <h6>Michelle Boockoff-bajdek</h6><h6>
+                <span>Chief Marketing Officer, Skillsoft</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1699" id="licontainer1699">
+              <div class="agenda_timing">
+              01:46 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Coffee Table Talk: Bridging the gap        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            01:46 PM - 02:59 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594628398.jpg" data-picture="int_1594628398.jpg">
+              <div class="floating_right">
+                <h6>Prof. Christopher Abraham</h6><h6>
+                <span>CEO &amp; Head - Dubai Campus, Sr Vice President - Institutional Development, S P Jain School of Global Management </span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594461890.jpg" data-picture="int_1594461890.jpg">
+              <div class="floating_right">
+                <h6>Thirumala Arohi</h6><h6>
+                <span>VP &amp; Head of Education, Training and Assessment (ETA) unit, Infosys</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593513596.jpg" data-picture="int_1593513596.jpg">
+              <div class="floating_right">
+                <h6>Chris Dede</h6><h6>
+                <span>Timothy E. Wirth Professor, Learning Technologies, Harvard University</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593432731.jpg" data-picture="int_1593432731.jpg">
+              <div class="floating_right">
+                <h6>Raman Kumar Singh</h6><h6>
+                <span>Chief Human Resources Officer, ABB India Ltd</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592819619.jpg" data-picture="int_1592819619.jpg">
+              <div class="floating_right">
+                <h6>Wayne Brockbank</h6><h6>
+                <span>Clinical Professor of Business, Ross School of Business, University of Michigan</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592379941.jpg" data-picture="int_1592379941.jpg">
+              <div class="floating_right">
+                <h6>Vasanthi Srinivasan</h6><h6>
+                <span>Professor, Organizational Behaviour and Human Resource Management, IIM Bangalore</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1701" id="licontainer1701">
+              <div class="agenda_timing">
+              03:04 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Panel Discussion: The Transformational focus        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            03:04 PM - 04:01 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593755294.jpg" data-picture="int_1593755294.jpg">
+              <div class="floating_right">
+                <h6>Amit Joshi</h6><h6>
+                <span>Head - Global L&amp;D, Talent, OD, Commercial Capability, Business &amp; HR Transformation, Meril</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593509982.jpg" data-picture="int_1593509982.jpg">
+              <div class="floating_right">
+                <h6>Harpreet Ghumman</h6><h6>
+                <span>Head - Learning &amp; Organizational Development, Raymond Limited</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593066817.jpg" data-picture="int_1593066817.jpg">
+              <div class="floating_right">
+                <h6>Anupam Trehan</h6><h6>
+                <span>Director, People &amp; Communities, Cisco India &amp; SAARC</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592890661.jpg" data-picture="int_1592890661.jpg">
+              <div class="floating_right">
+                <h6>Prithvi Shergill</h6><h6>
+                <span>Founder, Advisor, Chief Business Officer-KPISOFT, Co-Founder, Smarten Spaces, Previously, CHRO, HCL Technologies</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592890364.jpg" data-picture="int_1592890364.jpg">
+              <div class="floating_right">
+                <h6>Guy Whitcher</h6><h6>
+                <span>Global Head, Learning, Standard Chartered Bank</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592456852.jpg" data-picture="int_1592456852.jpg">
+              <div class="floating_right">
+                <h6>Kavita Kurup</h6><h6>
+                <span>Global Head - Talent &amp; Organizational Transformation, UST Global</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592379595.jpg" data-picture="int_1592379595.jpg">
+              <div class="floating_right">
+                <h6>Dr. Swatee Sarangi</h6><h6>
+                <span>Global Head - Learning, Leadership &amp; Organization Development, Dr. Reddy's Laboratories</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1703" id="licontainer1703">
+              <div class="agenda_timing">
+              04:06 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Learning Unusual - Creating a Skill Revolution        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            04:06 PM - 04:18 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594711582.jpg" data-picture="int_1594711582.jpg">
+              <div class="floating_right">
+                <h6>Venguswamy Ramaswamy</h6><h6>
+                <span>Senior Vice President and Global Head – TCS iON, Tata Consultancy Services</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1704" id="licontainer1704">
+              <div class="agenda_timing">
+              04:23 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Panel Discussion: Leadership Viewpoint        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            04:23 PM - 05:24 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>   
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594292072.jpg" data-picture="int_1594292072.jpg">
+              <div class="floating_right">
+                <h6>Sanket Atal</h6><h6>
+                <span>Managing Director, Intuit India </span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594186649.jpg" data-picture="int_1594186649.jpg">
+              <div class="floating_right">
+                <h6>Kamal Bali</h6><h6>
+                <span>President and Managing Director, Volvo Group India</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594028862.jpg" data-picture="int_1594028862.jpg">
+              <div class="floating_right">
+                <h6>Amit Dayal</h6><h6>
+                <span>VP &amp; GM, Adobe Inc</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1593512601.jpg" data-picture="int_1593512601.jpg">
+              <div class="floating_right">
+                <h6>Prakash Iyer</h6><h6>
+                <span>Founder and CEO, Leadership Works</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592455898.jpg" data-picture="int_1592455898.jpg">
+              <div class="floating_right">
+                <h6>Abhilash Misra</h6><h6>
+                <span>CEO, NSE Academy Ltd. (A wholly owned subsidiary of National Stock Exchange Ltd.)</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592382097.jpg" data-picture="int_1592382097.jpg">
+              <div class="floating_right">
+                <h6>Sairee Chahal</h6><h6>
+                <span>Founder &amp; CEO, SHEROES</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1706" id="licontainer1706">
+              <div class="agenda_timing">
+              05:29 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Fast Forward: Learning at the pace of Business        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            05:29 PM - 06:01 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595060298.jpg" data-picture="int_1595060298.jpg">
+              <div class="floating_right">
+                <h6>Vikrant Gupta</h6><h6>
+                <span>Vice President, Human Resources, HARMAN International</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594987179.jpg" data-picture="int_1594987179.jpg">
+              <div class="floating_right">
+                <h6>Pankaj Bansal</h6><h6>
+                <span>Co-founder and CEO, PeopleStrong</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594985904.jpg" data-picture="int_1594985904.jpg">
+              <div class="floating_right">
+                <h6>Nishchae Suri</h6><h6>
+                <span>President Asia Pacific, Middle East &amp; Africa, EdCast</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1707" id="licontainer1707">
+              <div class="agenda_timing">
+              06:06 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Closing Remarks by ETHRWorld Advisory Board        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            06:06 PM - 06:16 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>    
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595350300.jpg" data-picture="int_1595350300.jpg">
+              <div class="floating_right">
+                <h6>Capt. Raghu Raman</h6><h6>
+                <span>Founding CEO NATGRID &amp; Former President Reliance Industries</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595349460.jpg" data-picture="int_1595349460.jpg">
+              <div class="floating_right">
+                <h6>Vikramjeet Singh</h6><h6>
+                <span>Chief Human Resources Officer, Bajaj Allianz General Insurance Company</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/img_file_1598848658_21126.jpg" data-picture="img_file_1598848658_21126.jpg">
+              <div class="floating_right">
+                <h6>Sv Nathan</h6><h6>
+                <span>Deloitte India</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595348839.jpg" data-picture="int_1595348839.jpg">
+              <div class="floating_right">
+                <h6>Nandita Gurjar</h6><h6>
+                <span>Independent  Director on Boards and Advisor to Startups, Former CHRO, Infosys Group</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/img_file_1598848433_14915.jpg" data-picture="img_file_1598848433_14915.jpg">
+              <div class="floating_right">
+                <h6>Dr Aquil Busrai</h6><h6>
+                <span>Aquil Busrai Consulting</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594896718.jpg" data-picture="int_1594896718.jpg">
+              <div class="floating_right">
+                <h6>Aparna Mittal</h6><h6>
+                <span>Leading Diversity &amp; Inclusion Advisor and Corporate Lawyer &amp; Founder Sam?na Centre for Gender, Policy and Law</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594896327.jpg" data-picture="int_1594896327.jpg">
+              <div class="floating_right">
+                <h6>Amit Das</h6><h6>
+                <span>Director - HR and CHRO, Bennett Coleman &amp; Company Ltd</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592890661.jpg" data-picture="int_1592890661.jpg">
+              <div class="floating_right">
+                <h6>Prithvi Shergill</h6><h6>
+                <span>Founder, Advisor, Chief Business Officer-KPISOFT, Co-Founder, Smarten Spaces, Previously, CHRO, HCL Technologies</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+        <div id="761" class="tab-pane fade in ">
+          <div class="agenda_listing ">
+        <div class="Event_time">24th Jul 2020</div>        <div class="agenda_box " data-module="1708" id="licontainer1708">
+              <div class="agenda_timing">
+              10:42 AM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Special Address        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            10:42 AM - 10:51 AM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/file_1595527162_sri_prabhakar.jpg" data-picture="file_1595527162_sri_prabhakar.jpg">
+              <div class="floating_right">
+                <h6>Gurudev Sri Sri Ravi Shankar</h6><h6>
+                <span>Founder, Art of Living</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1709" id="licontainer1709">
+              <div class="agenda_timing">
+              03:04 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          ChatShow: Skill need and impact analysis        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            03:04 PM - 03:53 PM 
+            <span style="margin:20px;">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>  
+                </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594294037.jpg" data-picture="int_1594294037.jpg">
+              <div class="floating_right">
+                <h6>Deepshikha Sikarwar</h6><h6>
+                <span>Editor-Economics, The Economic Times</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594050422.jpg" data-picture="int_1594050422.jpg">
+              <div class="floating_right">
+                <h6>Vandana Bhatnagar</h6><h6>
+                <span>Chief Program Officer, National Skill Development Corporation</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592819914.jpg" data-picture="int_1592819914.jpg">
+              <div class="floating_right">
+                <h6>Amit Aggarwal</h6><h6>
+                <span>CEO, IT-ITES Sector Skill Council, NASSCOM</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1592380001.jpg" data-picture="int_1592380001.jpg">
+              <div class="floating_right">
+                <h6>Navin Mittal</h6><h6>
+                <span>Commissioner, Collegiate Education &amp; Technical Education, Government of Telangana</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1710" id="licontainer1710">
+              <div class="agenda_timing">
+              03:55 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          StandUp Act Blending humour and learning        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            03:55 PM - 04:27 PM 
+            <span style="margin:20px;" id="live-buttons">
+              <!-- <button style="" id="btn-agenda"><i class="fas fa-rocket"></i>&nbsp;&nbsp;&nbsp;Replay</button>
+              <button id="btn-agenda-live"><i class="fas fa-video-camera"></i>&nbsp;&nbsp;&nbsp;Live</button> -->  
+              <button id="btn-agenda"><i class="fas fa-calendar-plus"></i>&nbsp;&nbsp;&nbsp;Calendar</button>
+              <button id="btn-agenda"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;Notify me</button>    
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594878417.jpg" data-picture="int_1594878417.jpg">
+              <div class="floating_right">
+                <h6>Vikram Poddar</h6><h6>
+                <span>Humour Resource Manager, BoredRoom Comedy</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+            <div class="agenda_box " data-module="1711" id="licontainer1711">
+              <div class="agenda_timing">
+              05:40 PM          </div>
+            <div class="time-circle"></div>
+            <div class="agenda_details_box">
+              <h5>  <a class="btn_live">Live<span class="live-icon"></span></a> 
+          Interactive Chat: Promoting Skills for a Resilient Youth &amp; Fireside Chat: Leadership Evolution        </h5>
+            <div class="times ">
+            <span class="feather icon-clock"></span> 
+            05:40 PM - 06:13 PM 
+            <span style="margin:20px;">
+              <button id="_buttonlaunchschd_1122" class="btn stander_btn launch-video " data-playinauditoruim="0" data-cat="0" data-url="#category=0&amp;module=761" data-id="1122"> Launch</button>
+            </span>
+    
+              </div>
+          <div class="speaker_list">
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/file_1595527225_IMG_20190727_164614_1_01_removebg_preview.png" data-picture="file_1595527225_IMG_20190727_164614_1_01_removebg_preview.png">
+              <div class="floating_right">
+                <h6>Apeksha Kaushik</h6><h6>
+                <span>Timesinternet</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1595352045.jpg" data-picture="int_1595352045.jpg">
+              <div class="floating_right">
+                <h6>Kamal Dutta</h6><h6>
+                <span>MD, Skillsoft India</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/img_file_1598848433_14915.jpg" data-picture="img_file_1598848433_14915.jpg">
+              <div class="floating_right">
+                <h6>Dr Aquil Busrai</h6><h6>
+                <span>Aquil Busrai Consulting</span>
+              </h6></div>
+            </div>
+                <div class="speaker_box">
+              <img class="agenda-speaker-image" src="https://img.etb2bimg.com/files/retail_files/int_1594878126.jpg" data-picture="int_1594878126.jpg">
+              <div class="floating_right">
+                <h6>Ramanan Ramanathan</h6><h6>
+                <span>Mission Director - Atal Innovation Mission, NITI Aayog, Government of India</span>
+              </h6></div>
+            </div>
+              </div>
+          <div class="item-schedules_items" style="display:none;">
+              <div class="item-wrapper">
+                <div class="description-schedules">
+                                        
+                </div>
+                <div class="button-schedules"><i class="feather icon-plus" aria-hidden="true"></i></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+        </div>
+</div>
+<div id="container-speaker">
+    
+    <div class="speaker-main-div">
+        <!-- pop-up -->
+        <div class="speaker-pop-up1">
+            <div class="speaker-pop-up-main1">
+                <div class="speaker-pop-up-content">
+                    <div class="speaker-header">
+                        <h2>SPEAKER PROFILE #VIRTEX2020</h2>
+                        <img onclick="close_speaker()" id="close-card" src="images/close-Copy.svg">
+                    </div>
+                    <div class="speaker-content">
+                    <div class="speaker-img-pop-up">
+                        <img src="https://2018.re-invest.in/user-admin/uploads/AK_Jain.jpg" alt="">
+                    </div>
+                    <div class="speaker-pop-up-info">
+                        <h1>A K Jain</h1>
+                        <p class="speaker-desig">Managing Director, Rajasthan Electronics & Instruments Ltd, India</p>
+                        <p class="about-speaker">Mr A K Jain has worked for Rajasthan Electronics and Instruments Limited (REIL) for 36 years in various capacities and disciplines. His leadership and out-of-box approach resulted in high growth for REIL and the launch of several innovative solutions - World’s first Electronic Milk-Adulteration Tester, Largest 11 MW off-grid Solar Project at 9400 Gram Panchayats, 1 MWp Solar Power Project at Katra Railway Station, over 1,00,000 solar systems for low cost rural housing in Uttar Pradesh, Rajasthan and Tamil Nadu. REIL emerged as the largest off-grid solution provider and the largest deployer of milk analyser in India, benefiting sixty million citizens and three hundred thousand villages.He has been a key professional in Government’s Missions like National Dairy Plan, Solar Mission, Make in India, Digital India, National Electric Mobility Mission and Swachh Bharat.</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>

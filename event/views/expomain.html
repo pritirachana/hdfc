@@ -1,0 +1,397 @@
+<style>
+    img{
+        width:100%;
+    }
+    .individual_slug{
+        position: relative;
+    }
+    .previousSlide{
+        position: absolute;
+        cursor: pointer;
+        bottom: 14%;
+        left: 45%;
+    }
+    .nextSlide{
+        position: absolute;
+        bottom: 14%;
+        right: 45%;
+        cursor: pointer;
+    }
+
+    .previousSlide img{
+        width: 25px;
+    }
+
+    .nextSlide img{
+        width: 25px;
+    }
+
+    .expo_assets{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .videoPopup{
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .videoPopup .popup{
+        position: absolute;
+        min-height: 40%;
+        min-width: 40%;
+    }
+
+    iframe {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .closeIcon {
+        position: absolute;
+        top: 24%;
+        right: 30%;
+    }
+
+    .closeIcon img{
+        width: 20px;
+    }
+
+    .stall_name{
+        /* width: calc(100% - 84%); */
+        width: calc(100% - 65%);
+        position: absolute;
+        text-align: center;
+        top: 14.5%;
+        right: 28.5%;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: black;
+        font-weight: 900;
+
+        /* position: absolute;
+        top: 13%;
+        right: 32.5%;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: black;
+        font-weight: 900; */
+    }
+
+    .youtube{
+        width: calc(100% - 96%);
+        position: absolute;
+        top: 57.5%;
+        left: 28.5%;
+        cursor: pointer;
+    }
+
+    .broucher_download{
+        width: calc(100% - 94%);
+        position: absolute;
+        top: 37%;
+        right: 20%;
+        height: 32vh;
+        /* background-color: white; */
+        display: block;
+    }
+
+    .broucher_download a{
+        width: 100%;
+        display: block;
+        cursor: pointer;
+        height: 32vh;
+         
+    }
+
+    .horizontal_banner{
+        width: calc(100% - 86.6%);
+        height: calc(100% - 66.5%);
+        position: absolute;
+        top: 22.6%;
+        right: 20%;
+    }
+
+    .vertical_banner_left{
+        width: calc(100% - 86.6%);
+        height: calc(100% - 66.5%);
+        position: absolute;
+        top: 22.6%;
+        left: 28.4%;
+    }
+
+    .social_icons{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 52%;
+        right: 33%;
+        cursor: pointer;
+    }
+
+    .social{
+        width: 44px;
+        margin: 6px;
+    }
+
+    .socialico{
+        padding: 5px;
+    }
+
+    .company_logo{
+        width: calc(100% - 87.2%);
+        position: absolute;
+        top: 8.6%;
+        height: calc(100% - 82%);
+        left: 8.7%;
+    }
+
+    .insta{
+        width: calc(100% - 98.8%);
+        position: absolute;
+        top: 62.2%;
+        height: calc(100% - 98.4%);
+        left: 2.6%;
+    }
+
+    .linkedin{
+        width: calc(100% - 98.8%);
+        position: absolute;
+        top: 62.2%;
+        height: calc(100% - 98.4%); 
+        left: 4.9%;
+    }
+
+    .twitter{
+        width: calc(100% - 98.8%);
+        position: absolute;
+        top: 62.2%;
+        height: calc(100% - 98.4%);
+        left: 7.3%;
+    }
+
+    .fb{
+        width: calc(100% - 98.8%);
+        position: absolute;
+        top: 62.2%;
+        height: calc(100% - 98.4%);
+        left: 9.6%;
+    }
+
+    .website{
+        width: calc(100% - 98.8%);
+        position: absolute;
+        top: 62.2%;
+        height: calc(100% - 98.4%);
+        left: 11.89%;
+    }
+
+    .chat_with_us{
+        width: calc(100% - 96%);
+        position: absolute;
+        top: 49.7%;
+        height: calc(100% - 96.4%);
+        left: 17.59%;
+    }
+
+    .jitsi_meet{
+        width: calc(100% - 78.1%);
+        position: absolute;
+        top: 30.6%;
+        height: calc(100% - 82.4%);
+        left: 43.33%;
+    }
+
+    .videos{
+        width: calc(100% - 93.3%);
+        position: absolute;
+        top: 24.3%;
+        height: calc(100% - 94.8%);
+        left: 51.5%;
+    }
+
+</style>
+
+<!--------------------- Category 1 ----->
+
+<div class="individual_slug" ng-show="access_category_id == 1">
+    <div class="expo_slide_image">
+        <img src="images/partner_expo1.jpg" class="img-fluid">
+    </div>
+    <div class="expo_assets">
+            <div class="stall_name">{{company_name}}</div>
+            <a data-toggle="modal" data-target="#videoModal" ng-click="videolist()"><div class="videos"></div></a>
+            <a data-toggle="modal" data-target="#chatModal" ng-click="expolist()">    
+                <div class="chat_with_us"></div>   
+            </a>     
+                
+                <h1 style="display:none;" class="exhi_id">{{exhi_id}}</h1>
+                <a data-toggle="modal" data-target="#jitsiModal"><div class="jitsi_meet"></div></a>
+                <div class="company_logo"><img style="height: 100% !important;" src="{{company_banners}}" class="img-fluid"></div>    
+                <div class="vertical_banner_left"><img style="height: 100% !important;" src="{{secondBannerImage}}" class="img-fluid"></div>
+            	<div class="horizontal_banner"><img src="{{thumbnailBannerImage}}" style="height: 100%;" class="img-fluid"></div>
+                <a href="{{insta_link}}">
+                    <div class="insta"></div>
+                </a>
+                <a href="{{linkd_link}}">
+                    <div class="linkedin"></div>
+                </a>
+                <a href="{{twitter_link}}">
+                    <div class="twitter"></div>
+                </a>
+                <a href="{{fb_link}}">
+                    <div class="fb"></div>
+                </a>
+                <a href="{{website}}">
+                    <div class="website"></div>
+                </a>            
+    </div>
+</div>
+
+<!------------------------ Category 2 ----->
+
+<div class="individual_slug" ng-show="access_category_id == 2">
+    <div class="expo_slide_image">
+        <img src="images/sponsor_expo1.jpg" class="img-fluid">
+    </div>
+    <div class="expo_assets">
+            <div class="stall_name">{{company_name}}</div>
+            <a data-toggle="modal" data-target="#videoModal" ng-click="videolist()"><div class="videos"></div></a>
+                <a data-toggle="modal" data-target="#chatModal" ng-click="expolist()">    
+                    <div class="chat_with_us"></div>   
+                </a>     
+                
+                <h1 style="display:none;" class="exhi_id">{{exhi_id}}</h1>
+                <a data-toggle="modal" data-target="#jitsiModal"><div class="jitsi_meet"></div></a>
+                <div class="company_logo"><img style="height: 100% !important;" src="{{company_banners}}" class="img-fluid"></div>    
+                <div class="vertical_banner_left"><img style="height: 100% !important;" src="{{secondBannerImage}}" class="img-fluid"></div>
+            	<div class="horizontal_banner"><img src="{{thumbnailBannerImage}}" style="height: 100%;" class="img-fluid"></div>
+                <a href="{{insta_link}}">
+                    <div class="insta"></div>
+                </a>
+                <a href="{{linkd_link}}">
+                    <div class="linkedin"></div>
+                </a>
+                <a href="{{twitter_link}}">
+                    <div class="twitter"></div>
+                </a>
+                <a href="{{fb_link}}">
+                    <div class="fb"></div>
+                </a>
+                <a href="{{website}}">
+                    <div class="website"></div>
+                </a>            
+    </div>
+</div>
+
+<!---------------- Category 3 ----->
+
+<div class="individual_slug" ng-show="access_category_id == 3">
+    <div class="expo_slide_image">
+        <img src="images/exhibitor_expo1.jpg" class="img-fluid">
+    </div>
+    <div class="expo_assets">
+            <div class="stall_name">{{company_name}}</div>
+            <a data-toggle="modal" data-target="#videoModal" ng-click="videolist()"><div class="videos"></div></a>
+                <a data-toggle="modal" data-target="#chatModal" ng-click="expolist()">    
+                    <div class="chat_with_us"></div>   
+                </a>     
+                
+                <h1 style="display:none;" class="exhi_id">{{exhi_id}}</h1>
+                <a data-toggle="modal" data-target="#jitsiModal"><div class="jitsi_meet"></div></a>
+                <div class="company_logo"><img style="height: 100% !important;" src="{{company_banners}}" class="img-fluid"></div>    
+                <div class="vertical_banner_left"><img style="height: 100% !important;" src="{{secondBannerImage}}" class="img-fluid"></div>
+            	<div class="horizontal_banner"><img src="{{thumbnailBannerImage}}" style="height: 100%;" class="img-fluid"></div>
+                <a href="{{insta_link}}">
+                    <div class="insta"></div>
+                </a>
+                <a href="{{linkd_link}}">
+                    <div class="linkedin"></div>
+                </a>
+                <a href="{{twitter_link}}">
+                    <div class="twitter"></div>
+                </a>
+                <a href="{{fb_link}}">
+                    <div class="fb"></div>
+                </a>
+                <a href="{{website}}">
+                    <div class="website"></div>
+                </a>            
+    </div>
+</div>
+
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" > 
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Videos</h4>
+
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div> 
+        <div class="modal-body" id="" style="padding: 0px !important;width: 101.3% !important;overflow:auto !important;height: auto !important;min-height: 40vh !important;overflow: scroll;">
+            <ul class="list-group list-group-flush" style="width: 80%;position: absolute;top: 20px;">
+                <span ng-repeat = "video in videos"><a target="_blank" href="{{video.video_link}}" style="color:#000"><li class="list-group-item" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold;">{{video.title}}</li></a></span>                    
+                <li ng-if="videos == 'No Record Found'" class="list-group-item" style="color:#000;margin: 5px;border-radius: 15px;font-weight: bold;">No Videos Found</li>
+            </ul>
+        </div>
+      </div>
+    </div> 
+</div>
+
+<div class="modal fade" id="jitsiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: 48% !important;height: 80% !important;margin:0px auto !important;">
+      <div class="modal-content">
+        <div class="modal-body" id="jitsiContainer2" style="padding:0px !important;width:101.3% !important;">
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+    $('.jitsi_meet').click(function(){
+        var exhi_id = $('.exhi_id').text();
+        $("#jitsiModal").modal({backdrop: false});
+        var domain = "meetings.virtex.in";
+        var options = {
+            roomName: "GBCII"+exhi_id,
+            width: '100%',
+            height: '100%',
+            parentNode: document.querySelector('#jitsiContainer2'),
+            configOverwrite: {
+                prejoinPageEnabled:false,
+                disable1On1Mode:true,
+                disableSimulcast: true,
+                disableProfile:true,
+                disableInviteFunctions:true
+            },
+            interfaceConfigOverwrite: {
+                SHOW_JITSI_WATERMARK: false,
+                SHOW_WATERMARK_FOR_GUESTS: false,
+                HIDE_INVITE_MORE_HEADER:true,
+                disableInviteFunctions:true,
+                DEFAULT_REMOTE_DISPLAY_NAME:'VIRTEX ALMOND'
+                // TOOLBAR_BUTTONS:['microphone', 'camera','fodeviceselection', 'hangup','mute-everyone']
+                //filmStripOnly: true
+            },
+            invitees:false
+        }
+          var api = new JitsiMeetExternalAPI(domain, options);
+        api.on('readyToClose', () => {
+            $("#jitsiModal").modal('hide');
+            $("#jitsiContainer2").empty();
+            // window.location.href = "https://globalbioindiavirtual.com/event/#!";
+        });
+    });
+</script>

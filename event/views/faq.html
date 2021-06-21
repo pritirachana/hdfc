@@ -1,0 +1,568 @@
+
+<style>
+    /*FAQ section, where the accordion is kept, including section specific css*/
+#faq {
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	min-height: 100vh;
+}
+
+#faq .add {
+	/*Add is the name for the plus icon*/
+	display: block;
+}
+
+#faq .remove {
+	/*Remove is the name for the less icon*/
+	display: none;
+}
+
+#faq i {
+	font-size: 30px;
+}
+
+/*Accordion container and each item*/
+.accordion {
+    max-width: 80%;
+    height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.accordion-item {
+	background-color: transparent;
+	border-bottom: 3px solid black;
+
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+/*Styles for the question*/
+
+.accordion-title {
+	display: flex;
+
+	align-items: center;
+	justify-content: space-around;
+
+	color: black;
+	font-size: 18px;
+	font-family: Open Sans;
+	font-weight: 600;
+
+	width: 100%;
+	padding: 1rem 0;
+	cursor: pointer;
+	transition-duration: 0.5s;
+}
+
+.accordion-title:hover {
+	color: black;
+}
+
+.accordion-title h2 {
+	width: 100%;
+}
+
+/*Styles for the answer*/
+
+.accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	position: relative;
+	background-color: #939393;
+	transition: max-height 0.6s;
+	font-family: Open Sans;
+    font-weight: 400;
+    overflow: hidden !important;
+    overflow-y: scroll !important;
+}
+
+.accordion-content p {
+	padding: 20px;
+	color: white;
+}
+.heading-block{    
+    font-size: 34px;
+    font-weight: 600;
+    color: #3f3ff9;
+    margin-top: 5vh;
+}
+.main-heading-block{    
+    font-size: 38px;
+    font-weight: 700;
+    color: #3f3ff9;
+
+}
+.list1{
+    list-style: circle;
+    margin-left: 5vh;
+    color: white;
+}
+.list2{
+    list-style: disc;
+    margin-left: 5vh;
+}
+.list2 li{
+    margin-left: 2vh;
+}
+.list3{
+    list-style: circle;
+    margin-left: 5vh;
+    color: white;
+    padding-bottom: 2vh;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+    .accordion {
+    max-width: 90% !important;
+    height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+}
+
+</style>
+
+	<section id="faq">
+		<div class="accordion">
+            <h1 class="main-heading-block">FAQ</h1>
+            <h1 class="heading-block">Generic</h1>
+			<div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Do I have to log in again when I revisit?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Yes. The property show will be live from 17th October, 2020 and will continue till 25th October, 2020. You need
+                        to log-in with your credentials each time you visit.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>What are the event dates and timings? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>The event will be live from 17th October, 2020 and will continue till 25th October, 2020. The sales
+                        representatives will be available from 10:30 am to 6:30 pm. However, you can visit the show at any time as
+                        per your convenience. </p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Are there any fees for visiting? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>No. The GIHED CREDAI VIRTUAL PROPERTY SHOW is free for all to visit and explore.</p>
+				</div>
+            </div>
+            <h1 class="heading-block">Technical</h1>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Which is the best way to experience the show?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>We suggest that you use the latest Google Chrome for optimum results. And to get a complete exhibitor
+                        experience, our recommendation is to access the platform on a laptop or computer.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Can I attend the event through my mobile / tab?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Yes. The GIHED CREDAI VIRTUAL PROPERTY SHOW will be accessible through all smartphones, tablets, PCs and
+                        laptops.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>How much internet speed is required to visit the property show?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>The internet requirement is the same as playing YouTube without buffering.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Do I have to log in again when I revisit?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Yes. The property show will be live from 17th October, 2020 and will continue till 25th October, 2020. You need
+                        to log-in with your credentials each time you visit.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>I need technical support. Who can I contact?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>If you have further questions, or require any help during your visit at the GIHED CREDAI Virtual Property Show,
+                        click on the Information Centre in the lobby</p>
+				</div>
+            </div>
+            <h1 class="heading-block">Profile</h1>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Can I change my buying preferences at any time?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Yes, you can edit your profile at any time during the event.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Where will my information be used?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>The details filled in the profile will be used to show you shortlisted properties in the ‘What is Where’ window.</p>
+				</div>
+            </div>
+            <h1 class="heading-block">Briefcase</h1>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>What is a briefcase?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>A briefcase is a digital bog that can hold documents for you.</p>
+				</div>
+			</div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>How can I use briefcase?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>You can save brochures from the stalls into your briefcase</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>What will happen to my documents in the briefcase after I log out?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>All the documents from the briefcase will be emailed to you after you log out.</p>
+				</div>
+			</div>
+            <h1 class="heading-block">Offers</h1>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Do I get special discount on property booking? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Yes, you must have received a cashback voucher.</p>
+				</div>
+			</div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>How can I redeem the voucher?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>You can give your coupon code to the developer at the time of property booking. The developer will then verify
+                        your coupon code with GIHED CREDAI and give you the benefits.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Which developers are giving the cashback offer?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>All participating developers of GIHED CREDAI Property Show 2020 will be giving you the cashback offer.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Till when can I use the cashback voucher?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>The cashback voucher can be redeemed until 31st December 2020</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Are there any terms and conditions applicable for the voucher?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Yes, there are certain terms and conditions applicable to redeem the cashback vouchers. These are mentioned
+                        below.<br>
+                        <ul class="list1">
+                            <li>Valid only for property purchase and not on purchase of loans, allied industry products or other items</li>
+                            <li>Redeemable only on properties of developers participating in GIHED CREDAI Virtual Property Show
+                                2020. Valid till 31st December 2020</li>
+                            <li>Only 1 voucher can be redeemed on purchase </li>
+                            <li> Voucher is transferrable to your family member but cannot be clubbed with any other offer of developer. </li>
+                            <li>One voucher can be used only once</li>
+                            <li><span>Cash redemption criteria
+                                <ul class="list2">
+                                    <li>Property Cost - Cash redemption</li>
+                                    <li>upto 50 lacs - 50000/-</li>
+                                    <li>Above 51 lacs - 100000/-</li>
+
+                                </ul>
+							</span> </li>
+                            <li>All disputes & conflicts subject to Ahmedabad jurisdiction only</li>
+                        </ul>
+                    </p>
+				</div>
+            </div>
+            <h1 class="heading-block">Properties & Participants</h1>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>How many properties are on display?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>The GIHED CREDAI VIRTUAL PROPERTY SHOW will be having a more than 200 properties on display. </p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Where can I find the list of exhibitors?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>To access the entire list of all exhibitors, you can refer to the ‘Participant List’. Click here to open the participant
+                        list</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>THow do I get project details of all exhibitors?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>When you access the ‘What is Where’ booklet, you can find all developers’ project details within it. Click here
+                        to download the booklet</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>How can I visit a specific stall?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+                    <p>There are multiple ways to visit any stall.</p>
+                    <ul class="list3">
+                        <li>
+                        You can click on the company name or stall number in the ‘What is Where’ window to visit the stall
+                    </li>
+                    <li>You can click on the company logos scrolling at the bottom in the lobby</li>
+                    <li>You can click on the company logo on the logo panels visible in the lobby</li>
+                </ul>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>How can I find the property of my choice?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>You can use the ‘What is Where’ feature to filter and shortlist the prospective properties. Further, you can visit
+                        the stalls and interact with the developers directly for further details.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>How can I get more information about any property?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>You can interact with the developer at any stall through the chat feature. You can also view brochures, video
+                        ads and branding panels from each stall.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>How can I get in touch with the representatives at the stall?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Each stall has a chat feature. When you click on ‘Chat’, your text interaction with the representative will start.
+                        In case, they are not occupied or not available, you can schedule a call back.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Can I schedule meeting with any particular exhibitor? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Yes. You can visit the developers’ stall and click on the Chat option in order to schedule a meeting with a
+                        representative of the exhibitor. </p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2> What should I do if I cannot reach sales representative of the particular stall? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>TThe sales representative might be busy at that moment. You can request for a call back from the respective
+                        stall.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Is there a video chat feature available?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>TYes, this feature is available for all sponsors. You can request the sponsors for a video chat through Chat button
+                        from their stalls.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Can I book any property online?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>You can surely connect with the respective developer and book the property. However, please note that GIHED
+                        CREDAI does not have any role in the sales/purchase of any property.</p>
+				</div>
+            </div>
+            <h1 class="heading-block">Auditorium</h1>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Can I access and view recordings of any previous sessions?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Yes. The sessions will be recorded and accessible for you to view later.</p>
+				</div>
+            </div>
+            <h1 class="heading-block">Organizer:</h1>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Can I get more details of organizer? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Please visit GIHED CREDAI’s official website for complete information about the organizer –
+                      <a href="https://www.gihedcredai.org">www.gihedcredai.org</a></p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>How can I contact the organizer? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>You can contact them on 91-9510554444 or mail@gihedcredai.org</p>
+				</div>
+            </div>
+            <h1 class="heading-block">Any other queries:</h1>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>Can I get more details of organizer? </h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>Please visit GIHED CREDAI’s official website for complete information about the organizer –
+                      <a href="https://www.gihedcredai.org">www.gihedcredai.org</a></p>
+				</div>
+            </div>
+            <div class="accordion-item" style="border-bottom: none;">
+				<div class="accordion-title" >
+                    <h2>If you have any other questions that aren’t answered, please feel free to reach out to us on
+                        <a href="https://info@gobananas.co.in">info@gobananas.co.in</a></h2>
+                    <!-- <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i> -->
+				</div>
+				<!-- <div class="accordion-content">
+					<p>You can contact them on 91-9510554444 or mail@gihedcredai.org</p>
+				</div> -->
+            </div>
+		</div>
+
+		<script>
+            const questions = document.getElementsByClassName("accordion-title"); //Gets all the questions (plus icon)
+
+for (const question of questions) {
+	const answer = question.parentElement.querySelector(".accordion-content");
+	const remove = question.parentElement.querySelector(".remove");
+	const add = question.parentElement.querySelector(".add");
+	let open = false; //Variable to check if the answer is visible or not
+
+	function openAnswer() {
+		if (open == true) {
+			//If you click the question while the answer is visible it will stop being visible and open will change it's value to false
+			add.style.display = "block";
+			remove.style.display = "none";
+			answer.style.overflow = "hidden";
+			answer.style.maxHeight = "0";
+			open = false;
+		} else {
+			//If you click the question while the answer is not visible it will start being visible and open will change it's value to true
+			add.style.display = "none";
+			remove.style.display = "block";
+			answer.style.maxHeight = "300px";
+			answer.style.overflow = "visible";
+			open = true;
+		}
+	}
+
+	question.addEventListener("click", openAnswer);
+}
+
+        </script>
+	</section>

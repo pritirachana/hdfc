@@ -1,0 +1,293 @@
+
+<style>
+    /*FAQ section, where the accordion is kept, including section specific css*/
+#faq {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 96vh;
+}
+
+#faq .add {
+	/*Add is the name for the plus icon*/
+	display: block;
+}
+
+#faq .remove {
+	/*Remove is the name for the less icon*/
+	display: none;
+}
+
+#faq i {
+	font-size: 30px;
+}
+
+/*Accordion container and each item*/
+.accordion {
+    max-width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.accordion-item {
+	background-color: transparent;
+	border-bottom: 3px solid black;
+
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+/*Styles for the question*/
+
+.accordion-title {
+	display: flex;
+
+	align-items: center;
+	justify-content: space-around;
+
+	color: black;
+	font-size: 18px;
+	font-family: Open Sans;
+	font-weight: 600;
+
+	width: 100%;
+	padding: 1rem 0;
+	cursor: pointer;
+	transition-duration: 0.5s;
+}
+
+.accordion-title:hover {
+	color: black;
+}
+
+.accordion-title h2 {
+	width: 100%;
+	font-size: 18px;
+}
+
+/*Styles for the answer*/
+
+.accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	position: relative;
+	background-color: #939393;
+	transition: max-height 0.6s;
+	font-family: Open Sans;
+    font-weight: 400;
+    overflow: hidden !important;
+    overflow-y: scroll !important;
+}
+
+.accordion-content p {
+	padding: 20px;
+	color: white;
+}
+.heading-block{    
+    font-size: 34px;
+    font-weight: 600;
+    color: #3f3ff9;
+    margin-top: 5vh;
+}
+.main-heading-block{    
+    font-size: 38px;
+    font-weight: 700;
+    color: #3f3ff9;
+
+}
+.list1{
+    list-style: circle;
+    margin-left: 5vh;
+    color: white;
+}
+.list2{
+    list-style: disc;
+    margin-left: 5vh;
+}
+.list2 li{
+    margin-left: 2vh;
+}
+.list3{
+    list-style: circle;
+    margin-left: 5vh;
+    color: white;
+    padding-bottom: 2vh;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+    .accordion {
+    max-width: 90% !important;
+    height: 90vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+}
+
+</style>
+
+	<section id="faq">
+		<div class="accordion">
+			<div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>1. What is a .ME domain name?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>.ME domain name is used by almost a million people and businesses from across the world. It’s a top-level domain for Montenegro, a country in SouthEast Europe, but, because of its meaning it is considered a global domain name which people use for their personal website like JayShetty.me, or to personalize their services like PayPal.me</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>2. What is .ME domain used for? Who uses .ME domains?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>.ME domain name is a perfect choice for setting up your personal website. It can also be used for creating an online resume, personal blog, sharing your craft or setting up a custom email address.<br> 
+						.ME also goes great with your startup or business website, as it helps you send a powerful call-to-action message in a web link. A lot of big brands put their trust in .ME, such as Facebook (fb.ME, m.ME), WordPress (wp.ME), Spotify (Spotify.ME), etc. In addition, businesses like PayPal (PayPal.ME) use .ME to personalize their services.<br>
+						For more info on using .ME domain name, check out these blog posts - "Use .ME: Make Your Personal Brand AwesoME" and "Use .ME for Building a MEmorable Business Website".</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>3. What characters and symbols can be a part of a .ME domain name?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>.ME is an IDN domain as of 2018. A domain name that is an IDN (internationalized domains) can have ASCII alphanumeric characters and hyphens, as well as all other characters. You can register your .ME domain in the following languages and scripts: Arabic, Belarusian, Bosnian, Bulgarian, Chinese (traditional and simplified), Croatian, Danish, Finnish, French, German, Hindi, Hungarian, Icelandic, Italian, Korean, Japanese, Latvian, Lithuanian, Macedonian, Montenegrin (Latin and Cyrillic), Polish, Portuguese, Russian, Serbian (Latin and Cyrillic), Spanish, Swedish, Turkish and Ukrainian.</p>
+				</div>
+            </div>
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>4. How long can a .ME domain name be?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>The maximum length of a domain name is 63 characters, including the dot and the domain extension. So, if you are lucky to have a domain like me.ME you have a 5 character domain. Many people would refer to "me.ME" as a two-letter domain, however, it's important for you to know that the ".ME" part counts as well, so actually, this domain has 5 characters. The complete URL length may not exceed 253 characters.</p>
+				</div>
+            </div>
+
+			<div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>5. How safe is a .ME domain? What is .ME's anti-abuse policy?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>While our policies were always anti-abuse oriented, in 2016 we decided to establish an anti-abuse team, together with our back-end provider and partner Afilias and start to act proactively to ensure the safety and security of .ME neighborhood! This includes daily monitoring for spam, phishing, malware, pharming, fast flux hosting, illegal access to other computers or networks, distribution of child pornography, gathering domains by misuse of WHOIS information, but also sinkholing domains found to be a threat as botnets, and other forms of abuse. For detailed explanations and definitions of each of these terms please check our policies page.</p>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>6. What happens if I don't renew my domain name?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>If you do not renew the domain name it will expire and eventually get back to the pool of available domains. For instance, after a .ME domain expires it is automatically auto-renewed (provided that the sponsoring registrar allows for an auto-renew period) and the domain holder can continue to use it after paying a renewal fee. If the holder does not renew it, the subject .ME domain will be deleted and it will enter a 30-day redemption grace period. During this period the domain holder may redeem the domain but for a higher price (prices are set by the sponsoring registrar). If the subject .ME domain is not redeemed it will enter a 5-day redemption grace period when no changes could be made to the domain. After the redemption grace period a .ME domain becomes available for public registration.</p>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>7. What are premium .ME domains and how to get one yourself?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>.ME Premium Names are highly valuable .ME domains, such as key-words and call-to-action domains which naturally create a catchy marketing message. Just try to forget a service called About.ME, Return.ME or Join.ME. Mission impossible!</p>
+				</div>
+			</div>
+			
+			<div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>8. Register it through your favourite registrar</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>To register a .ME premium domain you just need to “Previously, .ME premium domains could be registered via auctions, our Premium Domain Program, and, most recently, through Afternic at “buy-now” prices. Making them directly accessible to millions of entrepreneurs, startups and individuals is the ultimate step in releasing our best .ME domains into the wild.</p>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>9. Premium Domain Program</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>You can apply for a premium .ME domain through our Premium Domain Program.  Premium Domain Program is designed to match the most attractive .ME domains, which have been reserved by the .ME Registry, with the most innovative projects, services, and websites.</p>
+				</div>
+			</div>
+
+            <div class="accordion-item">
+				<div class="accordion-title">
+                    <h2>10. How to become a certified .ME registrar?</h2>
+                    <i class="fas fa-chevron-circle-down add"></i>
+					<i class="fas fa-chevron-circle-up remove"></i>
+				</div>
+				<div class="accordion-content">
+					<p>You can register a .ME domain only through a .ME accredited registrar or their reseller. Any company can become an accredited .ME Registrar. This can be completed in three easy steps:</p>
+                        <ul class="list1">
+							<li><b>Step 1: Apply</b><br>
+								If the registrar already has an ORMS account (Afilias Online Registrar Management System) they can login here: <a href="https://apply.afilias.info/." target="blank">https://apply.afilias.info/</a>. If they do not have an ORMS account they may send us their company information and we will open it for them.<br>
+								As for the rest of the documentation, in the ORMS the registrar will find two forms that need to be filled in. The Data Form asks for contact information of the registry liaisons and the Finance Form asks for the registrar’s financial information. In addition to the forms we need a company formation document and a signed RRA (Registry-Registrar Agreement).
+							</li>
+							<li><b>Step 2: Test</b><br>
+								After the forms are completed we need to run OT&E (Operational Test and Evaluation) to make sure that the registrar can run domain operations smoothly.
+							</li>
+							<li><b>Step 3: Production</b><br>
+								As soon as the test is successfully completed the registrar is moved to production and contacted by our sales team.
+							</li>
+                        </ul>
+                    </p>
+				</div>
+            </div>
+
+		</div>
+
+		<script>
+            const questions = document.getElementsByClassName("accordion-title"); //Gets all the questions (plus icon)
+
+for (const question of questions) {
+	const answer = question.parentElement.querySelector(".accordion-content");
+	const remove = question.parentElement.querySelector(".remove");
+	const add = question.parentElement.querySelector(".add");
+	let open = false; //Variable to check if the answer is visible or not
+
+	function openAnswer() {
+		if (open == true) {
+			//If you click the question while the answer is visible it will stop being visible and open will change it's value to false
+			add.style.display = "block";
+			remove.style.display = "none";
+			answer.style.overflow = "hidden";
+			answer.style.maxHeight = "0";
+			open = false;
+		} else {
+			//If you click the question while the answer is not visible it will start being visible and open will change it's value to true
+			add.style.display = "none";
+			remove.style.display = "block";
+			answer.style.maxHeight = "300px";
+			answer.style.overflow = "visible";
+			open = true;
+		}
+	}
+
+	question.addEventListener("click", openAnswer);
+}
+
+        </script>
+	</section>

@@ -1,0 +1,35 @@
+<style>
+    body{
+        overflow-y: scroll;
+    }
+    html{
+        overflow-y: scroll;
+    }
+    .col-sm-4{
+        text-align: center;
+        margin-top:20px;
+    }
+    .expo-box{
+        background: #e0e0e0;
+        min-height: 250px;
+        max-height: 250px;
+        padding:10px;
+    }
+    h1{
+        text-align: center;
+        font-size:42px;
+        padding:10px;
+        font-weight:bold;
+    }
+</style>
+<h1>Expos</h1>
+<div>
+    <div class="row" style="overflow-y: auto !important;height: 100vh;width: 98%;margin: 0px auto;">
+        <div class="col-sm-4 col-sm-offset-2" ng-repeat = "expos in expobyCategory">
+            <div class="expo-box">
+                <a ui-sref="expomain({id: expos.id})"><img style="max-width:45%;max-height:200px;" class="" src="{{expos.company_banners}}"></a>
+                <a ui-sref="expomain({id: expos.id})"><h3 style="padding:10px;font-weight: 500;">{{expos.company_name}}</h3></a>
+            </div>    
+        </div>
+    </div>
+</div>    

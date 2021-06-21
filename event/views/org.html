@@ -1,0 +1,288 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    area{
+        border: none;
+        outline: none;
+    }
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    .expo-header{
+    background-color: #4a2d16;
+}
+.modal-title{
+  display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.modal-title img{
+  max-width: 10%;
+  margin-left: 2vh;
+  margin-right: 2vh;
+}
+.expo-header p{
+  color: white;
+    margin: auto;
+    margin-left: 6%;
+}
+.thank-you-message{
+  /*display: none;*/
+  text-align: center;
+
+}
+    </style>
+    <div ng-hide="showvideo" style="position: relative;">
+        <img class="rwdimgmap img-fluid" src="https://d3daqnblwo9fae.cloudfront.net/org.jpg" usemap="#powerpuffgirlsnew" alt="" />
+        <map name="powerpuffgirlsnew">
+            <area target="" alt="Chat" title="Chat" data-toggle="modal" data-target="#exampleModal6" coords="53,109,53,204,469,211,473,116" shape="poly">
+            <area target="" alt="Video Conf" data-toggle="modal" data-target="#exampleModal6" data-target="#chatModal" coords="53,241,51,331,462,331,464,238" shape="poly">
+            <area target="" alt="Videos" title="Videos" ng-click="videotracking()" data-toggle="modal" data-target="#videosModal" coords="56,361,56,456,464,461,473,359" shape="poly">
+            <area target="" alt="Games" ng-click="gametracking()" title="Games" data-toggle="modal" data-target="#gameModal2" coords="51,486,53,586,462,590,476,495" shape="poly">
+            <area target="" alt="Links" title="Links" data-toggle="modal" data-target="#linksModal" coords="2113,173,2110,263,2530,266,2528,168" shape="poly">
+            <area target="" alt="Join Meeting" title="Join Meeting" data-toggle="modal" data-target="#exampleModal6" coords="2110,293,2113,397,2528,400,2523,300" shape="poly">
+            <area target="" alt="Form" title="Form" data-toggle="modal" data-target="#exampleModal6" coords="2110,418,2110,513,2519,520,2526,420" shape="poly">
+            <!-- <area target="blank" alt="brochure1" title="brochure1" href="images/docs/1. IFCAI/IBS AACSB Accr Ad.pdf" coords="201,713,196,790,432,795,408,711" shape="poly">
+            <area target="blank" alt="brochure2" title="brochure2" href="images/docs/1. IFCAI/IBS Case Studies brochure.pdf" coords="201,822,190,897,426,901,432,820" shape="poly">
+            <area target="blank" alt="brochure3" title="brochure3" href="images/docs/1. IFCAI/IBSAT 2 folder 2021 - updated.pdf" coords="630,929,635,1040,957,1044,952,924" shape="poly">
+            <area target="blank" alt="brochure4" title="brochure4" href="images/docs/1. IFCAI/IBSAT-flyer2021 - updated.pdf" coords="2174,713,2174,808,2401,801,2403,697" shape="poly">
+            <area target="blank" alt="brochure5" title="brochure5" href="images/docs/1. IFCAI/Icfai Group Profile Flyer 2020.pdf" coords="2178,820,2181,904,2412,901,2390,815" shape="poly">
+            <area target="" alt="video" title="video"  ng-click="myTrigger('video')" coords="1509,819,1502,919,1806,933,1806,817" shape="poly"> -->
+            
+        </map>
+        <div class="back-button">
+            <button ui-sref="expo" class="back-btn"><i class="fas fa-arrow-circle-left"></i> &nbsp;<span>Back</span></button>
+        </div>
+        <div class="expo-msg-box">
+            <p>{{booth_message}}</p>
+         </div>
+    </div>
+    <div class="lightbox" ng-if="popupvideo" id="lightbox-1">
+        <div class="video-pop-box">
+        <iframe src="https://www.youtube.com/embed/r7FaMXaUhnI?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+    </div>
+    </div>
+    <!-- <div class="lightbox" ng-if="popupvideo2" id="lightbox-1">
+        <div class="video-pop-box">
+        <iframe src="images/brochure/2. RIGHT_Driving Real Connections with Connected Consumers.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="lightbox__close" ng-click="closePopup()"> <img id="close-card" src="images/close-Copy.svg"></a>
+    </div>
+    </div> -->
+    
+        <!-- video-modal -->
+        <div class="modal fade" id="videosModal" tabindex="-1" role="dialog" aria-labelledby="videosModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header  expo-header">
+                  <h5 class="modal-title" id="VideoModalLabel">Videos List</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                    <div id="modalVideoBody" class="modal-body">
+                        <div class="videos">
+                            <ul class="videos-list">
+                              <a ng-click="myTrigger('video')"><li>Get to Know the New .ORG</li></a>
+                              <!-- <a href=""><li>video 2</li></a>
+                              <a href=""><li>video 3</li></a>
+                              <a href=""><li>video 4</li></a>
+                              <a href=""><li>video 5</li></a>
+                              <a href=""><li>video 6</li></a> -->
+                            </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+          </div>
+
+              <!-- links modal -->
+    <div class="modal fade" id="linksModal" tabindex="-1" role="dialog" aria-labelledby="linksModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header expo-header">
+              <h5 class="modal-title" id="linksModalLabel">Links List</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+                <div id="modallinksBody" class="modal-body">
+                    <div class="videos">
+                        <ul class="videos-list">
+                          <a href="https://thenew.org/" target="blank"><li>The New .ORG</li></a>
+                          <a href="https://liveforthis.org/" target="blank"><li>We Live For This .ORG</li></a>
+                          <!-- <a href=""><li>social media 2</li></a>
+                          <a href=""><li>social media 3</li></a>
+                          <a href=""><li>social media 4</li></a> -->
+                        </ul>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+    
+      
+          <!-- demos modal -->
+    <div class="modal fade" id="demosModal" tabindex="-1" role="dialog" aria-labelledby="demosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header expo-header">
+              <h5 class="modal-title" id="demosModalLabel">Demos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal(this)">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+                <div id="modaldemosBody" class="modal-body">
+                    <iframe id="demo-iframe" allow="camera; microphone; fullscreen; display-capture" src=""  class="accordion" frameborder="0"></iframe>
+                  </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="demosModal2" tabindex="-1" role="dialog" aria-labelledby="demosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header expo-header">
+              <h5 class="modal-title" id="demosModalLabel">Demos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+                <div id="modaldemosBody2" class="modal-body">
+                  <div class="videos">
+                    <ul class="videos-list">
+                      <li onclick="open_demoOrg()">11th Dec, 3 pm - Meeting with GlobeHost</li>
+                      <li onclick="open_demoOrg()">11th Dec, 5 pm - Meeting with JInfo.net</li>
+                      <li onclick="open_demoOrg()">11th Dec, 5:45 pm - Meeting with AlphaNet</li>
+                      <li onclick="open_demoOrg()">11th Dec, 6:45 pm - Meeting with EverData</li>
+                      <li onclick="open_demoOrg()">12th Dec, 2 pm - Meeting with Book & Host</li>
+                      <li onclick="open_demoOrg()">12th Dec, 3 pm - Meeting with DomainIndia.org</li>
+                      <li onclick="open_demoOrg()">12th Dec, 4 pm - Meeting with IndiaMart</li>
+                    </ul>
+                </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+
+         <!-- form modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header expo-header">
+              <h5 class="modal-title" id="formModalLabel">Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+                <div id="modalformBody" class="modal-body">
+                    <div class="container-fluid form-expo">
+                      <form ng-submit="submitFeedback(feedback)">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-12">
+                                <input type="text" id="name" name="text-input" ng-model="feedback.website" placeholder="Your Website:" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-12">
+                                <input type="text" id="email" name="text-input" ng-model="feedback.email" placeholder="Your Favourite Product / Service to Sell:" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-12">
+                                <input type="text" id="Contact" name="text-input" ng-model="feedback.message" placeholder=" One Word That Comes to Mind when You Think of .ORG:" class="form-control">
+                            </div>
+                        </div>
+                       
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-12" style="text-align: center;">
+                               <button class="form-button" type="submit">Submit</button>
+                            </div>
+                        </div>
+                      </form>
+                      <div class="thank-you-message" ng-if="form_thank_you">
+                        <h3>Thank You!</h3>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+
+             <!-- games modal -->
+    <!-- <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
+      <div style="margin-top: 2%;" class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header expo-header">
+            <h5 class="modal-title" id="gameModalLabel">Race with <img src="images/org-logo.png"><span style="font-size: 10px; margin-left: 1vh;">(Instructions for desktop users: use mouse for navigation)</span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              <div id="modalgameBody" class="modal-body">
+                 <iframe id="myFrame" class="accordion" frameborder="0"></iframe>
+                </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="modal fade" id="gameModal2" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
+      <div style="margin-top: 2%;" class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header expo-header">
+            <h5 class="modal-title" id="gameModalLabel"><img src="images/org-logo.png"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              <div id="modalgameBody2" class="modal-body">
+                <h2>Instructions</h2>
+                <ol>
+                  <li>Use mouse for navigation</li>
+                  <li>You have only 5 chances</li>
+                </ol>
+                <button type="button" class="game-btn" onclick="open_gameOrg()">Play Game</button>
+                </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- onclick="open_gameBlue()" -->
+
+    <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
+      <div style="margin-top: 2%;" class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header expo-header">
+            <h5 class="modal-title" id="gameModalLabel">Race with <img src="images/org-logo.png"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal(this)">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              <div id="modalgameBody" class="modal-body">
+                 <iframe id="myFrame" class="accordion" frameborder="0"></iframe>
+                </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <p>"Thank you for visiting us, the event is over now."</p>   
+          </div>
+        </div>
+      </div>
+    </div>

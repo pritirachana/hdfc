@@ -1,0 +1,295 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+    }
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    /* resource */
+    .resource-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .close-data{
+        width: 3vh;
+        position: absolute;
+        top: 1vh;
+        right: 1vh;
+        cursor: pointer;
+    }
+    .resource-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .resource-box ul{
+        color: white;
+        width: 100%;
+    }
+    .resource-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .resource-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .heading{
+        text-align: center;
+        width: 100%;
+        padding-bottom: 2vh;
+        color: white;
+    }
+    .heading h1{
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+
+    /* video */
+    .video-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .video-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .video-box ul{
+        color: white;
+        width: 100%;
+    }
+    .video-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .video-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    /* brochure */
+    .brochure-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .brochure-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .brochure-box ul{
+        color: white;
+        width: 100%;
+    }
+    .brochure-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .brochure-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .modal-dialog{
+      margin-top: 10%;
+    }
+    iframe{
+      width: 100%;
+      max-height: 56vh;
+      min-height: 56vh;
+    }
+    a{
+      text-decoration: none !important;
+      color: white;
+    }
+    .text{
+      width: 85%;
+    /* text-overflow: ellipsis; */
+    word-break: break-word;
+    }
+        .company-name{
+    text-align: center;
+    width: 100%;
+    background-color: rgb(210 210 208);
+    padding: 1vh;
+
+}
+.company-name h1{
+    font-size: 18px;
+    font-weight: 700;
+}
+.chat-pop{
+        background-color: white;
+        height: 45vh;
+        width: 21%;
+        z-index: 999999;
+        position: absolute;
+        bottom: 40%;
+        border-radius: 8px;
+        right: 5vh;
+        display: block;
+    }
+    .message-container{
+        height: 90%;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        background-color: white;
+        padding:1vh;
+        
+    }
+    .close-chat-expo{
+        position: absolute;
+        top: -1vh;
+        right: -1vh;
+        width: 3vh;
+        cursor: pointer;
+    }
+    .name-time{
+        display: flex;
+        justify-content: space-between;
+    }
+    .expo-name{
+        margin-right: 3vh;
+    }
+    .expo-chat{
+        margin-bottom: 2vh;
+    }
+    .expo-message{
+        color: #7c7c7c;
+    }
+    </style>
+    <div ng-hide="showvideo" style="position: relative;">
+        <img class="rwdimgmap img-fluid"  src="images/stalls/Alliance Booth 2_AGC_Booth.jpg" usemap="#powerpuffgirlsnew" alt="" />
+        <map name="powerpuffgirlsnew">
+            <area target="" alt="resources" title="resources" onclick="resources()"  coords="975,627,975,776,1243,776,1248,622" shape="poly">
+            <area target="" alt="video" title="video" onclick="boothvideo()"  coords="1484,624,1486,776,1752,779,1754,622" shape="poly">
+            <area target="" alt="chat" title="chat" ng-click="showchatWithUs()"  coords="1865,842,1863,938,2035,940,2033,842" shape="poly">
+            <area target="" alt="brochure" title="brochure" onclick="boothbrochure()" coords="294,731,296,863,544,863,546,733" shape="poly">
+        </map>
+        <div class="chat-pop" ng-show="chatwithuspopup">
+        <img class="close-chat-expo" src="images/criss-cross.svg" ng-click="hidechatWithUs()">
+        <div class="company-name">
+            <h1 id="">AGC</h1>
+            </div>
+        <div class="message-container">          
+            
+        </div>
+        <div id="chat-msg" >
+            <div id="input-icon-chat">
+          <i id="input-icon" class="fas fa-paper-plane" ng-click="sendMessage(message)"></i>
+          </div>
+          <input style="border: none;outline-style: none;" ng-model="message" ng-keypress="($event.charCode==13)? sendMessage(message) : return"  class="chat-input" id="chat-input-text" type="text" placeholder="Start Typing..." autofocus>
+        </div>
+    </div>
+    </div>
+   
+    <div class="resource-main">
+       <div class="heading">
+           <h1>Resources</h1>
+       </div>
+        <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+        <div class="resource-box">
+            <ul>
+              <a href="videos/AGC/AGC Connect  Brochure_09232020 Final.pdf" target="blank"><li><span class="text">AGC Connect  Brochure</span><span> <i class="fas fa-file-pdf"></i></span></li></a>
+              <a href="videos/AGC/AGC Corporate brochure.pdf" target="blank"><li><span class="text">AGC Corporate brochure</span><span> <i class="fas fa-file-pdf"></i></span></li></a>
+              <li ng-click="showVideoSolution('https://player.vimeo.com/video/471973216?autoplay=1')" ><span class="text">AGC Networks Corporate Video</span><span><i class="far fa-play-circle"></i></span></li>
+              <li ng-click="showVideoSolution('https://player.vimeo.com/video/471973284?autoplay=1')" ><span class="text">FLAIR AGENT WORKSPACE</span><span><i class="far fa-play-circle"></i></span></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="video-main">
+        <div class="heading">
+            <h1>Videos</h1>
+        </div>
+         <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+         <div class="video-box">
+             <ul>
+ 				<li ng-click="showVideoSolution('https://player.vimeo.com/video/471973216?autoplay=1')"  data-category="video_play" data-label="AGC Networks Corporate Video" data-value="Videos" listen><span class="text">AGC Networks Corporate Video</span><span><i class="far fa-play-circle"></i></span></li>
+                <li ng-click="showVideoSolution('https://player.vimeo.com/video/471973284?autoplay=1')"  data-category="video_play" data-label="FLAIR AGENT WORKSPACE" data-value="Videos" listen><span class="text">FLAIR AGENT WORKSPACE</span><span><i class="far fa-play-circle"></i></span></li>
+             </ul>
+         </div>
+     </div>
+     <div class="brochure-main">
+        <div class="heading">
+            <h1>Brochures</h1>
+        </div>
+         <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+         <div class="brochure-box">
+             <ul>
+                <a ng-click="broucherDownload('videos/AGC/AGC Connect  Brochure_09232020 Final.pdf')" data-category="pdf_download" data-label="AGC Connect  Brochure" data-value="Brochure" listen><li><span class="text">AGC Connect  Brochure</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/AGC/AGC Corporate brochure.pdf')" data-category="pdf_download" data-label="AGC Corporate brochure" data-value="Brochure" listen><li><span class="text">AGC Corporate brochure</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+             </ul>
+         </div>
+     </div>
+     <div class="lightbox reception_video" ng-if="popupVideoSolution"  ng-init="startVideo()" id="lightbox-1">
+        <div class="video-pop-box">
+            <iframe ng-src="{{currentpopupvideo}}" id="popupVideoSolution" frameborder="0" allow="autoplay; fullscreen"></iframe>
+            <a class="lightbox__close" ng-click="hideVideoSolution()"><img src="images/close.svg"></a>
+        </div>
+    </div> 
+     <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            
+            <button type="button" class="close video_close" onclick="closeModal()">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body video_body">
+           <!-- <iframe src=""></iframe> -->
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>

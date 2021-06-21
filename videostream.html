@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <base href="http://dezd00medastx.cloudfront.net/"> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clappr/0.2.98/clappr.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-ga-events-plugin@0.1.3/dist/clappr-ga-events-plugin.min.js"></script>
+    <script src="https://demo.virtex.in:1234/socket.io/socket.io.js"></script>
+    <title></title>
+    <style type="text/css">
+    .media-control-left-panel {
+        display: none !important;
+        pointer-events: none;
+    }
+
+    .bar-container {
+        pointer-events: none;
+        display: none !important;
+    }
+
+    .media-control[data-media-control] .media-control-background[data-background] {
+        background: none !important;
+    }
+
+    .live {
+        left: 2vh;
+        position: absolute;
+        bottom: 1vh;
+        color: #62fe2d;
+        font-weight: 900;
+    }
+
+    .live img {
+        width: 8%;
+    }
+    </style>
+</head>
+
+<body style="background-color: black; margin: 0px; padding: 0px;">
+    <div id="player-wrapper" style="position: relative;"></div>
+    <div class="live"><img src="https://almond.atechnos.net/livestream.png"></div>
+</body>
+<script type="text/javascript" charset="utf-8">
+var r = 100000;
+var height = '100%';
+var width = '100%';
+// $('#player').resize({
+//     maxHeight: 720,
+//     maxWidth: 1280,
+//     minHeight: 350,
+//     minWidth: 320,
+// });
+var height = $(window).height();
+var width = '';
+var imageName = 'https://d3jngcoe26fiwv.cloudfront.net/demo/img/thanks.jpg';
+var videoLabel = '';
+var playerElement = document.getElementById('player-wrapper');
+window.onload = function() {
+    var player = new Clappr.Player({
+        source: 'https://d3jngcoe26fiwv.cloudfront.net/croma_latest/DemoCromashootFinal_v5.m3u8',
+        poster: imageName,
+        parentId: '#player-wrapper',
+        plugins: {
+            core: [LevelSelector],
+        },
+        width: width,
+        height: height,
+        playback: {
+            playInline: true,
+        },
+        hideMediaControl: false,
+        disableErrorScreen: true,
+        autoPlay: true,
+        //mute: true,
+        //seek: 20,
+        disableKeyboardShortcuts: true,
+        disableVideoTagContextMenu: true,
+        loop: false,
+        seekEnabled: false,
+        autoSeekFromUrl: false,
+        mediacontrol: { buttons: '#FFFFFF' },
+        events: {
+            onPlay: function() {
+                // sendUdata();
+                //setInterval(updateData, 50000);
+            },
+            onPause: function() {
+                player.play()
+            },
+            onError: function(e) {
+                r--;
+                var s = player.options.source;
+                var t = 10;
+                var retry = function() {
+                    if (t === 0) {
+                        player.configure({ source: s });
+                        return;
+                    }
+
+                    Clappr.$('#retryCounter').text(t);
+                    t--;
+                    setTimeout(retry, 1000);
+                };
+
+                player.configure({
+                    autoPlay: true,
+                    poster: imageName,
+                });
+                //   resizePlayer();
+                if (r > 0) {
+                    retry();
+                    //resizePlayer();
+                }
+            },
+        } /**/ ,
+    });
+    player.seek(6);
+
+
+    var socket = io.connect('https://demo.virtex.net:1234');
+    socket.on('connect', function() {
+
+        console.log('connected');
+
+        socket.emit('seektimeupdate');
+
+        socket.on('playvideo', () => {
+            // player.play();
+            console.log('Unmute Trigger');
+            player.unmute();
+            player.play();
+        });
+
+        socket.on('stopvideo', () => {
+            player.stop();
+        });
+
+        socket.on('changeduration', (data) => {
+            console.log(data);
+            var duration = parseInt(data);
+            player.seek(duration);
+        });
+
+    });
+};
+// $(window).load(function() {
+//     if ($(window).width() <= 1279 && $(window).width() >= 800) {
+//         $('.container').find('.player-poster').css('height', '40%');
+//         $('.container').find('.player-poster').css('margin-top', '44%');
+//     }
+//     playerresize();
+// });
+
+// function playerresize() {
+//     if ($(window).width() <= 1279 && $(window).width() >= 800) {
+//         $('.container').find('.player-poster').css('height', '40%');
+//         $('.container').find('.player-poster').css('margin-top', '44%');
+//     }
+// } /**/
+</script>
+
+</html>

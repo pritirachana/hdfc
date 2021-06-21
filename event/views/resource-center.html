@@ -1,0 +1,320 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+    }
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    /* resource */
+    .resource-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .close-data{
+        width: 3vh;
+        position: absolute;
+        top: 1vh;
+        right: 1vh;
+        cursor: pointer;
+    }
+    .resource-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .resource-box ul{
+        color: white;
+        width: 100%;
+    }
+    .resource-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+    }
+    .resource-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .heading{
+        text-align: center;
+        width: 100%;
+        padding-bottom: 2vh;
+        color: white;
+    }
+    .heading h1{
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+
+    /* video */
+    .video-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .video-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .video-box ul{
+        color: white;
+        width: 100%;
+    }
+    .video-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+    }
+    .video-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    /* brochure */
+    .brochure-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .brochure-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .brochure-box ul{
+        color: white;
+        width: 100%;
+    }
+    .brochure-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+    }
+    .brochure-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .modal-dialog{
+      margin-top: 10%;
+    }
+    iframe{
+      width: 100%;
+      max-height: 56vh;
+      min-height: 56vh;
+    }
+    a{
+      text-decoration: none !important;
+      color: white;
+    }
+    .text{
+      width: 85%;
+    /* text-overflow: ellipsis; */
+    word-break: break-word;
+    }
+    </style>
+    <div ng-hide="showvideo">
+        <img class="rwdimgmap img-fluid" src="images/Resource Center.jpg" usemap="#powerpuffgirlsnew" alt="" />
+        <map name="powerpuffgirlsnew">
+            <area target="" alt="resources" title="resources"  onclick="resources()"  coords="516,89,514,393,1018,395,1021,82" shape="poly">
+            <area target="" alt="video" title="video" onclick="boothvideo()" coords="1515,89,1522,397,2026,393,2024,84" shape="poly">
+        </map>
+    </div>
+    <div class="resource-main">
+        <div class="heading">
+            <h1>Resources</h1>
+        </div>
+         <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+         <div class="resource-box">
+             <ul>
+                <a href="videos/AGC/AGC Connect  Brochure_09232020 Final.pdf" target="blank"><li><span class="text">AGC Connect  Brochure</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/AGC/AGC Corporate brochure.pdf" target="blank"><li><span class="text">AGC Corporate brochure</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/Avaya One Pager.pdf" target="blank"><li><span class="text">Avaya One Pager</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/CCAI IDC Info Spapshot - Fin Serv.pdf" target="blank"><li><span class="text">CCAI IDC Info Spapshot - Fin Serv</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/CCAI IDC Info Spapshot - Insurance.pdf" target="blank"><li><span class="text">CCAI IDC Info Spapshot - Insurance</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/CCAI IDC Info Spapshot - Telco.pdf" target="blank"><li><span class="text">CCAI IDC Info Spapshot - Telco</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Brightstar/Avaya Aura platform.pdf" target="blank"><li><span class="text">Avaya Aura platform</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Brightstar/Avaya-HEADSETS-BROCHURE.pdf" target="blank"><li><span class="text">Avaya-HEADSETS-BROCHURE</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Brightstar/BR-OPEN-PRODUCTS-DV15372EN.pdf" target="blank"><li><span class="text">BR-OPEN-PRODUCTS-DV15372EN</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Brightstar/FS-AVAYA-IP-OFFICE-finalv2 7222020.pdf" target="blank"><li><span class="text">FS-AVAYA-IP-OFFICE</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Avaya CCAAS booth/Factsheets/Avaya Multiexperience Contact center/Avaya oceana solution.pdf" target="blank"><li><span class="text">Avaya oceana solution</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Avaya CCAAS booth/Factsheets/Avaya Multiexperience Contact center/AVAYA WORKSPACES.pdf" target="blank"><li><span class="text">AVAYA WORKSPACES</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Avaya CCAAS booth/Factsheets/Avaya Onecloud CCAAS/Avaya OneCLoud CCaaS.pdf" target="blank"><li><span class="text">Avaya OneCLoud CCaaS</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Avaya CCAAS booth/Factsheets/Avaya Onecloud CCAAS/White paper_Digital transformation with Avaya .pdf" target="blank"><li><span class="text">White paper_Digital transformation with Avaya</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Avaya CCAAS booth/Factsheets//Case study/Case study-xiaomi.pdf" target="blank"><li><span class="text">Case study-xiaomi</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Avaya CCAAS booth/Factsheets/Powered by Avaya one cloud/ACCS Azure powered by one cloud Avaya.pdf" target="blank"><li><span class="text">ACCS Azure powered by one cloud Avaya</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Avaya CCAAS booth/Factsheets/Powered by Avaya one cloud/Avaya Centrum Brochure.pdf" target="blank"><li><span class="text">Avaya Centrum Brochure</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Avaya CCAAS booth/Factsheets/Workforce engagement/AVAYA MANAGING-RESOURCES-CUSTOMER FACT SHEET.pdf" target="blank"><li><span class="text">AVAYA MANAGING-RESOURCES-CUSTOMER FACT SHEET</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Avaya CCAAS booth/Factsheets/Workforce engagement/Avaya Workforce Engagement.pdf" target="blank"><li><span class="text">Avaya Workforce Engagement</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/CSI/At_Home_New Product.pdf" target="blank"><li><span class="text">At Home New Product</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/CSI/CSI_All Products_Offerings.pdf" target="blank"><li><span class="text">CSI All Products Offerings</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/CSI/CSI_Complete Profile.pdf" target="blank"><li><span class="text">CSI Complete Profile</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Extreme/2020-cloud-networking-guide-buyers-guide.pdf" target="blank"><li><span class="text">2020 cloud networking guide buyers guide</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Gnani/Gnani_Solution_Brochure.pdf" target="blank"><li><span class="text">Gnani Solution Brochure</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/Avaya One Pager.pdf" target="blank"><li><span class="text">Avaya One Pager</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/CCAI IDC Info Spapshot - Fin Serv.pdf" target="blank"><li><span class="text">CCAI IDC Info Spapshot - Fin Serv</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/CCAI IDC Info Spapshot - Insurance.pdf" target="blank"><li><span class="text">CCAI IDC Info Spapshot - Insurance</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/CCAI IDC Info Spapshot - Telco.pdf" target="blank"><li><span class="text">CCAI IDC Info Spapshot - Telco</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/IR/Avaya & IR_Performance and Experience Management.pdf" target="blank"><li><span class="text">Avaya & IR Performance and Experience Management</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/IR/IDCInfoBriefIRUC&CAsiaPacMEA.pdf" target="blank"><li><span class="text">IDC Info Brief IRUC & CAsia PacMEA</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Koopid/Koopid-Avaya Partnership.pdf" target="blank"><li><span class="text">Koopid-Avaya Partnership</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Microsoft/Cloud Migration Simplified.pdf" target="blank"><li><span class="text">Cloud Migration Simplified</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Microsoft/Cloud Scale.pdf" target="blank"><li><span class="text">Cloud Scale</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Microsoft/Four ways to maximise your business inteligence investments.pdf" target="blank"><li><span class="text">Four ways to maximise your business inteligence investments</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Microsoft/Seven Key Principles of Cloud Security and Privacy.pdf" target="blank"><li><span class="text">Seven Key Principles of Cloud Security and Privacy</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Microsoft/Three Ways Analytics Can Help.pdf" target="blank"><li><span class="text">Three Ways Analytics Can Help</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Microsoft/Understanding Migration Strategies.pdf" target="blank"><li><span class="text">Understanding Migration Strategies</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Tetherfi/01_Tetherfi Work From Home.pdf" target="blank"><li><span class="text">Tetherfi Work From Home</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Tetherfi/02_Tetherfi-VideoKYC.pdf" target="blank"><li><span class="text">Tetherfi VideoKYC</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Tetherfi/03_Tetherfi Virtual Banking.pdf" target="blank"><li><span class="text">Tetherfi Virtual Banking</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/Avaya One Pager.pdf" target="blank"><li><span class="text">Avaya One Pager</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/CCAI IDC Info Spapshot - Fin Serv.pdf" target="blank"><li><span class="text">CCAI IDC Info Spapshot - Fin Serv</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/CCAI IDC Info Spapshot - Insurance.pdf" target="blank"><li><span class="text">CCAI IDC Info Spapshot - Insurance</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Google/CCAI IDC Info Spapshot - Telco.pdf" target="blank"><li><span class="text">CCAI IDC Info Spapshot - Telco</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Conference Phone B109.pdf" target="blank"><li><span class="text">Avaya Conference Phone B109</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Conference Phone B199.pdf" target="blank"><li><span class="text">Avaya Conference Phone B199</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Desktop Phones Jseries 100.pdf" target="blank"><li><span class="text">Avaya Desktop Phones Jseries 100</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya vantage 3.0 use cases.pdf" target="blank"><li><span class="text">Avaya vantage 3.0 use cases</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Vantage 3.0.pdf" target="blank"><li><span class="text">Avaya Vantage 3.0</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Vantage K175 K165.pdf" target="blank"><li><span class="text">Avaya Vantage K175 K165</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Team collaboration/Avaya Spaces Immersive Meetings & Team collaboration.pdf" target="blank"><li><span class="text">Avaya Spaces Immersive Meetings & Team collaboration</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/UCAAS/Avaya IP Office.pdf" target="blank"><li><span class="text">Avaya IP Office</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/UCAAS/Avaya Workplace.pdf" target="blank"><li><span class="text">Avaya Workplace</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/UCAAS/Taking the Next Step in Communications and Collaboration.pdf" target="blank"><li><span class="text">Taking the Next Step in Communications and Collaboration</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/UCAAS/The Avaya Aura platform.pdf" target="blank"><li><span class="text">The Avaya Aura platform</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya Collaboration UNIT CU360.pdf" target="blank"><li><span class="text">Avaya Collaboration UNIT CU360</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya One Cable Connect Hub.pdf" target="blank"><li><span class="text">Avaya One Cable Connect Hub</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya Room System XT240.pdf" target="blank"><li><span class="text">Avaya Room System XT240</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya Room System XT7100.pdf" target="blank"><li><span class="text">Avaya Room System XT7100</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya Tracking Camera.pdf" target="blank"><li><span class="text">Avaya Tracking Camera</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/HUDDLE-CAMERAS.pdf" target="blank"><li><span class="text">HUDDLE-CAMERAS</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Verint/Fortune 500 Financial Services Firm Case Study (English US).pdf" target="blank"><li><span class="text">Fortune 500 Financial Services Firm Case Study</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/Verint/IAG Case Study (English UK).pdf" target="blank"><li><span class="text">IAG Case Study</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/VIS/Ccube Features.pdf" target="blank"><li><span class="text">Ccube Features</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/VIS/SAI_brochure_1 (1).pdf" target="blank"><li><span class="text">SAI_brochure</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="videos/VIS/VIS-Automation-Solution.pdf" target="blank"><li><span class="text">VIS-Automation-Solution</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a href="images/resources/Future Of Customer Experience In A Connected World.pdf" target="blank"><li><span class="text">Future Of Customer Experience In A Connected World.pdf</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                
+             </ul>
+         </div>
+     </div>
+     <div class="video-main">
+         <div class="heading">
+             <h1>Videos</h1>
+         </div>
+          <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+          <div class="video-box">
+              <ul>
+                <li onclick="open_video_modal('videos/AGC/AGC_Networks_Corporate_Video.mp4')"><span class="text">AGC Networks Corporate Video</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/AGC/FLAIR_AGENT_WORKSPACE.mp4')"><span class="text">FLAIR AGENT WORKSPACE</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Assertion/PartnerVideo1_Explainer.mp4')"><span class="text">PartnerVideo1_Explainer</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Assertion/SBCHMarketingVideo-Intro.mp4')"><span class="text">SBCHMarketingVideo-Intro</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Contact_Center_AI_inancial_Services.mp4')"><span class="text">Contact Center AI Financial Services</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Contact_Center_AI_Telecommunications.mp4')"><span class="text">Contact Center AI Telecommunications</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Google_Cloud_and_Avaya-Contact_Center_AI_for_Healthcare.mp4')"><span class="text">Google Cloud and Avaya Contact Center AI for Healthcare</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/How_Google_Contact_Center_AI_transforms_the_retail_call_center.mp4')"><span class="text">How Google Contact Center AI transforms the retail call center</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/CCAAS/video/AI_and_Automation/Avaya_&_Google_Cloud_Contact_Center_AI.mp4')"><span class="text">Avaya & Google Cloud Contact Center AI</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/CCAAS/video/Avaya_Multiexperience_Contact_center/Avaya_Oceana_Solution_for_Agents_and_Supervisors.mp4')"><span class="text">Avaya Oceana Solution for Agents and Supervisors</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/CCAAS/video/Avaya_Multiexperience_Contact_center/Avaya_Workspace.mp4')"><span class="text">Avaya Workspace</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/CCAAS/video/Avaya_Multiexperience_Contact_center/The_Avaya_AI-Enabled_Customer_Journey.mp4')"><span class="text">The Avaya AI-Enabled Customer Journey</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/CCAAS/video/Avaya_Onecloud_CCAAS/Avaya_OneCloud_CCaaS_final_video.mp4')"><span class="text">Avaya OneCloud CCaaS final video</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/CCAAS/video/Case_study/Enabling_communication_with_UP_Dial_112.mp4')"><span class="text">Enabling communication with UP Dial 112</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/CCAAS/video/Workforce_engagement/Art_of_the_Possible_(Avaya_Verint_solution).mp4')"><span class="text">Art of the Possible ( Avaya Verint solution)</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/CSI/CSI_AVAYA_Advt_2min.mp4')"><span class="text">CSI AVAYA Advt 2min</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Extreme/6979-Extreme_CloudIQ.mp4')"><span class="text">6979 Extreme CloudIQ</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Gnani/Gnani_Avaya_Integration.mp4')"><span class="text">Gnani Avaya Integration</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Gnani/Gnani_Company_Video.mp4')"><span class="text">Gnani Company Video</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Gnani/Gnani_Omnichannel_Analytics.mp4')"><span class="text">Gnani_Omnichannel_Analytics</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Contact_Center_AI_inancial_Services.mp4')"><span class="text">Contact Center AI Financial Services</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Contact_Center_AI_Telecommunications.mp4')"><span class="text">Contact Center AI Telecommunications</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Google_Cloud_and_Avaya-Contact_Center_AI_for_Healthcare.mp4')"><span class="text">Google Cloud and Avaya Contact Center AI for Healthcare</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/How_Google_Contact_Center_AI_transforms_the_retail_call_center.mp4')"><span class="text">How Google Contact Center AI transforms the retail call center</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/IR/Empower_your_UCC_collaboration_with_IR_and_Avaya.mp4')"><span class="text">Empower your UCC collaboration with IR and Avaya</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/IR/Ensure_Digital_Transformation_Success_with_IR[1].mp4')"><span class="text">Ensure Digital Transformation Success with IR</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Koopid/Avaya_Workspaces_With_Koopid_&_WhatsApp.mp4')"><span class="text">Avaya Workspaces With Koopid & WhatsApp</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Koopid/Koopid_Animation.mp4')"><span class="text">Koopid_Animation</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Contact_Center_AI_inancial_Services.mp4')"><span class="text">Contact Center AI Financial Services</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Contact_Center_AI_Telecommunications.mp4')"><span class="text">Contact Center AI Telecommunications</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Google_Cloud_and_Avaya-Contact_Center_AI_for_Healthcare.mp4')"><span class="text">Google Cloud and Avaya Contact Center AI for Healthcare</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/How_Google_Contact_Center_AI_transforms_the_retail_call_center.mp4')"><span class="text">How Google Contact Center AI transforms the retail call center</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Tetherfi/Tetherfi_Video_KYC_Platform.mp4')"><span class="text">Tetherfi Video KYC Platform</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Tetherfi/Tetherfi_Work_From_Home.mp4')"><span class="text">Tetherfi Work From Home</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Avaya_OneCloud_UCaaS/Avaya_OneCloud_UCAAS.mp4')"><span class="text">Avaya OneCloud UCAAS</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Avaya_OneCloud_UCaaS/Avaya_Subscription.mp4')"><span class="text">Avaya Subscription</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Avaya_OneCloud_UCaaS/Avaya_workplace_Accelerate_your_business.mp4')"><span class="text">Avaya workplace Accelerate your business</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Avaya_Work_from_home-Virtually_unstoppable/Avaya_Work_from_Home_Communications_Planning_Guide.mp4')"><span class="text">Avaya Work from Home Communications Planning Guide</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Devices_and_Phones/Avaya_B109_Conferencing_Phone.mp4')"><span class="text">Avaya B109 Conferencing Phone</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Devices_and_Phones/Avaya_Conference_Phone_B199_Video.mp4')"><span class="text">Avaya Conference Phone B199 Video</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Devices_and_Phones/Avaya_Devices_and_Phones.mp4')"><span class="text">Avaya Devices and Phones</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Devices_and_Phones/Avaya_Vantage-Revolutionizing_the_Business_Desktop.mp4')"><span class="text">Avaya Vantage-Revolutionizing the Business Desktop</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Team_collaboration/Avaya_Spaces-Powering_Your_Digital_Workplace.mp4')"><span class="text">Avaya Spaces-Powering Your Digital Workplace</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/VIDEO_ROOM_SYSTEMS/Avaya_Collaboration_Unit_Five-Minute_Setup.mp4')"><span class="text">Avaya Collaboration Unit Five-Minute Setup</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/VIDEO_ROOM_SYSTEMS/Using_the_HCO50_3.mp4')"><span class="text">Using the HCO50 3</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Verint/Back_Office_Intro_Video-2-software_encoding_1.mp4')"><span class="text">Back Office Intro Video-2-software encoding_1</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Verint/How_Well_Do_You_Know_Your_Customers.mp4')"><span class="text">How Well Do You Know Your Customers</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/VIS/Axis.mp4')"><span class="text">Axis</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/VIS/Circle.mp4')"><span class="text">Circle</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/VIS/CRM.mp4')"><span class="text">CRM</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/Introduction.mp4')"><span class="text">Introduction</span><span><i class="far fa-play-circle"></i></span></li>
+                <li onclick="open_video_modal('videos/Google/POM.mp4')"><span class="text">POM</span><span><i class="far fa-play-circle"></i></span></li>
+
+              </ul>
+          </div>
+      </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              
+              <button type="button" class="close video_close" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body video_body">
+             <!-- <iframe src=""></iframe> -->
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+      

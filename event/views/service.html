@@ -1,0 +1,661 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+    }
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    .meeting-popup {
+    position: absolute;
+    width: 18%;
+    height: auto;
+    top: 17%;
+    left: 41%;
+    background-color: black;
+    border-radius: 8px;
+}
+    .meeting-pop-main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2vh;
+    }
+    input{
+        margin-bottom: 2vh;
+    }
+
+    input[type="radio"] {
+        margin-bottom: 4px;
+        margin-right: 8px;
+    }
+    .close-meeting{
+        width: 3vh;
+        position: absolute;
+        top: -1vh;
+        right: -1vh;
+        cursor: pointer;
+    }
+    .quiz-popup{
+        position: absolute;
+        width: 23%;
+        top: 20%;
+        left: 41%;
+        background-color: black;
+        border-radius: 8px;
+        color: white;
+    }
+    .quiz-main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2vh;
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 3vh;
+    }
+    .quiz-main ul{
+        margin-top: 2vh;
+    }
+    input[type="checkbox"] {
+    vertical-align: baseline !important;
+    margin-right: 2vh !important;
+}
+.video-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .video-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .video-box ul{
+        color: white;
+        width: 100%;
+    }
+    .video-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .video-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    /* brochure */
+    .brochure-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .brochure-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .brochure-box ul{
+        color: white;
+        width: 100%;
+    }
+    .brochure-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .brochure-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .modal-dialog{
+      margin-top: 10%;
+    }
+    iframe{
+      width: 100%;
+      max-height: 56vh;
+      min-height: 56vh;
+    }
+    .close-data{
+        width: 3vh;
+        position: absolute;
+        top: 1vh;
+        right: 1vh;
+        cursor: pointer;
+    }
+    .heading{
+        text-align: center;
+        width: 100%;
+        padding-bottom: 2vh;
+        color: white;
+    }
+    .heading h1{
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+    a{
+      text-decoration: none !important;
+      color: white;
+    }
+    .text{
+      width: 85%;
+    /* text-overflow: ellipsis; */
+    word-break: break-word;
+    }
+
+       
+    .required p{
+        color: red;
+        margin-bottom: 10px;
+    }
+    .meeting-popup input{
+        width: 100%;
+    } 
+    .meeting-popup button{
+        margin: auto;
+        width: 100%;
+    }
+    .meeting-popup form{
+        margin-top:4vh;
+    }
+
+    .quiz-popup li{
+        margin-bottom: 10px;
+    }
+    .buttons button span{
+        display: block;
+    }
+
+    .quiz_completed{
+        padding: 20px;
+    }
+    .modal-body p{
+        color: black;
+        font-size: 15px;
+        text-align: center;
+    }
+    .modal-header button{
+        width: auto;
+        padding: 10px;
+        float: revert;
+    }
+    .button-feedback{
+        position: absolute;
+        top: 74%;
+        left: 32%;
+    }
+    .button-chat {
+        position: absolute;
+        top: 74%;
+        left: 62%;
+    }
+    .btn-feedback {
+        color: #fff;
+        background-color: #1293e3 !important;
+        border-color: #1293e3 !important;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        padding: 1.5vh;
+        border-radius: 6px;
+    }
+    .btn-chat {
+        color: #fff;
+        background-color: #1293e3 !important;
+        border-color: #1293e3 !important;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        padding: 1.5vh;
+        border-radius: 6px;
+
+    }
+    .company-name{
+    text-align: center;
+    width: 100%;
+    background-color: rgb(210 210 208);
+    padding: 1vh;
+
+    }
+    .company-name h1{
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .chat-pop{
+        background-color: white;
+        height: 45vh;
+        width: 19%;
+        z-index: 999999;
+        position: absolute;
+        bottom: 12%;
+        border-radius: 8px;
+        right: 15vh;
+        display: block;
+    }
+    .message-container{
+        height: 90%;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        background-color: white;
+        padding:1vh;
+        
+    }
+    .close-chat-expo{
+        position: absolute;
+        top: -1vh;
+        right: -1vh;
+        width: 3vh;
+        cursor: pointer;
+    }
+    .name-time{
+        display: flex;
+        justify-content: space-between;
+    }
+    .expo-name{
+        margin-right: 3vh;
+    }
+    .expo-chat{
+        margin-bottom: 2vh;
+    }
+    .expo-message{
+        color: #7c7c7c;
+    }
+    .feedback_heading{
+        text-align: center;
+        color: white;
+        font-weight: 700;
+        font-size: 22px;
+    }
+    .feedback_popup{
+        right: 0;
+        position: absolute;
+        width: 32%;
+        height: auto;
+        top: 10%;
+        left: 0;
+        background-color: black;
+        border-radius: 8px;
+        margin: auto;  
+        z-index: 9;
+    }
+   
+
+    .feedback_popup label{
+        color: white;
+    }
+    .feedback_popup input,.feedback_popup textarea,.feedback_popup select{
+        margin-top: 1vh;
+    }
+
+    .feedback_popup select{
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .feedback_popup textarea{
+
+        min-height: 100px;
+        margin-bottom: 2vh;
+        margin-top:1vh;
+    }
+
+    .rating {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 50px;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+  font-size: 40px;
+}
+
+.rating label:last-child .icon {
+    color: white;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+    color: #dc3545;
+    font-size: 40px;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+    color: white;
+  text-shadow: 0 0 5px #09f;
+}
+.feedback_popup label {
+    color: white;
+    display: block;
+}
+.feedback_message{
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    padding: 38px;
+}
+
+    </style>
+    <div ng-hide="showvideo">
+        <img class="rwdimgmap img-fluid" src="images/Services.jpg" usemap="#powerpuffgirlsnew" alt="" />
+        <map name="powerpuffgirlsnew">
+            <area target="" alt="quiz" title="quiz" ng-click="showQuiz()"  coords="351,722,578,722,582,842,355,847" shape="poly">
+            <area target="" alt="meeting" title="meeting" ng-click="showMeeting()"  coords="1248,729,1241,1058,1391,1058,1379,724" shape="poly">
+            <area target="" alt="brochure" title="brochure" onclick="boothbrochure()" coords="775,595,1034,597,1036,758,775,756" shape="poly">
+            <area target="" alt="video" title="video" onclick="boothvideo()" coords="1549,602,1547,756,1804,754,1806,595" shape="poly">
+        </map>
+        
+        <div class="meeting-popup"  ng-if="showMeetingPopUp == 1">
+            <img src="images/criss-cross.svg" class="close-meeting"  ng-click="hideMeetingPopup()" alt="">
+            <div class="meeting-pop-main">
+                <div ng-if="!form_submit">
+                    <form name="meetingForm" ng-submit="submitMeeting(meeting)">
+                        <input type="text" name="name" ng-model="meeting.name" placeholder="Name" required>
+                        <div ng-messages="meetingForm.name.$error" class="form_errors"  ng-show="meetingForm.name.$dirty">
+                            <p ng-message="required">Please Enter Name</p>
+                        </div>
+                        <input type="email" name="email"  ng-model="meeting.email" placeholder="Email" required>
+                        <div ng-messages="meetingForm.email.$error" class="form_errors"  ng-show="meetingForm.email.$dirty">
+                            <p ng-message="required">Please Enter E-mail</p>
+                            <p ng-message="email">Please Enter Valid E-mail Address.</p>
+                        </div>
+                        <input type="tel" name="mobile_number" ng-model="meeting.mobile_number" placeholder="Number" required>
+                        <div ng-messages="meetingForm.mobile_number.$error" class="form_errors"  ng-show="meetingForm.mobile_number.$dirty">
+                            <p ng-message="required">Please Enter Mobile Number</p>
+                        </div>
+                        <input type="date" name="date" ng-model="meeting.date" placeholder="Date" required>
+                        <div ng-messages="meetingForm.date.$error"class="form_errors"  ng-show="meetingForm.date.$dirty">
+                            <p ng-message="required">Please Enter Date</p>
+                        </div>
+                        <input type="time"  name="time" ng-model="meeting.time" placeholder="Time" required>
+                        <div ng-messages="meetingForm.time.$error" class="form_errors"  ng-show="meetingForm.time.$dirty">
+                            <p ng-message="required">Please Enter Time</p>
+                        </div>
+                        <button class="btn btn-success" type="submit" ng-disabled="meetingForm.$invalid">Submit</button>
+                    </form>
+                </div>
+                <div ng-if="form_submit">
+                    Thank you, Our representive will connect with you soon
+                </div>
+            </div>
+        </div>
+        <div class="quiz-popup" ng-if="showQuizPopUp == 1">
+            <img src="images/criss-cross.svg" class="close-meeting" ng-click="hideQuizPopUp()" ng-click=" = 0" alt="">
+            <div class="quiz-main" ng-if="!QuizCompleted">
+                <h1>{{quiz_questions[current_question]['question']}}</h1>
+                <ul>
+                    <li><input type="radio" name="quiz" ng-model="quiz_questions[current_question]['user_answer']" value="first" ng-if="quiz_questions[current_question]['option_first']">{{quiz_questions[current_question]['option_first']}}</li>
+                    <li><input type="radio" name="quiz" ng-model="quiz_questions[current_question]['user_answer']" value="second" ng-if="quiz_questions[current_question]['option_second']">{{quiz_questions[current_question]['option_second']}}</li>
+                    <li><input type="radio" name="quiz" ng-model="quiz_questions[current_question]['user_answer']" value="third" ng-if="quiz_questions[current_question]['option_third']">{{quiz_questions[current_question]['option_third']}}</li>
+                    <li><input type="radio" name="quiz" ng-model="quiz_questions[current_question]['user_answer']" value="fourth" ng-if="quiz_questions[current_question]['option_fourth']">{{quiz_questions[current_question]['option_fourth']}}</li>
+                    <li><input type="radio" name="quiz" ng-model="quiz_questions[current_question]['user_answer']" value="fifth"ng-if="quiz_questions[current_question]['options_fifth']">{{quiz_questions[current_question]['options_fifth']}}</li>
+                </ul>
+                <div class="error_message" ng-if="error_message">Please select options</div>
+                <div class="buttons">
+                    <button class="btn btn-warning" ng-if="!first_question"><span ng-click="prevQuestion()" >Previous</span></button>
+                    <button class="btn btn-success"><span ng-click="nextQuestion()" ng-if="!last_question">Next</span> <span ng-click="submitQuestion(quiz_questions)" ng-if="last_question">Submit</span></button>
+                </div>
+            </div>
+            <div ng-if="QuizCompleted" class="quiz_completed">
+                {{QuizMessage}}
+            </div>
+        </div>
+        <div class="meeting-popup feedback_popup"  ng-if="showFeedbackPopUp == 1">
+            <img src="images/criss-cross.svg" class="close-meeting"  ng-click="hideFeedbackPopup()" alt="">
+            <div class="meeting-pop-main">
+                <h4 class="feedback_heading">Feedback </h4>
+                <div ng-if="!form_submit_feedback">
+                    <form name="feedbackForm" ng-submit="submitFeedback(feedback)">    
+                        <label>How would you rate the Services & Client Success booth experience?</label>
+                        <div class="rating">
+                        <label>
+                            <input type="radio" ng-model="feedback.first_question_ans" name="stars" value="1" required/>
+                            <span class="icon">★</span>
+                          </label>
+                          <label>
+                            <input type="radio" ng-model="feedback.first_question_ans" name="stars" value="2" required/>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                          </label>
+                          <label>
+                            <input type="radio" ng-model="feedback.first_question_ans" name="stars" value="3" required/>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>   
+                          </label>
+                          <label>
+                            <input type="radio" ng-model="feedback.first_question_ans" name="stars" value="4" required/>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                          </label>
+                          <label>
+                            <input type="radio" ng-model="feedback.first_question_ans" name="stars" value="5" required/>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                          </label>
+                          </div>
+                          <label>How Likely are you to consider engaging Avaya Value Added Services to drive Service Management and Technical Solution ownership?</label>
+                        <select name="second_question" class="form-control" placeholder="Select" ng-model="feedback.sesond_question_ans">
+                            <option value="not_likely">Not Likely</option>
+                            <option value="less_likely">Less Likely</option>
+                            <option value="somewhat_likely">Somewhat Likely</option>
+                            <option value="very_likely">Very Likely</option>
+                        </select>
+                         
+                        <label>What is the likelihood of you subscribing /enrolling to Education Services (workshops for your IT teams, business unit users to help drive automation, simplification etc.)?</label>
+                        <select name="third_question" class="form-control" placeholder="Select" ng-model="feedback.third_question_ans">
+                            <option value="not_likely">Not Likely</option>
+                            <option value="less_likely">Less Likely</option>
+                            <option value="somewhat_likely">Somewhat Likely</option>
+                            <option value="very_likely">Very Likely</option>
+                        </select>
+
+                        <label>If you are an existing Avaya customer, what is your overall rating of Avaya Support Services? (Scale 1-5 – 5 = Excellent | 4 – very good, 3 - Good, 2- Fair, 1- Poor, No - if not Avaya customer)</label>
+                        <input name="fourth_question" class="form-control" placeholder="(Scale 1-5 – 5 = Excellent | 4 – very good, 3 - Good, 2- Fair, 1- Poor, No - if not Avaya customer)" ng-model="feedback.fourth_question_ans">
+                           
+                        
+                        <label>5)Please provide any feedback on what additional Support Services Avaya can offer to help drive your business objectives.</label>
+                        <textarea name="comment" cols="2" rows="2" class="form-control" ng-model="feedback.fifth_question" required></textarea>
+                       
+                        <button class="btn btn-success" type="submit" ng-disabled="feedbackForm.$invalid">Submit</button>
+                    </form> 
+                </div>
+                <div ng-if="form_submit_feedback" class="feedback_message">
+                    Thanks for your feedback
+                </div>
+            </div>
+        </div>
+        <div class="chat-pop" ng-show="chatwithuspopup">
+            <img class="close-chat-expo" src="images/criss-cross.svg" ng-click="hidechatWithUs()">
+            <div class="company-name">
+                <h1>Services</h1>
+                </div>
+            <div class="message-container">
+               
+            </div>
+                
+       
+            <div id="chat-msg" >
+                <div id="input-icon-chat">
+              <i id="input-icon" class="fas fa-paper-plane" ng-click="sendMessage(message)"></i>
+              </div>
+              <input style="border: none;outline-style: none;" ng-model="message" ng-keypress="($event.charCode==13)? sendMessage(message) : return"  class="chat-input" id="chat-input-text" type="text" placeholder="Start Typing..." autofocus>
+            </div>
+        </div>
+        </div>
+        <div class="button-feedback"  ng-click="showFeedback()">
+            <button class="btn-feedback">Feedback</button>
+        </div>
+        <div class="button-chat">
+            <button ng-click="showchatWithUs()" class="btn-chat">Chat With Us</button>
+        </div>
+     
+    </div>
+    <div class="video-main">
+        <div class="heading">
+            <h1>Videos</h1>
+        </div>
+         <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+         <div class="video-box">
+              <ul>
+               <!-- "onclick="open_video_modal('videos/ucaas/UCAAS booth assets/VIDEOS/Avaya_OneCloud_UCaaS/Avaya_OneCloud_UCAAS.mp4')" -->
+                <li ng-click="showVideoSolution('https://player.vimeo.com/video/471983474?autoplay=1')" data-category="video_play" data-label="Advanced Services-Own the customer Journey" data-value="Videos" listen><span class="text">Advanced Services-Own the customer Journey</span><span><i class="far fa-play-circle"></i></span></li>
+                <li ng-click="showVideoSolution('https://player.vimeo.com/video/471983522?autoplay=1')" data-category="video_play" data-label="Avaya Fast Pass-Human" data-value="Videos" listen><span class="text">Avaya Fast Pass-Human</span><span><i class="far fa-play-circle"></i></span></li>
+                <li ng-click="showVideoSolution('https://player.vimeo.com/video/471983550?autoplay=1')" data-category="video_play" data-label="Avaya OneCloud Subscription Video_Downloadable " data-value="Videos" listen><span class="text">Avaya OneCloud Subscription Video_Downloadable</span><span><i class="far fa-play-circle"></i></span></li>
+                <li ng-click="showVideoSolution('https://player.vimeo.com/video/471983595?autoplay=1')" data-category="video_play" data-label="Avaya SLA MON Effective Monitoring_downloadable" data-value="Videos" listen><span class="text">Avaya SLA MON Effective Monitoring_downloadable</span><span><i class="far fa-play-circle"></i></span></li>
+                <li ng-click="showVideoSolution('https://player.vimeo.com/video/471983666?autoplay=1')" data-category="video_play" data-label="Breeze Intelligent routing - Knowing the customer_downloadable" data-value="Videos" listen><span class="text">Breeze Intelligent routing - Knowing the customer_downloadable</span><span><i class="far fa-play-circle"></i></span></li>
+                <li ng-click="showVideoSolution('https://player.vimeo.com/video/471983697?autoplay=1')" data-category="video_play" data-label="Managed Services_downloadable" data-value="Videos" listen><span class="text">Managed Services_downloadable</span><span><i class="far fa-play-circle"></i></span></li>
+            </ul>
+         </div>
+     </div>
+    <div class="brochure-main">
+        <div class="heading">
+            <h1>Brochures</h1>
+        </div>
+         <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+         <div class="brochure-box">
+             <ul>
+                <!-- <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Conference Phone B109.pdf')" data-category="pdf_download" data-label="Avaya Conference Phone B109" data-value="Brochure" listen  target="blank"><li><span class="text">Avaya Conference Phone B109</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Conference Phone B199.pdf')" data-category="pdf_download" data-label="Avaya Conference Phone B199" data-value="Brochure" listen target="blank"><li><span class="text">Avaya Conference Phone B199</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Desktop Phones Jseries 100.pdf')" data-category="pdf_download" data-label="Avaya Desktop Phones Jseries 100" data-value="Brochure" listen target="blank"><li><span class="text">Avaya Desktop Phones Jseries 100</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya vantage 3.0 use cases.pdf')" data-category="pdf_download" data-label="Avaya vantage 3.0 use cases" data-value="Brochure" listen target="blank"><li><span class="text">Avaya vantage 3.0 use cases</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Vantage 3.0.pdf')" data-category="pdf_download" data-label="Avaya Vantage 3.0" data-value="Brochure" listen target="blank"><li><span class="text">Avaya Vantage 3.0</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Phones/Avaya Vantage K175 K165.pdf')" data-category="pdf_download" data-label="Avaya Vantage K175 K165" data-value="Brochure" listen target="blank"><li><span class="text">Avaya Vantage K175 K165</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Team collaboration/Avaya Spaces Immersive Meetings & Team collaboration.pdf')"  data-category="pdf_download" data-label="Avaya Spaces Immersive Meetings & Team collaboration" data-value="Brochure" listentarget="blank"><li><span class="text">Avaya Spaces Immersive Meetings & Team collaboration</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/UCAAS/Avaya IP Office.pdf')" data-category="pdf_download" data-label="Avaya IP Office" data-value="Brochure" listen target="blank"><li><span class="text">Avaya IP Office</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/UCAAS/Avaya Workplace.pdf')" data-category="pdf_download" data-label="Avaya Workplace" data-value="Brochure" listen target="blank"><li><span class="text">Avaya Workplace</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/UCAAS/Taking the Next Step in Communications and Collaboration.pdf')" data-category="pdf_download" data-label="Taking the Next Step in Communications and Collaboration" data-value="Brochure" listen target="blank"><li><span class="text">Taking the Next Step in Communications and Collaboration</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/UCAAS/The Avaya Aura platform.pdf')" data-category="pdf_download" data-label="The Avaya Aura platform" data-value="Brochure" listen target="blank"><li><span class="text">The Avaya Aura platform</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya Collaboration UNIT CU360.pdf')" data-category="pdf_download" data-label="Avaya Collaboration UNIT CU360" data-value="Brochure" listen target="blank"><li><span class="text">Avaya Collaboration UNIT CU360</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya One Cable Connect Hub.pdf')" data-category="pdf_download" data-label="Avaya One Cable Connect Hub" data-value="Brochure" listen target="blank"><li><span class="text">Avaya One Cable Connect Hub</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya Room System XT240.pdf')" data-category="pdf_download" data-label="Avaya Room System XT240" data-value="Brochure" listen target="blank"><li><span class="text">Avaya Room System XT240</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya Room System XT7100.pdf')"  data-category="pdf_download" data-label="Avaya Room System XT7100" data-value="Brochure" listen target="blank"><li><span class="text">Avaya Room System XT7100</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/Avaya Tracking Camera.pdf')" data-category="pdf_download" data-label="Avaya Tracking Camera" data-value="Brochure" listen target="blank"><li><span class="text">Avaya Tracking Camera</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                <a  ng-click="broucherDownload('videos/ucaas/UCAAS booth assets/FACTSHEETS/Video room systems/HUDDLE-CAMERAS.pdf')" data-category="pdf_download" data-label="HUDDLE-CAMERAS" data-value="Brochure" listen target="blank"><li><span class="text">HUDDLE-CAMERAS</span><span><i class="fas fa-file-pdf"></i></span></li></a> 
+            -->
+            <a  ng-click="broucherDownload('videos/ucaas/pdf/Client Service Manager.pdf')" data-category="pdf_download" data-label="Client Service Manager" data-value="Brochure" listen target="blank"><li><span class="text">Client Service Manager</span><span> <i class="fas fa-file-pdf"></i></span></li></a> 
+            <a  ng-click="broucherDownload('videos/ucaas/pdf/SAL Design and Architecture.pdf')" data-category="pdf_download" data-label="SAL Design and Architecture" data-value="Brochure" listen target="blank"><li><span class="text">SAL Design and Architecture</span><span><i class="fas fa-file-pdf"></i></span></li></a> 
+            <a  ng-click="broucherDownload('videos/ucaas/pdf/SAL Infographic.pdf')" data-category="pdf_download" data-label="SAL Infographic" data-value="Brochure" listen target="blank"><li><span class="text">SAL Infographic</span><span> <i class="fas fa-file-pdf"></i></span></li></a> 
+            <a  ng-click="broucherDownload('videos/ucaas/pdf/Secure Access Link_Fact Sheet .pdf')" data-category="pdf_download" data-label="Secure Access Link_Fact Sheet" data-value="Brochure" listen target="blank"><li><span class="text">Secure Access Link_Fact Sheet</span><span> <i class="fas fa-file-pdf"></i></span></li></a> 
+             </ul>
+         </div>
+     </div>
+
+     <div class="lightbox reception_video" ng-if="popupVideo" ng-init="startVideo()" id="lightbox-1">
+        <div class="video-pop-box">
+            <iframe src="https://player.vimeo.com/video/472359861?autoplay=1" id="popUpVideo" frameborder="0" allow="autoplay; fullscreen"></iframe>
+            <a class="lightbox__close" ng-click="hideVideo()"><img src="images/close.svg"></a>
+        </div>
+    </div>
+
+    <div class="lightbox reception_video" ng-show="popupVideoSolution" ng-init="startVideoSolution()" id="lightbox-1">
+        <div class="video-pop-box">
+            <iframe ng-src="{{currentpopupvideo}}" id="popupVideoSolution" frameborder="0" allow="autoplay; fullscreen"></iframe>
+            <a class="lightbox__close" ng-click="hideVideoSolution()"><img src="images/close.svg"></a>
+        </div>
+    </div> 
+
+    
+
+    <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content alert">
+            <div class="modal-header">
+                <h1>Alert</h1>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Content Not Available</p>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div> -->
+          </div>
+          
+        </div>
+      </div>
+    
+    
+   

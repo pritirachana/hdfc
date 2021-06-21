@@ -1,0 +1,304 @@
+<style type="text/css">
+    area:hover {
+        cursor: pointer;
+    }
+    img[usemap] {
+        border: none;
+        height: auto;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    /* resource */
+    .resource-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .close-data{
+        width: 3vh;
+        position: absolute;
+        top: 1vh;
+        right: 1vh;
+        cursor: pointer;
+    }
+    .resource-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .resource-box ul{
+        color: white;
+        width: 100%;
+    }
+    .resource-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .resource-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .heading{
+        text-align: center;
+        width: 100%;
+        padding-bottom: 2vh;
+        color: white;
+    }
+    .heading h1{
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+
+    /* video */
+    .video-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .video-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .video-box ul{
+        color: white;
+        width: 100%;
+    }
+    .video-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .video-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    /* brochure */
+    .brochure-main{   
+        background-color: black;
+        width: 30%;
+        height: 40%;
+        top: 30%;
+        display: none;
+        flex-direction: column;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        position: absolute;
+        left: 35%;
+        border-radius: 8px;
+    }
+    .brochure-box{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .brochure-box ul{
+        color: white;
+        width: 100%;
+    }
+    .brochure-box ul li{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 2vh;
+        cursor: pointer;
+    }
+    .brochure-box span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .modal-dialog{
+      margin-top: 10%;
+    }
+    iframe{
+      width: 100%;
+      max-height: 56vh;
+      min-height: 56vh;
+    }
+    a{
+      text-decoration: none !important;
+      color: white;
+    }
+    .text{
+      width: 85%;
+    /* text-overflow: ellipsis; */
+    word-break: break-word;
+    }
+        .company-name{
+    text-align: center;
+    width: 100%;
+    background-color: rgb(210 210 208);
+    padding: 1vh;
+
+}
+.company-name h1{
+    font-size: 18px;
+    font-weight: 700;
+}
+.chat-pop{
+        background-color: white;
+        height: 45vh;
+        width: 21%;
+        z-index: 999999;
+        position: absolute;
+        bottom: 40%;
+        border-radius: 8px;
+        right: 5vh;
+        display: block;
+    }
+    .message-container{
+        height: 90%;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        background-color: white;
+        padding:1vh;
+        
+    }
+    .close-chat-expo{
+        position: absolute;
+        top: -1vh;
+        right: -1vh;
+        width: 3vh;
+        cursor: pointer;
+    }
+    .name-time{
+        display: flex;
+        justify-content: space-between;
+    }
+    .expo-name{
+        margin-right: 3vh;
+    }
+    .expo-chat{
+        margin-bottom: 2vh;
+    }
+    .expo-message{
+        color: #7c7c7c;
+    }
+    </style>
+    <div ng-hide="showvideo" style="position: relative;">
+        <img class="rwdimgmap img-fluid" src="images/stalls/Alliance Booth 3_IR prognosis_Booth.jpg" usemap="#powerpuffgirlsnew" alt="" />
+        <map name="powerpuffgirlsnew">
+            <area target="" alt="resources" title="resources" onclick="resources()"   coords="1127,579,1125,747,1420,745,1420,579" shape="poly">
+            <area target="" alt="video" title="video" onclick="boothvideo()"  coords="1502,581,1502,747,1795,745,1797,579" shape="poly">
+            <area target="" alt="chat" title="chat" ng-click="showchatWithUs()" coords="1779,833,1777,940,1970,940,1965,829" shape="poly">
+            <area target="" alt="brochure" title="brochure" onclick="boothbrochure()" coords="610,645,607,813,907,815,907,649" shape="poly">
+        </map>
+        <div class="chat-pop" ng-show="chatwithuspopup">
+        <img class="close-chat-expo" src="images/criss-cross.svg" ng-click="hidechatWithUs()">
+        <div class="company-name">
+            <h1 id="">IR</h1>
+            </div>
+        <div class="message-container">          
+            
+        </div>
+        <div id="chat-msg" >
+            <div id="input-icon-chat">
+          <i id="input-icon" class="fas fa-paper-plane" ng-click="sendMessage(message)"></i>
+          </div>
+          <input style="border: none;outline-style: none;" ng-model="message" ng-keypress="($event.charCode==13)? sendMessage(message) : return"  class="chat-input" id="chat-input-text" type="text" placeholder="Start Typing..." autofocus>
+        </div>
+    </div>
+    </div>
+    
+    <div class="resource-main">
+       <div class="heading">
+           <h1>Resources</h1>
+       </div>
+        <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+        <div class="resource-box">
+            <ul>
+              <a href="videos/IR/Avaya & IR_Performance and Experience Management.pdf" target="blank"><li><span class="text">Avaya & IR Performance and Experience Management</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+              <a href="videos/IR/IDCInfoBriefIRUC&CAsiaPacMEA.pdf" target="blank"><li><span class="text">IDC Info Brief IRUC & CAsia PacMEA</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+                 
+                  <li ng-click="showVideoSolution('https://player.vimeo.com/video/471971713?autoplay=1')"><span class="text">Empower your UCC collaboration with IR and Avaya</span><span><i class="far fa-play-circle"></i></span></li>
+                  <li ng-click="showVideoSolution('https://player.vimeo.com/video/471971788?autoplay=1')"><span class="text">Ensure Digital Transformation Success with IR</span><span><i class="far fa-play-circle"></i></span></li>
+                   <!-- <li ng-click="showVideoSolution('https://player.vimeo.com/video/471972765?autoplay=1')" ><span class="text">IR HQ, Experience Avaya 2020, India - 15 MIN</span><span><i class="far fa-play-circle"></i></span></li> -->
+               
+            </ul>
+        </div>
+    </div>
+    <div class="video-main">
+        <div class="heading">
+            <h1>Videos</h1>
+        </div>
+         <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+         <div class="video-box">
+             <ul>
+                  <li ng-click="showVideoSolution('https://player.vimeo.com/video/471971713?autoplay=1')" data-category="video_play" data-label="Empower your UCC collaboration with IR and Avaya" data-value="Videos" listen><span class="text">Empower your UCC collaboration with IR and Avaya</span><span><i class="far fa-play-circle"></i></span></li>
+                  <li ng-click="showVideoSolution('https://player.vimeo.com/video/471971788?autoplay=1')" data-category="video_play" data-label="Ensure Digital Transformation Success with IR" data-value="Videos" listen><span class="text">Ensure Digital Transformation Success with IR</span><span><i class="far fa-play-circle"></i></span></li>
+                   <!-- <li ng-click="showVideoSolution('https://player.vimeo.com/video/471972765?autoplay=1')" data-category="video_play" data-label="IR HQ, Experience Avaya 2020, India - 15 MIN" data-value="Videos" listen><span class="text">IR HQ, Experience Avaya 2020, India - 15 MIN</span><span><i class="far fa-play-circle"></i></span></li> -->
+             </ul>
+         </div>
+     </div>
+     <div class="brochure-main">
+        <div class="heading">
+            <h1>Brochures</h1>
+        </div>
+         <img src="images/criss-cross.svg" onclick="close_data()" class="close-data">
+         <div class="brochure-box">
+             <ul>
+                <a ng-click="broucherDownload('videos/IR/Avaya & IR_Performance and Experience Management.pdf')"  data-category="pdf_download" data-label="Avaya & IR Performance and Experience Management" data-value="Brochure" listen><li><span class="text">Avaya & IR Performance and Experience Management</span><span><i class="fas fa-file-pdf"></i></span></li></a>
+              <a ng-click="broucherDownload('videos/IR/IDCInfoBriefIRUC&CAsiaPacMEA.pdf')"  data-category="pdf_download" data-label="IDC Info Brief IRUC & CAsia PacMEA" data-value="Brochure" listen><li><span class="text">IDC Info Brief IRUC & CAsia PacMEA</span><span><i class="fas fa-file-pdf"></i></span></li></a>              
+
+             </ul>
+         </div>
+     </div>
+     <div class="lightbox reception_video" ng-if="popupVideoSolution"  ng-init="startVideo()" id="lightbox-1">
+        <div class="video-pop-box">
+            <iframe ng-src="{{currentpopupvideo}}" id="popupVideoSolution" frameborder="0" allow="autoplay; fullscreen"></iframe>
+            <a class="lightbox__close" ng-click="hideVideoSolution()"><img src="images/close.svg"></a>
+        </div>
+    </div> 
+     <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            
+            <button type="button" class="close video_close" onclick="closeModal()">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body video_body">
+           <!-- <iframe src=""></iframe> -->
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    
+
+    
+    

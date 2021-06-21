@@ -1,0 +1,245 @@
+<style type="text/css">
+    .next{
+      bottom: 40% !important;
+      right: 15%;
+      background-color: #b72222;
+      padding: 10px;
+      position: absolute;
+    }
+
+
+    #container-support{
+        width: 55%;
+        height: 50vh;
+        text-align: center;
+        /* justify-content: center; */
+        /* align-items: center; */
+        margin: 0px auto;
+    }
+    .tawk-to {
+  
+    margin: 0px auto;
+    padding: 12vh 30vh 25vh 30vh;
+    height: 100vh;
+    position: relative;
+  }
+  area:hover {
+    cursor: pointer;
+  }
+  
+  img[usemap] {
+    border: none;
+    /*height: 100vh;*/
+    max-width: 100%;
+    min-width: 100%;
+    width: auto;
+  }
+  
+  .lg-container {
+  max-width: 100%;
+  position: relative;
+  padding: 0;
+  }
+  
+  .lg-image {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: scale-down;
+  }
+  .lg-hotspot {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  }
+  /* .lg-hotspot:hover .lg-hotspot__button, .lg-hotspot:active .lg-hotspot__button {
+  border-color: #ff774c;
+  }
+  .lg-hotspot:hover .lg-hotspot__button:after, .lg-hotspot:active .lg-hotspot__button:after {
+  background-color: #ff774c;
+  }
+  .lg-hotspot--selected {
+  z-index: 999;
+  }
+  .lg-hotspot--selected .lg-hotspot__label {
+  opacity: 1;
+  } */
+  .lg-hotspot__button {
+    border: 3px solid white;
+    -webkit-border-radius: 30px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    cursor: pointer;
+    opacity: 0.0
+  
+  }
+  .lg-hotspot__button:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  content: "";
+  display: block;
+  height: 16.8px;
+  width: 16.8px;
+  border-radius: 100%;
+  border: 3px solid white;
+  background-color: white;
+  transition: border-color 1s linear;
+  cursor: pointer;
+  }
+  .lg-hotspot__label {
+  position: absolute;
+  padding: 0 0 1.1em 0;
+  width: 16em;
+  max-width: 50vw;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14.5px;
+  line-height: 1.45em;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 2px;
+  user-select: none;
+  opacity: 0;
+  transition: all 0.1s linear;
+  }
+  .lg-hotspot__label h4 {
+  margin: 0;
+  padding: 0.65em 24px;
+  background-color: #555;
+  font-size: 1.1em;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  color: white;
+  border-radius: 2px 2px 0 0;
+  }
+  .lg-hotspot__label p {
+  margin: 0;
+  padding: 1.1em 24px 0 24px;
+  color: #333;
+  }
+  
+  .lg-hotspot--top-left .lg-hotspot__label {
+  top: 24px;
+  left: 24px;
+  }
+  
+  .lg-hotspot--top-right .lg-hotspot__label {
+  top: 24px;
+  right: 24px;
+  }
+  
+  .lg-hotspot--bottom-right .lg-hotspot__label {
+  right: 24px;
+  bottom: 24px;
+  }
+  
+  .lg-hotspot--bottom-left .lg-hotspot__label {
+  bottom: 24px;
+  left: 24px;
+  }
+  
+  
+  @-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+  }
+  @media only screen 
+  and (min-device-width : 320px) 
+  and (max-device-width : 1024px) 
+  and (orientation : landscape) {
+  .lg-hotspot__button:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    content: "";
+    display: block;
+    height: 6.8px;
+    width: 6.8px;
+    border-radius: 100%;
+    border: 3px solid white;
+    background-color: white;
+    transition: border-color 1s linear;
+    cursor: pointer;
+  }
+  .lg-hotspot__button {
+    border: 3px solid white;
+    -webkit-border-radius: 30px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    -webkit-animation: pulsate 1.5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    cursor: pointer;
+    opacity: 0.0;
+  }
+  }
+  
+  .formCell{
+    display:block;
+  }
+  
+  </style>
+  <div style="position: relative;" ng-hide="showvideo">
+    <img class="rwdimgmap" src="https://iisfvirtex.s3.ap-south-1.amazonaws.com/images/HELP-DESK-LOKMAT.jpg" usemap="#powerpuffgirls" alt="" />
+    <map name="powerpuffgirls">
+        <area target="" alt="Help Desk" title="Help Desk" href="" coords="720,840,713,1065,1221,1058,1224,840" shape="rect" data-toggle="modal" data-target="#myModal">
+        <!-- <area target="" alt="chat" title="chat" ui-sref="help-desk-chat" coords="828,751,828,826,957,824,957,751" shape="poly">
+        <area target="" alt="agenda" title="agenda" ui-sref="agenda" coords="1595,751,1595,826,1724,829,1727,749" shape="poly"> -->
+    </map>
+  
+    <div style="top: 45%;
+      right: 42%;
+      cursor: pointer;
+      height: 15vh;
+      width: 35vh;" data-toggle="modal" data-target="#myModal" class="lg-hotspot lg-hotspot--bottom-right" alt="Please enter here to network with fellow attendees">
+        <!-- <div class="lg-hotspot__button"></div> -->
+        <i style="color:#fff;font-size: 26px; display: none;" class="fas fa-comment-dots"></i>
+    </div>
+    <a class="next" ng-click = "goBack()">Back</a>
+  </div>
+  
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color:transparent;border:none">
+        <!-- <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+        </div> -->
+        <div class="modal-body" style="height: 75vh !important;overflow:hidden;border:none">
+            <div style="width:100%;text-align: center;">
+                <iframe style="height:70vh;width: 100%;;" src="https://tawk.to/chat/60c1d20265b7290ac6352d1a/1f7qhonn0"></iframe>
+            </div>    
+        </div>
+        <div class="modal-footer" style="border-top:0px !important;">
+            <button type="button" style="color:#000;background-color:#fff" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>
+  
+    <!-- <div id="helpdeskModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content" style="max-height:30vh !important;background-color:#fff;">
+          <div class="modal-body" style="text-align:center;">
+            <h2 style="color: #018db0;">Main event has started. Kindly click on <strong>Ok</strong> to attend the Family day function.</h2>
+          </div>
+          <div class="modal-footer">
+            <button style="border:none;font-weight: bold;padding:10px 20px;margin:0px auto;" type="button" onclick="location.href = 'https://guardianfamilyday2021.com/event/#!/workshop';">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>   -->
+    
+  

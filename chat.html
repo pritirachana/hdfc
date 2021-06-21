@@ -1,0 +1,187 @@
+<html>
+
+<head>
+    <script src="https://socket.virtex.in/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<style type="text/css">
+
+    @media (min-width: 992px)
+        #chat-div {
+            width: 18% !important;
+    }
+
+    @media screen and (min-width: 768px)
+    .container .jumbotron, .container-fluid .jumbotron {
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        text-align: center !important;
+    }
+</style>
+<body>
+    <h1>Manage Chat</h1>
+    <!--   <textarea name="emails" placeholder="Enter Emails to Show Popup in comma seprate" id="email"></textarea>
+    <textarea name="popdata" placeholder="Enter Popup Data" id="popdata"></textarea> -->
+    <!--  <button onclick="showmodel()">Show Model</button>
+    <button onclick="closemodel()">Close Model</button> -->
+    <div class="container-fluid" id="moderator_chat">
+        <div class="row"></div>
+    </div>
+    <script>
+    var socket = io.connect('https://socket.virtex.in');
+    socket.on('connect', function() {
+
+        console.log('connected');
+
+
+    });
+
+
+
+    function pushquestion() {
+
+        var formdata = $('form').serializeArray();
+        var userdata = [];
+        console.log(formdata);
+        var j = 0;
+        var t = 0;
+
+        for (var i = 0; i < formdata.length; i++) {
+
+            if (j > 5) {
+                j = 0;
+                t += 1;
+            }
+
+            console.log(typeof userdata[t]);
+
+            if (typeof userdata[t] == 'undefined') {
+                console.log('matched');
+                userdata[t] = {};
+            }
+            if (j == 0) {
+                console.log(userdata[t]);
+                userdata[t]['question'] = formdata[i]['value'];
+
+            } else if (j == 1) {
+
+                userdata[t]['first_option'] = formdata[i]['value'];
+
+            } else if (j == 2) {
+
+                userdata[t]['second_option'] = formdata[i]['value'];
+
+            } else if (j == 3) {
+
+                userdata[t]['third_option'] = formdata[i]['value'];
+
+            } else if (j == 4) {
+
+                userdata[t]['fourth_option'] = formdata[i]['value'];
+
+            } else if (j == 5) {
+
+                userdata[t]['answer'] = formdata[i]['value'];
+
+            }
+            console.log(userdata);
+
+            j++;
+        }
+        console.log('userdata', userdata);
+
+        socket.emit('showquestionsanswer', userdata);
+
+        // $('.showquestion_answer').show();
+
+    }
+
+    $(document).ready(function() {
+
+        $(".add-more").click(function() {
+            var total_length = $(".control-group").length;
+            var html = '<div class="copy hide"><div class="control-group input-group" style="margin-top:10px"><input type="text" name="data[' + total_length + '][question]" class="form-control" placeholder="Enter Question Here"><div><input type="text" name="data[' + total_length + '][option_first]" value="">Option First</div><div><input type="text" name="data[' + total_length + '][option_second]" value=""> Option Second</div><div><input type="text" name="data[' + total_length + '][option_third]" value=""> Option Third</div><div><input type="text" name="data[' + total_length + '][option_fourth]" value=""> Option Fourth</div><div><select name="data[' + total_length + '][correct_answer]"><option value="0">First</option><option value="1">Second</option><option value="2">Third</option><option value="3">Fourth</option></select></div><div class="input-group-btn"><button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button></div></div></div>';
+            $(".after-add-more").after(html);
+        });
+
+
+        $("body").on("click", ".remove", function() {
+            $(this).parents(".control-group").remove();
+        });
+
+    });
+
+    function showmodel() {
+        var emails = $("#email").val();
+        var popdata = $("#popdata").val();
+        socket.emit('showfrontmodel', { 'emails': emails.toLowerCase(), 'popdata': popdata });
+    }
+
+    function startconcert() {
+        socket.emit('startconcertredis');
+    }
+
+    function resetconcert() {
+        socket.emit('resetconcert');
+    }
+
+
+    function stopconcert() {
+        socket.emit('stopconcertredis');
+    }
+
+    function closemodel() {
+        socket.emit('closefrontmodel');
+    }
+
+
+    function closemodelqns() {
+        socket.emit('closemodelqns');
+    }
+
+    function unmutevideo() {
+        socket.emit('playuservideo');
+    }
+
+    function seekvideo() {
+
+        var seedvideo = $("#seedvideo").val();
+        console.log(seedvideo);
+        socket.emit('changeuserduration', seedvideo);
+
+    }
+
+
+    socket.on('moderate-comments', function(data) {
+            console.log(data);
+            // var divElement = angular.element(document.querySelector('#chat-container'));
+
+            $('#moderator_chat').prepend('<div class="col-md-3" id="chat-div"><div class="jumbotron"><h3>' + data.user.first_name + '</h3><p>' + data.message + '</p><a class="btn btn-primary btn-lg" href="#" role="button" onclick="approvecomment(this)">Approve</a><h6 style="display:none;">'+JSON.stringify(data)+'</h6></div></div>');
+            // if (data.user.id != $rootScope.currentUser.id) {
+            //     var first_newval = $rootScope.getUserName(data.user.first_name, data.user.last_name);
+            //     let comment = angular.element('<div class="chat-box"><div class="chat-img"><img id="username-image" src="https://quiin.s3.amazonaws.com/default_images/avatars/' + first_newval + '.svg" class="user-menu_avatar__1ZmG9 user-menu_border__2k_pD" alt="avatar"></div><div class="chat-text"><a href="#"><span class="chat-name">' + data.user.first_name + '</span></a><span class="chat-time">11:00</span><div class="chat-para"><p>' + data.message + '</p></div></div></div>');
+            //     divElement.append(comment);
+            //     $compile(divElement)($scope);
+            //     angular.element(divElement)[0]['scrollTop'] = divElement[0]['scrollHeight'];
+            // }
+        });
+
+
+    function approvecomment (obj) {
+        var name = $(obj).parent().find('h6').text();
+        socket.emit('approve_comment', name);
+        $(obj).parent().append('<h4>Published</h4>');
+        $(obj).hide();
+    }
+    </script>
+</body>
+
+</html>

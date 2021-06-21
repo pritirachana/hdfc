@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<style>
+		.row_first {
+			margin-top: 25px;
+			padding: 0 10px;
+		}
+		.row_second {
+			margin-top: 0px;
+			padding: 0 10px;
+		}
+
+		.clickable {
+			cursor: pointer;
+		}
+
+		.panel-heading div {
+			margin-top: -18px;
+			font-size: 15px;
+		}
+
+		.panel-heading div span {
+			margin-left: 5px;
+		}
+
+		.panel-body {
+			display: none;
+		}
+
+		#dev-table th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #03a9f4;
+			color: white;
+		}
+
+		@media (min-width: 1200px) {
+			.container {
+				width: 100%;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.container {
+				width: 100%;
+			}
+		}
+
+		tr:nth-child(even) {
+			background-color: #fbfbfb;
+		}
+
+		td {
+			text-align: center;
+		}
+
+		/* th{
+			text-align: center;
+		} */
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row row_first">
+			<div class="col-md-6 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">ADVERTISEMENTS</h3>
+						<div class="pull-right">
+
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter"
+							data-filters="#dev-table" placeholder="Filter Developers" />
+					</div>
+					<table class="table table-hover  table-bordered table-responsive" id="dev-table">
+						<!-- <thead>
+							<tr>
+								<th style="text-align: center;">File Name</th>
+								<th style="text-align: center;">Link</th>
+							</tr>
+						</thead> -->
+						<tbody>
+							<tr>
+								<td>Consulate General of Switzerland</td>
+								<td class="text-center"><a target="_blank"
+										href="https://drive.google.com/file/d/1I5OSuUKyeDIxW3QgBpK76OpUFGjx1mhn/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Embassy of the Kingdom of the Netherlands</td>
+								<td class="text-center"><a target="_blank"
+										href="https://drive.google.com/file/d/16ZdPEYlFqLrSuo27-DElFi8ctQtl4grn/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+
+									</a></td>
+							</tr>
+							<tr>
+								<td>Serum Institute</td>
+								<td class="text-center"><a target="_blank"
+										href="https://drive.google.com/file/d/11XaHncy1EAd9QFLLZQjcw7Q6-EQwJ3dD/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Premas Biotech</td>
+								<td class="text-center"><a target="_blank"
+										href="https://drive.google.com/file/d/1iGTHJTymLOZOKghCnWLst13UrnniNeXy/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Premas Biotech
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/14DuqT0x_RtmkTHHZx5xZYrhpBFFKyEXL/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Gennova</td>
+								<td class="text-center"><a target="_blank"
+										href="https://drive.google.com/file/d/1IIB-Ar7US-RnJlW3yKU0sUoCC4NzJvGX/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>BIOCON - Syngene - BIOCON Biologics</td>
+								<td class="text-center"><a target="_blank"
+										href="https://drive.google.com/drive/folders/1WXm5C0_Od0z-89bMDEVTlAG6ZeRy0txI?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>IBSD, Imphal</td>
+								<td class="text-center"><a target="_blank"
+										href="https://drive.google.com/drive/folders/1s0jipMb0H8-1mcHiovAXL7TZ9REAVMah?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Cytiva</td>
+								<td class="text-center"><a target="_blank"
+										href="https://drive.google.com/file/d/1g8JKp1sF_0fb0Lmae4LfrDYGmotzLuCj/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Thermofisher</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/drive/folders/1Vzr8I2Od50obqVNk-eTtzp355jnySaFW?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>USP</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/drive/folders/1JhZr-aG2GezQSaG0j7RdP-rbLeSda1ha?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Crescent
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/drive/folders/1ZrT6rCMd8M7IdJW0CqFwvef2ZltHgND9?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Biological E Limited
+
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/drive/folders/13qbS6D5jvXrw3w4G5wzDhwVs3FCznMjW?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>IIL - Indian Imunnological Limited
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/drive/folders/1TePeGInPH_DAEqWm2ezO_LXoP6vYhmcK?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">BROCHURES</h3>
+						<div class="pull-right">
+
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter"
+							data-filters="#dev-table" placeholder="Filter Developers" />
+					</div>
+					<table class="table table-hover  table-bordered table-responsive" id="dev-table">
+						<!-- <thead>
+							<tr>
+								<th style="text-align: center;">File Name</th>
+								<th style="text-align: center;">Link</th>
+							</tr>
+						</thead> -->
+						<tbody>
+							<tr>
+								<td>Consulate General of Switzerland
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1vJQFQHU87ilbSQLurNdXEpM5seC8flR0/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Embassy of the Kingdom of the Netherlands
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/18B9iTf3VnZ7Tg-M_9l8W1-AibGAduTl-/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+
+									</a></td>
+							</tr>
+							<tr>
+								<td>Government of Odisha
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/11lsgbEy6jx3-pLmnC9v1cuD5n4i3LySe/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Premas Biotech
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1jOR_sSFO2LW5ARzD1539hcQ3uHWc7t4t/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>BIOCON - Syngene - BIOCON Biologics
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/13PuTJFf46OExo8hfWiSKL-rMdXkivWyD/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>IBSD
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1dJLF_I0jsdCEoPK76tAnrxoUKpVejByy/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Thermofisher
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/14qE-rXHsgB7tmtd8W7PSicRP797f50TZ/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>USP
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1pAq9ZLLFDRvq30y-HvcuN-dwNhh2CQww/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td> Symbiorph
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1UL5GJiAVaFenX1vKnUU1gk7ZEv6rZCuL/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td> Biological E Limited
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/17_MFgIcvb3AzChJ6k5ixsLtsJCfIn5Tp/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td> IIL - Indian Imunnological Limited
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1d69clYuloz899AbUfMn9BKc-aFRud9RC/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>panacea biotec
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1nm3YRkg_Wo1HmQVEr1bkLJCQirr0asdG/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Premas Lifesciences
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1PsmxRbKYZg8Kbt01KpO3BjbKYrI3wjoF/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row row_second">
+			<div class="col-md-6 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">CORPORATE FILMS</h3>
+						<div class="pull-right">
+
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter"
+							data-filters="#dev-table" placeholder="Filter Developers" />
+					</div>
+					<table class="table table-hover  table-bordered table-responsive" id="dev-table">
+						<tbody>
+							<tr>
+								<td>Government of Karnataka
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1zgMYEP4F1wjFe3ybpBP1r10_o0ceTZdq/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Government of Odisha
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1jAeZMuOBx7yXUROm-ns9MSHTeQPkNu7U/view
+										">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+
+									</a></td>
+							</tr>
+
+							<tr>
+								<td>Premas Biotech
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1IKpVq0dp3B_WaEi86B827-SWn3wLJcsA/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+
+									</a></td>
+							</tr>
+ 
+							<tr>
+								<td>Premas Biotech
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1xIviWHg-Al2pQ5fmTwZ9-eJVllSy9Llc/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+							</tr>
+
+							<tr>
+								<td>Premas Biotech
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1IKpVq0dp3B_WaEi86B827-SWn3wLJcsA/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+
+									</a></td>
+							</tr>
+
+							<tr>
+								<td>BIOCON - Syngene - BIOCON Biologics
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1jaGA3RrJO3uhYhNF8ws4RFtYJW72D5rK/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Thermofisher
+								</td>
+								<td class="text-center"><a target="_blank" href="https://www.youtube.com/watch?v=wtJuTd175Nc">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Thermofisher</td>
+								<td class="text-center"><a target="_blank" href="https://www.youtube.com/watch?v=p5NpxYWTwiw">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Cytiva
+								</td>
+								<td class="text-center"><a target="_blank" href="https://youtu.be/v5JKbygCQgo
+										">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Biological E Limited
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1I1yAn_0EIa6-fyD5tXEvMM2ccZqhyGMm/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">KNOWLEDGE REPORTS</h3>
+						<div class="pull-right">
+
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter"
+							data-filters="#dev-table" placeholder="Filter Developers" />
+					</div>
+					<table class="table table-hover  table-bordered table-responsive" id="dev-table">
+						<!-- <thead>
+							<tr>
+								<th style="text-align: center;">File Name</th>
+								<th style="text-align: center;">Link</th>
+							</tr>
+						</thead> -->
+						<tbody>
+							<tr>
+								<td>Consulate General of Switzerland
+
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1vVlByQRMlqA27UDu8rI_apXNbHkrXR2b/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Government of Karnataka
+
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/drive/folders/1_e97icuAGCcKR90ORHV2jZoHTGSmnakt?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+
+									</a></td>
+							</tr>
+							<tr>
+								<td>Government of Odisha
+
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/drive/folders/1_e97icuAGCcKR90ORHV2jZoHTGSmnakt?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+
+							<tr>
+								<td>Premas Biotech
+
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/drive/folders/1oK7K8sVmvSPvgaeI1SzPul7Jvbhi_SXr?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+
+							<tr>
+								<td>Gennova
+
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1N7y6UChY-2It5w4-trOI1uQfEv9CKak3/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Cytiva
+
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1N7y6UChY-2It5w4-trOI1uQfEv9CKak3/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Symbiorph
+
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1lYcDlbqoz9MvKJRCZRw1jjvQlZ3yDitc/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Premas lifesciences
+
+								</td>
+								<td class="text-center"><a target="_blank" href="https://drive.google.com/file/d/1MyJUEm45Yd_RCp70bUMMSs0JSkSYIRWo/view?usp=sharing
+										">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

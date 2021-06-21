@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<style>
+		.row {
+			margin-top: 25px;
+			padding: 0 10px;
+		}
+
+		.clickable {
+			cursor: pointer;
+		}
+
+		.panel-heading div {
+			margin-top: -18px;
+			font-size: 15px;
+		}
+
+		.panel-heading div span {
+			margin-left: 5px;
+		}
+
+		.panel-body {
+			display: none;
+		}
+
+		#dev-table th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #03a9f4;
+			color: white;
+		}
+
+		@media (min-width: 1200px) {
+			.container {
+				width: 100%;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.container {
+				width: 100%;
+			}
+		}
+
+		tr:nth-child(even) {
+			background-color: #fbfbfb;
+		}
+		td{
+			text-align: center;
+		}
+		/* th{
+			text-align: center;
+		} */
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">BROCHURE</h3>
+						<div class="pull-right">
+							
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter"
+							data-filters="#dev-table" placeholder="Filter Developers" />
+					</div>
+					<table class="table table-hover  table-bordered table-responsive" id="dev-table">
+						<!-- <thead>
+							<tr>
+								<th style="text-align: center;">File Name</th>
+								<th style="text-align: center;">Link</th>
+							</tr>
+						</thead> -->
+						<tbody>
+							<tr>
+								<td>Switzerland</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/1vJQFQHU87ilbSQLurNdXEpM5seC8flR0/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Serum Institute</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/17hGpG5KTEyIb21EUMm7xjMbWnBDcvuRY/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+
+									</a></td>
+							</tr>
+							<tr>
+								<td>Netherlands</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/1_k8zn2hfvYeZJC3p4lYGorDm4M6E9HRw/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Karnataka</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/1kI4u3DFO7KEAZ2UbvSQvqvONz4xREJVV/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>IIL</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/1BgU2SNSG3se5pJ73OjXUfS_2wIoWArOR/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Gennova</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/1L8eFeFShr-CLxmhUdPwTiD1RvmJBYX6G/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>EIL</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/1Jh2hOBkz8TMCmV7sUIB096vM8_4PLZ8X/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Cytiva</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/1GbfE-diQ9304UcAazJ8SvTy6IyqJTKqN/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>CIIC</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/1cG6nXMHSwIBAfONGwAWUcSbdVafR3BsG/view?usp=sharing">
+										<button type="button" class="btn btn-primary">Click To View</button>
+									</a></td>
+
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">VIDEOS</h3>
+						<div class="pull-right">
+							
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter"
+							data-filters="#dev-table" placeholder="Filter Developers" />
+					</div>
+					<table class="table table-hover  table-bordered table-responsive" id="dev-table">
+						<!-- <thead>
+							<tr>
+								<th style="text-align: center;">File Name</th>
+								<th style="text-align: center;">Link</th>
+							</tr>
+						</thead> -->
+						<tbody>
+							<tr>
+								<td>Switzerland</td>
+								<td class="text-center"><a
+										href="https://youtu.be/vd99IJQhk7U">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Netherlands</td>
+								<td class="text-center"><a
+										href="#">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+
+									</a></td>
+							</tr>
+							<tr>
+								<td>Government of Karnataka</td>
+								<td class="text-center"><a
+										href="#">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+								<td>Government of Odisha</td>
+								<td class="text-center"><a
+										href="https://drive.google.com/file/d/1CWfsqdbV82MUtW9lHELs2AVU9O2BRiPr/view?usp=drive_web">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Serum</td>
+								<td class="text-center"><a
+										href="https://youtu.be/UxQO8A0UCAE">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Premas</td>
+								<td class="text-center"><a
+										href="#">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Gennova</td>
+								<td class="text-center"><a
+										href="#">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Biocon</td>
+								<td class="text-center"><a
+										href="#">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td> IBSD, Imphal</td>
+								<td class="text-center"><a
+										href="#">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td> Cytiva </td>
+								<td class="text-center"><a
+										href="#">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td> Thermo Fisher </td>
+								<td class="text-center"><a
+										href="#">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>USP</td>
+								<td class="text-center"><a
+										href="https://www.youtube.com/watch?v=Ywk1enZ35us">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Symbiorph</td>
+								<td class="text-center"><a
+										href="#">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>Crescent </td>
+								<td class="text-center"><a
+										href="https://youtu.be/kN548sd7GNc">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+							<tr>
+
+								<td>ILL</td>
+								<td class="text-center"><a
+										href="video/ILL.mp4">
+										<button type="button" class="btn btn-primary">Watch Video</button>
+									</a></td>
+
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<style type="text/css">
+
+    area:hover {
+        cursor: pointer;
+    }
+    
+    img[usemap] {
+        border: none;
+        height: 100vh;
+        max-width: 100%;
+        min-width: 100%;
+        width: auto;
+    }
+    </style>
+<div id="container3">
+    <div>
+        <img class="rwdimgmap" src="images/virtual-meeting-room-creative-CII.jpg" usemap="#powerpuffgirls" alt="" />
+        <map name="powerpuffgirls">
+            <area target="" alt="Meeting1" title="Meeting1" onclick="jitsiMeet('1')" coords="75,226,87,213,323,214,331,221,328,511,318,521,82,526,70,508" shape="poly">
+        </map>
+       
+    </div>
+</div>
+
+<div class="modal fade" id="jitsiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: 54% !important;height: 80% !important;margin:0px auto !important;">
+      <div class="modal-content">
+        <div class="modal-body" id="jitsiContainer2" style="padding:0px !important;width:101.3% !important;">
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+    function jitsiMeet(id){
+        $("#jitsiModal").modal({backdrop: false});
+        var domain = "meetings.virtex.in";
+        var options = {
+            roomName: "meetingroom"+id,
+            width: '100%',
+            height: '100%',
+            parentNode: document.querySelector('#jitsiContainer2'),
+            configOverwrite: {
+                prejoinPageEnabled:false,
+                disable1On1Mode:true,
+                disableSimulcast: true,
+                disableProfile:true,
+                disableInviteFunctions:true
+            },
+            interfaceConfigOverwrite: {
+                SHOW_JITSI_WATERMARK: false,
+                SHOW_WATERMARK_FOR_GUESTS: false,
+                HIDE_INVITE_MORE_HEADER:true,
+                disableInviteFunctions:true,
+                DEFAULT_REMOTE_DISPLAY_NAME:'VIRTEX ALMOND',
+                TOOLBAR_BUTTONS:['microphone', 'camera','fodeviceselection', 'hangup','mute-everyone','raisehand','desktop','chat']
+                //filmStripOnly: true
+            },
+            invitees:false
+        }
+          var api = new JitsiMeetExternalAPI(domain, options);
+        api.on('readyToClose', () => {
+            $("#jitsiModal").modal('hide');
+            $("#jitsiContainer2").empty();
+            // window.location.href = "https://globalbioindiavirtual.com/event/#!";
+        });
+    };
+</script>

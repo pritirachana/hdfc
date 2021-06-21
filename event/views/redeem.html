@@ -1,0 +1,55 @@
+<style>
+    .error_mesage{
+        color: red;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 3vh;
+    }
+
+    .self_leaderboard{
+        width: 100%;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    }
+    
+    
+    .points_user{
+        display: inline-block;
+    width: 30%;
+    font-weight: 700;
+    }
+</style>
+<div id="container9">
+    <div class="redeem-box">
+        <div ng-if="error_mesage" class="error_mesage">{{error_mesage}}</div>
+        <div class="self_leaderboard">
+            <div class="points_user">Current Points : {{current_user_leaderboard.current_points}}</div>
+            <div class="points_user">Total Earned Points : {{current_user_leaderboard.total_earned_points}}</div>
+            <div class="points_user">Total Redeem Points : {{current_user_leaderboard.total_reedem_points}}</div>
+        </div>
+<table>
+    <thead>
+        <tr>
+            <th id="th-small">S.no</th>
+            <th id="">Coupons</th>
+            <th id="">Denomination</th>
+            <th id="redeem-coupon">Redeem Coupon</th>
+            <!-- <th id="send">Send Mail</th> -->
+            <th id="th-small">Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="redeem in redeems">
+            <td id="serial-no" data-column="S.no">{{$index+1}}</td>
+            <td>{{redeem.coupon}}</td>
+            <td>{{redeem.denomination}}</td>
+            <!-- <td id="redeem" data-column="Points"><span ng-if="redeem.user_points == null">Redeem Coupon</span><span ng-if="redeem.user_points != null">-</span></td> -->
+            <td id="send" data-column="Points"><button  ng-if="redeem.user_points == null" ng-click="redeemCoupon(redeem)" class="btn btn-success">Redeem</button><span ng-if="redeem.user_points != null">Already Redeemed</span></td>
+            <td id="points" data-column="Points">{{redeem.points}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
